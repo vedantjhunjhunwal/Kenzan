@@ -1,0 +1,4819 @@
+{
+ "source_file": "0105010_honbun_jpcrp030000-asr-001_E02367-000_2026-03-31_01_2026-06-25_ixbrl.htm",
+ "found_by": "heading",
+ "tables": [
+  {
+   "table_index": 0,
+   "rows": [
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 3,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 4,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 5,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 6,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 7,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 8,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 9,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "(単位：百万円)",
+       "value_text": "(単位：百万円)",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 0.0,
+       "facts": []
+      }
+     ],
+     "label": "(単位：百万円)",
+     "label_cell": 11,
+     "lead_cols": 11,
+     "indent_css": 0.0,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 3,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 4,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 5,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 6,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 7,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 8,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 9,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "前連結会計年度(2025年3月31日)",
+       "value_text": "前連結会計年度(2025年3月31日)",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 0.0,
+       "facts": []
+      },
+      {
+       "text": "当連結会計年度(2026年3月31日)",
+       "value_text": "当連結会計年度(2026年3月31日)",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 0.0,
+       "facts": []
+      }
+     ],
+     "label": "前連結会計年度(2025年3月31日)",
+     "label_cell": 10,
+     "lead_cols": 10,
+     "indent_css": 0.0,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "資産の部",
+       "value_text": "資産の部",
+       "notes": [],
+       "colspan": 10,
+       "pos": 0,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "資産の部",
+     "label_cell": 0,
+     "lead_cols": 0,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "流動資産",
+       "value_text": "流動資産",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "流動資産",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "現金及び預金",
+       "value_text": "現金及び預金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "1,586,275",
+       "value_text": "1,586,275",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CashAndDeposits",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "1,586,275",
+         "value": 1586275000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "1,791,802",
+       "value_text": "1,791,802",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CashAndDeposits",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "1,791,802",
+         "value": 1791802000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "現金及び預金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "受取手形及び売掛金",
+       "value_text": "受取手形及び売掛金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "※1 65,180",
+       "value_text": "65,180",
+       "notes": [
+        "※1"
+       ],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NotesAndAccountsReceivableTrade",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "65,180",
+         "value": 65180000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "※1 147,485",
+       "value_text": "147,485",
+       "notes": [
+        "※1"
+       ],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NotesAndAccountsReceivableTrade",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "147,485",
+         "value": 147485000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "受取手形及び売掛金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "有価証券",
+       "value_text": "有価証券",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "471,915",
+       "value_text": "471,915",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ShortTermInvestmentSecurities",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "471,915",
+         "value": 471915000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "425,054",
+       "value_text": "425,054",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ShortTermInvestmentSecurities",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "425,054",
+         "value": 425054000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "有価証券",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "棚卸資産",
+       "value_text": "棚卸資産",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "※2 486,428",
+       "value_text": "486,428",
+       "notes": [
+        "※2"
+       ],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Inventories",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "486,428",
+         "value": 486428000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "※2 539,804",
+       "value_text": "539,804",
+       "notes": [
+        "※2"
+       ],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Inventories",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "539,804",
+         "value": 539804000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "棚卸資産",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他",
+       "value_text": "その他",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "142,603",
+       "value_text": "142,603",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherCA",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "142,603",
+         "value": 142603000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "105,690",
+       "value_text": "105,690",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherCA",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "105,690",
+         "value": 105690000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "その他",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "貸倒引当金",
+       "value_text": "貸倒引当金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "△52",
+       "value_text": "△52",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:AllowanceForDoubtfulAccountsCA",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": "-",
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "52",
+         "value": -52000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "△52",
+       "value_text": "△52",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:AllowanceForDoubtfulAccountsCA",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": "-",
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "52",
+         "value": -52000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "貸倒引当金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "流動資産合計",
+       "value_text": "流動資産合計",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "2,752,352",
+       "value_text": "2,752,352",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CurrentAssets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,752,352",
+         "value": 2752352000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "3,009,784",
+       "value_text": "3,009,784",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CurrentAssets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "3,009,784",
+         "value": 3009784000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "流動資産合計",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "固定資産",
+       "value_text": "固定資産",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "固定資産",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "有形固定資産",
+       "value_text": "有形固定資産",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "有形固定資産",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "建物及び構築物（純額）",
+       "value_text": "建物及び構築物（純額）",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "53,360",
+       "value_text": "53,360",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:BuildingsAndStructuresNet",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "53,360",
+         "value": 53360000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "54,808",
+       "value_text": "54,808",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:BuildingsAndStructuresNet",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "54,808",
+         "value": 54808000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "建物及び構築物（純額）",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "工具、器具及び備品（純額）",
+       "value_text": "工具、器具及び備品（純額）",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "10,599",
+       "value_text": "10,599",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ToolsFurnitureAndFixturesNet",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "10,599",
+         "value": 10599000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "9,857",
+       "value_text": "9,857",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ToolsFurnitureAndFixturesNet",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "9,857",
+         "value": 9857000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "工具、器具及び備品（純額）",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "機械装置及び運搬具（純額）",
+       "value_text": "機械装置及び運搬具（純額）",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "1,807",
+       "value_text": "1,807",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:MachineryEquipmentAndVehiclesNet",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "1,807",
+         "value": 1807000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "2,126",
+       "value_text": "2,126",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:MachineryEquipmentAndVehiclesNet",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,126",
+         "value": 2126000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "機械装置及び運搬具（純額）",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "土地",
+       "value_text": "土地",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "43,517",
+       "value_text": "43,517",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Land",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "43,517",
+         "value": 43517000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "46,182",
+       "value_text": "46,182",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Land",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "46,182",
+         "value": 46182000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "土地",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "建設仮勘定",
+       "value_text": "建設仮勘定",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "3,326",
+       "value_text": "3,326",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ConstructionInProgress",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "3,326",
+         "value": 3326000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "14,474",
+       "value_text": "14,474",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ConstructionInProgress",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "14,474",
+         "value": 14474000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "建設仮勘定",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "有形固定資産合計",
+       "value_text": "有形固定資産合計",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "※3 112,612",
+       "value_text": "112,612",
+       "notes": [
+        "※3"
+       ],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:PropertyPlantAndEquipment",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "112,612",
+         "value": 112612000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "※3 127,450",
+       "value_text": "127,450",
+       "notes": [
+        "※3"
+       ],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:PropertyPlantAndEquipment",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "127,450",
+         "value": 127450000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "有形固定資産合計",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "無形固定資産",
+       "value_text": "無形固定資産",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "無形固定資産",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "ソフトウエア",
+       "value_text": "ソフトウエア",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "11,393",
+       "value_text": "11,393",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Software",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "11,393",
+         "value": 11393000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "11,103",
+       "value_text": "11,103",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Software",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "11,103",
+         "value": 11103000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "ソフトウエア",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他",
+       "value_text": "その他",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "11,969",
+       "value_text": "11,969",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherIA",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "11,969",
+         "value": 11969000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "33,543",
+       "value_text": "33,543",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherIA",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "33,543",
+         "value": 33543000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "その他",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "無形固定資産合計",
+       "value_text": "無形固定資産合計",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "23,362",
+       "value_text": "23,362",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:IntangibleAssets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "23,362",
+         "value": 23362000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "44,647",
+       "value_text": "44,647",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:IntangibleAssets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "44,647",
+         "value": 44647000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "無形固定資産合計",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "投資その他の資産",
+       "value_text": "投資その他の資産",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "投資その他の資産",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "投資有価証券",
+       "value_text": "投資有価証券",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "※4 369,373",
+       "value_text": "369,373",
+       "notes": [
+        "※4"
+       ],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:InvestmentSecurities",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "369,373",
+         "value": 369373000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "※4 420,875",
+       "value_text": "420,875",
+       "notes": [
+        "※4"
+       ],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:InvestmentSecurities",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "420,875",
+         "value": 420875000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "投資有価証券",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "退職給付に係る資産",
+       "value_text": "退職給付に係る資産",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "13,117",
+       "value_text": "13,117",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NetDefinedBenefitAsset",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "13,117",
+         "value": 13117000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "18,769",
+       "value_text": "18,769",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NetDefinedBenefitAsset",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "18,769",
+         "value": 18769000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "退職給付に係る資産",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "繰延税金資産",
+       "value_text": "繰延税金資産",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "80,929",
+       "value_text": "80,929",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:DeferredTaxAssets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "80,929",
+         "value": 80929000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "121,899",
+       "value_text": "121,899",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:DeferredTaxAssets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "121,899",
+         "value": 121899000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "繰延税金資産",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他",
+       "value_text": "その他",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "46,767",
+       "value_text": "46,767",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherIOA",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "46,767",
+         "value": 46767000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "61,886",
+       "value_text": "61,886",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherIOA",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "61,886",
+         "value": 61886000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "その他",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "投資その他の資産合計",
+       "value_text": "投資その他の資産合計",
+       "notes": [],
+       "colspan": 7,
+       "pos": 3,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "510,188",
+       "value_text": "510,188",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:InvestmentsAndOtherAssets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "510,188",
+         "value": 510188000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "623,431",
+       "value_text": "623,431",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:InvestmentsAndOtherAssets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "623,431",
+         "value": 623431000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "投資その他の資産合計",
+     "label_cell": 3,
+     "lead_cols": 3,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "固定資産合計",
+       "value_text": "固定資産合計",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "646,162",
+       "value_text": "646,162",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NoncurrentAssets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "646,162",
+         "value": 646162000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "795,528",
+       "value_text": "795,528",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NoncurrentAssets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "795,528",
+         "value": 795528000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "固定資産合計",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "資産合計",
+       "value_text": "資産合計",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "3,398,515",
+       "value_text": "3,398,515",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Assets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "3,398,515",
+         "value": 3398515000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "3,805,312",
+       "value_text": "3,805,312",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Assets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "3,805,312",
+         "value": 3805312000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "資産合計",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    }
+   ]
+  },
+  {
+   "table_index": 1,
+   "rows": [
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 3,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 4,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 5,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 6,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 7,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 8,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 9,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "(単位：百万円)",
+       "value_text": "(単位：百万円)",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 0.0,
+       "facts": []
+      }
+     ],
+     "label": "(単位：百万円)",
+     "label_cell": 11,
+     "lead_cols": 11,
+     "indent_css": 0.0,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 2,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 3,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 4,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 5,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 6,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 7,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 8,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 9,
+       "indent": 2.6,
+       "facts": []
+      },
+      {
+       "text": "前連結会計年度(2025年3月31日)",
+       "value_text": "前連結会計年度(2025年3月31日)",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 0.0,
+       "facts": []
+      },
+      {
+       "text": "当連結会計年度(2026年3月31日)",
+       "value_text": "当連結会計年度(2026年3月31日)",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 0.0,
+       "facts": []
+      }
+     ],
+     "label": "前連結会計年度(2025年3月31日)",
+     "label_cell": 10,
+     "lead_cols": 10,
+     "indent_css": 0.0,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "負債の部",
+       "value_text": "負債の部",
+       "notes": [],
+       "colspan": 10,
+       "pos": 0,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "負債の部",
+     "label_cell": 0,
+     "lead_cols": 0,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "流動負債",
+       "value_text": "流動負債",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "流動負債",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "支払手形及び買掛金",
+       "value_text": "支払手形及び買掛金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "201,091",
+       "value_text": "201,091",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NotesAndAccountsPayableTrade",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "201,091",
+         "value": 201091000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "236,082",
+       "value_text": "236,082",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NotesAndAccountsPayableTrade",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "236,082",
+         "value": 236082000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "支払手形及び買掛金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "賞与引当金",
+       "value_text": "賞与引当金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "4,485",
+       "value_text": "4,485",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ProvisionForBonuses",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "4,485",
+         "value": 4485000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "5,062",
+       "value_text": "5,062",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ProvisionForBonuses",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "5,062",
+         "value": 5062000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "賞与引当金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "未払法人税等",
+       "value_text": "未払法人税等",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "34,726",
+       "value_text": "34,726",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:IncomeTaxesPayable",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "34,726",
+         "value": 34726000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "111,218",
+       "value_text": "111,218",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:IncomeTaxesPayable",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "111,218",
+         "value": 111218000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "未払法人税等",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他",
+       "value_text": "その他",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "※5 357,342",
+       "value_text": "357,342",
+       "notes": [
+        "※5"
+       ],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherCL",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "357,342",
+         "value": 357342000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "※5 407,783",
+       "value_text": "407,783",
+       "notes": [
+        "※5"
+       ],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherCL",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "407,783",
+         "value": 407783000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "その他",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "流動負債合計",
+       "value_text": "流動負債合計",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "597,646",
+       "value_text": "597,646",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CurrentLiabilities",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "597,646",
+         "value": 597646000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "760,148",
+       "value_text": "760,148",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CurrentLiabilities",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "760,148",
+         "value": 760148000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "流動負債合計",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "固定負債",
+       "value_text": "固定負債",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "固定負債",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "取締役報酬引当金",
+       "value_text": "取締役報酬引当金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "4",
+       "value_text": "4",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jpcrp030000-asr_E02367-000:ProvisionForDirectorSCompensationNCL",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "4",
+         "value": 4000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "－",
+       "value_text": "－",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jpcrp030000-asr_E02367-000:ProvisionForDirectorSCompensationNCL",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": null,
+         "scale": 0,
+         "sign": null,
+         "format": null,
+         "nil": true,
+         "text": "",
+         "value": null,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "取締役報酬引当金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "退職給付に係る負債",
+       "value_text": "退職給付に係る負債",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "28,821",
+       "value_text": "28,821",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NetDefinedBenefitLiability",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "28,821",
+         "value": 28821000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "24,684",
+       "value_text": "24,684",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NetDefinedBenefitLiability",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "24,684",
+         "value": 24684000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "退職給付に係る負債",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他",
+       "value_text": "その他",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "46,596",
+       "value_text": "46,596",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherNCL",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "46,596",
+         "value": 46596000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "65,299",
+       "value_text": "65,299",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:OtherNCL",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "65,299",
+         "value": 65299000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "その他",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "固定負債合計",
+       "value_text": "固定負債合計",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "75,422",
+       "value_text": "75,422",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NoncurrentLiabilities",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "75,422",
+         "value": 75422000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "89,984",
+       "value_text": "89,984",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NoncurrentLiabilities",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "89,984",
+         "value": 89984000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "固定負債合計",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "負債合計",
+       "value_text": "負債合計",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "673,068",
+       "value_text": "673,068",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Liabilities",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "673,068",
+         "value": 673068000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "850,132",
+       "value_text": "850,132",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:Liabilities",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "850,132",
+         "value": 850132000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "負債合計",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "純資産の部",
+       "value_text": "純資産の部",
+       "notes": [],
+       "colspan": 10,
+       "pos": 0,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "純資産の部",
+     "label_cell": 0,
+     "lead_cols": 0,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "株主資本",
+       "value_text": "株主資本",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "株主資本",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "資本金",
+       "value_text": "資本金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "10,065",
+       "value_text": "10,065",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CapitalStock",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "10,065",
+         "value": 10065000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "10,065",
+       "value_text": "10,065",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CapitalStock",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "10,065",
+         "value": 10065000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "資本金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "資本剰余金",
+       "value_text": "資本剰余金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "15,186",
+       "value_text": "15,186",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CapitalSurplus",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "15,186",
+         "value": 15186000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "15,041",
+       "value_text": "15,041",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:CapitalSurplus",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "15,041",
+         "value": 15041000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "資本剰余金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "利益剰余金",
+       "value_text": "利益剰余金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "2,732,509",
+       "value_text": "2,732,509",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:RetainedEarnings",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,732,509",
+         "value": 2732509000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "2,979,910",
+       "value_text": "2,979,910",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:RetainedEarnings",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,979,910",
+         "value": 2979910000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "利益剰余金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "自己株式",
+       "value_text": "自己株式",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "△271,015",
+       "value_text": "△271,015",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:TreasuryStock",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": "-",
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "271,015",
+         "value": -271015000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "△341,854",
+       "value_text": "△341,854",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:TreasuryStock",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": "-",
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "341,854",
+         "value": -341854000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "自己株式",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "株主資本合計",
+       "value_text": "株主資本合計",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "2,486,746",
+       "value_text": "2,486,746",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ShareholdersEquity",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,486,746",
+         "value": 2486746000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "2,663,163",
+       "value_text": "2,663,163",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ShareholdersEquity",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,663,163",
+         "value": 2663163000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "株主資本合計",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他の包括利益累計額",
+       "value_text": "その他の包括利益累計額",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": 4.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": 4.1,
+       "facts": []
+      }
+     ],
+     "label": "その他の包括利益累計額",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他有価証券評価差額金",
+       "value_text": "その他有価証券評価差額金",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "67,469",
+       "value_text": "67,469",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ValuationDifferenceOnAvailableForSaleSecurities",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "67,469",
+         "value": 67469000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "53,422",
+       "value_text": "53,422",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ValuationDifferenceOnAvailableForSaleSecurities",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "53,422",
+         "value": 53422000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "その他有価証券評価差額金",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "為替換算調整勘定",
+       "value_text": "為替換算調整勘定",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "170,112",
+       "value_text": "170,112",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ForeignCurrencyTranslationAdjustment",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "170,112",
+         "value": 170112000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "237,438",
+       "value_text": "237,438",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ForeignCurrencyTranslationAdjustment",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "237,438",
+         "value": 237438000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "為替換算調整勘定",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 1,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "その他の包括利益累計額合計",
+       "value_text": "その他の包括利益累計額合計",
+       "notes": [],
+       "colspan": 8,
+       "pos": 2,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "237,581",
+       "value_text": "237,581",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ValuationAndTranslationAdjustments",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "237,581",
+         "value": 237581000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "290,861",
+       "value_text": "290,861",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:ValuationAndTranslationAdjustments",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "290,861",
+         "value": 290861000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "その他の包括利益累計額合計",
+     "label_cell": 2,
+     "lead_cols": 2,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "非支配株主持分",
+       "value_text": "非支配株主持分",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "1,119",
+       "value_text": "1,119",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NonControllingInterests",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "1,119",
+         "value": 1119000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "1,155",
+       "value_text": "1,155",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NonControllingInterests",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "1,155",
+         "value": 1155000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "非支配株主持分",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "",
+       "value_text": "",
+       "notes": [],
+       "colspan": 1,
+       "pos": 0,
+       "indent": 10.1,
+       "facts": []
+      },
+      {
+       "text": "純資産合計",
+       "value_text": "純資産合計",
+       "notes": [],
+       "colspan": 9,
+       "pos": 1,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "2,725,446",
+       "value_text": "2,725,446",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NetAssets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,725,446",
+         "value": 2725446000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "2,955,180",
+       "value_text": "2,955,180",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:NetAssets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "2,955,180",
+         "value": 2955180000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "純資産合計",
+     "label_cell": 1,
+     "lead_cols": 1,
+     "indent_css": 7.5,
+     "label_notes": []
+    },
+    {
+     "cells": [
+      {
+       "text": "負債純資産合計",
+       "value_text": "負債純資産合計",
+       "notes": [],
+       "colspan": 10,
+       "pos": 0,
+       "indent": 7.5,
+       "facts": []
+      },
+      {
+       "text": "3,398,515",
+       "value_text": "3,398,515",
+       "notes": [],
+       "colspan": 1,
+       "pos": 10,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:LiabilitiesAndNetAssets",
+         "contextRef": "Prior1YearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "3,398,515",
+         "value": 3398515000000,
+         "instant": "2025-03-31",
+         "dims": []
+        }
+       ]
+      },
+      {
+       "text": "3,805,312",
+       "value_text": "3,805,312",
+       "notes": [],
+       "colspan": 1,
+       "pos": 11,
+       "indent": null,
+       "facts": [
+        {
+         "name": "jppfs_cor:LiabilitiesAndNetAssets",
+         "contextRef": "CurrentYearInstant",
+         "unitRef": "JPY",
+         "decimals": "-6",
+         "scale": 6,
+         "sign": null,
+         "format": "ixt:numdotdecimal",
+         "nil": false,
+         "text": "3,805,312",
+         "value": 3805312000000,
+         "instant": "2026-03-31",
+         "dims": []
+        }
+       ]
+      }
+     ],
+     "label": "負債純資産合計",
+     "label_cell": 0,
+     "lead_cols": 0,
+     "indent_css": 7.5,
+     "label_notes": []
+    }
+   ]
+  }
+ ],
+ "n_facts": 88,
+ "n_consolidated_facts": 88,
+ "scale": 6,
+ "instants": [
+  "2025-03-31",
+  "2026-03-31"
+ ]
+}

@@ -1,0 +1,6 @@
+spec_locked_at: 2026-10-24T00:16:08Z  unseen.json sha256: 54e6b44c663d9567
+dev_check_on_seen_started: 2026-10-24T00:18:48Z  candidate fingerprint: 888416e5df3fbc7c
+FROZEN v2 at 2026-10-24T00:21:28Z  pipeline fingerprint: 888416e5df3fbc7c  (no code changes after the seen dev check)
+unseen_run_started: 2026-10-24T00:21:28Z  unseen.json sha256: 54e6b44c663d9567
+v1_baseline_on_unseen: run after the v2 unseen run, round-1 code snapshot, pipeline fingerprint 9e905d908f7ad771
+post_freeze_changes (no pipeline code): tests (acceptance asserts), stress/run_geometry.py (records decision), scripts/run_all.sh, README; fingerprint re-checked 2026-10-24T00:27:59Z: 888416e5df3fbc7c

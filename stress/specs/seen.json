@@ -1,0 +1,18 @@
+{
+ "label": "seen",
+ "note": "The original stress variants (round 1). Results on these motivated the round-2 fixes, so they are NOT evidence for those fixes.",
+ "seed": 0,
+ "variants": [
+  ["born_digital", null, 0, 0, null],
+  ["raster_300", 300, 0, 0, null],
+  ["raster_150", 150, 0, 0, null],
+  ["raster_100", 100, 0, 0, null],
+  ["rot_+1", 300, 1.0, 0, null],
+  ["rot_-1", 300, -1.0, 0, null],
+  ["rot_+2", 300, 2.0, 0, null],
+  ["rot_-2", 300, -2.0, 0, null],
+  ["noise_s15", 300, 0, 15, null],
+  ["jpeg_q30", 300, 0, 0, 30],
+  ["scan_combo", 150, 1.5, 10, 50]
+ ]
+}

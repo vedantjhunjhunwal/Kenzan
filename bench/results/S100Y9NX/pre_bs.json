@@ -1,0 +1,1109 @@
+{
+ "http://disclosure.edinet-fsa.go.jp/role/jppfs/rol_ConsolidatedBalanceSheet": [
+  {
+   "from": "jppfs_cor_AssetsAbstract",
+   "to": "jppfs_cor_CurrentAssetsAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_AssetsAbstract",
+   "to": "jppfs_cor_NoncurrentAssetsAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_AssetsAbstract",
+   "to": "jppfs_cor_Assets",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_ConsolidatedBalanceSheetHeading",
+   "to": "jppfs_cor_BalanceSheetTable",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": "http://disclosure.edinet-fsa.go.jp/jppfs/Consolidated/role/label"
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetTable",
+   "to": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ConsolidatedBalanceSheetHeading",
+   "to": "jppfs_cor_BalanceSheetLineItems",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": "http://disclosure.edinet-fsa.go.jp/jppfs/Consolidated/role/label"
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_AssetsAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_LiabilitiesAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_NetAssetsAbstract",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_LiabilitiesAndNetAssets",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "to": "jppfs_cor_ConsolidatedMember",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_CashAndDeposits",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_NotesAndAccountsReceivableTrade",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_ShortTermInvestmentSecurities",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_Inventories",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_OtherCA",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_AllowanceForDoubtfulAccountsCA",
+   "order": "6",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_CurrentAssets",
+   "order": "7",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_NotesAndAccountsPayableTrade",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_ProvisionForBonuses",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_IncomeTaxesPayable",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_OtherCL",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_CurrentLiabilities",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_IntangibleAssetsAbstract",
+   "to": "jppfs_cor_Software",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_IntangibleAssetsAbstract",
+   "to": "jppfs_cor_OtherIA",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_IntangibleAssetsAbstract",
+   "to": "jppfs_cor_IntangibleAssets",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_InvestmentSecurities",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_NetDefinedBenefitAsset",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_DeferredTaxAssets",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_OtherIOA",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_InvestmentsAndOtherAssets",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_LiabilitiesAbstract",
+   "to": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_LiabilitiesAbstract",
+   "to": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_LiabilitiesAbstract",
+   "to": "jppfs_cor_Liabilities",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NetAssetsAbstract",
+   "to": "jppfs_cor_ShareholdersEquityAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NetAssetsAbstract",
+   "to": "jppfs_cor_ValuationAndTranslationAdjustmentsAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": "http://disclosure.edinet-fsa.go.jp/jppfs/Consolidated/role/label"
+  },
+  {
+   "from": "jppfs_cor_NetAssetsAbstract",
+   "to": "jppfs_cor_NonControllingInterests",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NetAssetsAbstract",
+   "to": "jppfs_cor_NetAssets",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_IntangibleAssetsAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_NoncurrentAssets",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jpcrp030000-asr_E02367-000_ProvisionForDirectorSCompensationNCL",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_NetDefinedBenefitLiability",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_OtherNCL",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_NoncurrentLiabilities",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_BuildingsAndStructuresNet",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_ToolsFurnitureAndFixturesNet",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_MachineryEquipmentAndVehiclesNet",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_Land",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_ConstructionInProgress",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_PropertyPlantAndEquipment",
+   "order": "6",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_CapitalStock",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_CapitalSurplus",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_RetainedEarnings",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_TreasuryStock",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_ShareholdersEquity",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_ValuationAndTranslationAdjustmentsAbstract",
+   "to": "jppfs_cor_ValuationDifferenceOnAvailableForSaleSecurities",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ValuationAndTranslationAdjustmentsAbstract",
+   "to": "jppfs_cor_ForeignCurrencyTranslationAdjustment",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ValuationAndTranslationAdjustmentsAbstract",
+   "to": "jppfs_cor_ValuationAndTranslationAdjustments",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://disclosure.edinet-fsa.go.jp/jppfs/Consolidated/role/totalLabel"
+  }
+ ],
+ "http://disclosure.edinet-fsa.go.jp/role/jpcrp/rol_NotesConsolidatedBalanceSheet": [
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetHeading",
+   "to": "jpcrp_cor_NotesConsolidatedBalanceSheetTable",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetHeading",
+   "to": "jpcrp_cor_NotesConsolidatedBalanceSheetLineItems",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingAmountsOfNotesAndAccountsReceivableTradeAndContractAssetsTextBlock",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingAccumulatedDepreciationOfPropertyPlantAndEquipmentTextBlock",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingSharesAndBondsEtcOfUnconsolidatedSubsidiariesAndAssociatesTextBlock",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingAmountOfContractLiabilitiesTextBlock",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesConsolidatedBalanceSheetTable",
+   "to": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingAccumulatedDepreciationOfPropertyPlantAndEquipmentTextBlock",
+   "to": "jppfs_cor_AccumulatedDepreciationPPEByGroup",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingAmountOfContractLiabilitiesTextBlock",
+   "to": "jppfs_cor_ContractLiabilities",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingAmountsOfNotesAndAccountsReceivableTradeAndContractAssetsTextBlock",
+   "to": "jppfs_cor_NotesReceivableTrade",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingAmountsOfNotesAndAccountsReceivableTradeAndContractAssetsTextBlock",
+   "to": "jppfs_cor_AccountsReceivableTrade",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "to": "jppfs_cor_FinishedGoods",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "to": "jppfs_cor_WorkInProcess",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "to": "jppfs_cor_RawMaterialsAndSupplies",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "to": "jppfs_cor_ConsolidatedMember",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  }
+ ],
+ "http://disclosure.edinet-fsa.go.jp/role/jppfs/rol_BalanceSheet": [
+  {
+   "from": "jppfs_cor_AssetsAbstract",
+   "to": "jppfs_cor_CurrentAssetsAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_AssetsAbstract",
+   "to": "jppfs_cor_NoncurrentAssetsAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_AssetsAbstract",
+   "to": "jppfs_cor_Assets",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetHeading",
+   "to": "jppfs_cor_BalanceSheetTable",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetHeading",
+   "to": "jppfs_cor_BalanceSheetLineItems",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_AssetsAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_LiabilitiesAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_NetAssetsAbstract",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetLineItems",
+   "to": "jppfs_cor_LiabilitiesAndNetAssets",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_BalanceSheetTable",
+   "to": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CapitalSurplusAbstract",
+   "to": "jppfs_cor_LegalCapitalSurplus",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CapitalSurplusAbstract",
+   "to": "jppfs_cor_OtherCapitalSurplus",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CapitalSurplusAbstract",
+   "to": "jppfs_cor_CapitalSurplus",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "to": "jppfs_cor_NonConsolidatedMember",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_CashAndDeposits",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_NotesAndAccountsReceivableTrade",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_ShortTermInvestmentSecurities",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_Inventories",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_OtherCA",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_AllowanceForDoubtfulAccountsCA",
+   "order": "6",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentAssetsAbstract",
+   "to": "jppfs_cor_CurrentAssets",
+   "order": "7",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_NotesAndAccountsPayableTrade",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_AdvancesReceived",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_AccountsPayableOther",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_IncomeTaxesPayable",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_ProvisionForBonuses",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_OtherCL",
+   "order": "6",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_CurrentLiabilities",
+   "order": "7",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_IntangibleAssetsAbstract",
+   "to": "jppfs_cor_Software",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_IntangibleAssetsAbstract",
+   "to": "jppfs_cor_OtherIA",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_IntangibleAssetsAbstract",
+   "to": "jppfs_cor_IntangibleAssets",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_InvestmentSecurities",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_StocksOfSubsidiariesAndAffiliates",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_DeferredTaxAssets",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_OtherIOA",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_InvestmentsAndOtherAssetsAbstract",
+   "to": "jppfs_cor_InvestmentsAndOtherAssets",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_LiabilitiesAbstract",
+   "to": "jppfs_cor_CurrentLiabilitiesAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_LiabilitiesAbstract",
+   "to": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_LiabilitiesAbstract",
+   "to": "jppfs_cor_Liabilities",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NetAssetsAbstract",
+   "to": "jppfs_cor_ShareholdersEquityAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NetAssetsAbstract",
+   "to": "jppfs_cor_ValuationAndTranslationAdjustmentsAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NetAssetsAbstract",
+   "to": "jppfs_cor_NetAssets",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_IntangibleAssetsAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentAssetsAbstract",
+   "to": "jppfs_cor_NoncurrentAssets",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_LongTermIncomeTaxesPayable",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jpcrp030000-asr_E02367-000_ProvisionForDirectorSCompensationNCL",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_ProvisionForRetirementBenefits",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_OtherNCL",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_NoncurrentLiabilitiesAbstract",
+   "to": "jppfs_cor_NoncurrentLiabilities",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_RetainedEarningsAbstract",
+   "to": "jppfs_cor_OtherRetainedEarningsAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_OtherRetainedEarningsAbstract",
+   "to": "jppfs_cor_ReserveForAdvancedDepreciationOfNoncurrentAssets",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_OtherRetainedEarningsAbstract",
+   "to": "jppfs_cor_GeneralReserve",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_OtherRetainedEarningsAbstract",
+   "to": "jppfs_cor_RetainedEarningsBroughtForward",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_BuildingsNet",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": "http://disclosure.edinet-fsa.go.jp/jppfs/cte/role/label"
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_ToolsFurnitureAndFixturesNet",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": "http://disclosure.edinet-fsa.go.jp/jppfs/cte/role/label"
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_Land",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_ConstructionInProgress",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_OtherNetPPE",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": "http://disclosure.edinet-fsa.go.jp/jppfs/cte/role/label"
+  },
+  {
+   "from": "jppfs_cor_PropertyPlantAndEquipmentAbstract",
+   "to": "jppfs_cor_PropertyPlantAndEquipment",
+   "order": "6",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_RetainedEarningsAbstract",
+   "to": "jppfs_cor_LegalRetainedEarnings",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_RetainedEarningsAbstract",
+   "to": "jppfs_cor_RetainedEarnings",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_CapitalStock",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_CapitalSurplusAbstract",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_RetainedEarningsAbstract",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_TreasuryStock",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ShareholdersEquityAbstract",
+   "to": "jppfs_cor_ShareholdersEquity",
+   "order": "5",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  },
+  {
+   "from": "jppfs_cor_ValuationAndTranslationAdjustmentsAbstract",
+   "to": "jppfs_cor_ValuationDifferenceOnAvailableForSaleSecurities",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ValuationAndTranslationAdjustmentsAbstract",
+   "to": "jppfs_cor_ValuationAndTranslationAdjustments",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": "http://www.xbrl.org/2003/role/totalLabel"
+  }
+ ],
+ "http://disclosure.edinet-fsa.go.jp/role/jpcrp/rol_NotesBalanceSheet": [
+  {
+   "from": "jpcrp_cor_NotesBalanceSheetHeading",
+   "to": "jpcrp_cor_NotesBalanceSheetTable",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesBalanceSheetHeading",
+   "to": "jpcrp_cor_NotesBalanceSheetLineItems",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingAssetsAndLiabilitiesIncurredFromTransactionsWithAffiliatedEntitiesTextBlock",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesBalanceSheetLineItems",
+   "to": "jpcrp_cor_NotesRegardingGuaranteeObligationsTextBlock",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesBalanceSheetLineItems",
+   "to": "jpcrp030000-asr_E02367-000_NotesRegardingReserveForAdvancedDepreciationOfNonCurrentAssetsTextBlock",
+   "order": "4",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesBalanceSheetTable",
+   "to": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "to": "jppfs_cor_FinishedGoods",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "to": "jppfs_cor_WorkInProcess",
+   "order": "2",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jpcrp_cor_NotesRegardingInventoriesTextBlock",
+   "to": "jppfs_cor_RawMaterialsAndSupplies",
+   "order": "3",
+   "weight": null,
+   "preferredLabel": null
+  },
+  {
+   "from": "jppfs_cor_ConsolidatedOrNonConsolidatedAxis",
+   "to": "jppfs_cor_NonConsolidatedMember",
+   "order": "1",
+   "weight": null,
+   "preferredLabel": null
+  }
+ ]
+}

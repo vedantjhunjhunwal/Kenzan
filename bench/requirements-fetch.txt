@@ -1,0 +1,3 @@
+requests>=2.31
+pymupdf>=1.24
+lxml>=5.0

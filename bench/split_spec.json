@@ -1,0 +1,22 @@
+{
+ "name": "JP-BS-Bench split",
+ "version": "1.1",
+ "locked_at": "2026-10-24",
+ "key": "edinetCode",
+ "key_rationale": "Split by company, not by document: two filings of the same company (FY2025, FY2026) share layout and labels, so a document-level split would leak test layouts into dev.",
+ "salt": "JP-BS-Bench/2026-10-24/split-v1",
+ "hash": "sha256",
+ "test_fraction": 0.7,
+ "rule": "if edinetCode in forced_dev: 'dev'; else u = int(sha256(f'{salt}:{edinetCode}').hexdigest()[:8], 16) / 2**32; split = 'test' if u < test_fraction else 'dev'",
+ "policy": "Development, debugging and threshold choices use dev documents only. The test set is evaluated once, with frozen code whose fingerprint is logged in bench/FREEZE_LOG.txt before the run.",
+ "amendments": [
+  {
+   "date": "2026-10-24",
+   "version": "1.1",
+   "change": "forced-dev list: companies listed in bench/forced_dev.txt (the pilot filings, and any filing inspected before the test freeze) are always 'dev'. The hash rule is unchanged.",
+   "reason": "Pilot filings are inspected while debugging; they must never become test documents.",
+   "made_before_any_benchmark_document_was_seen": true
+  }
+ ],
+ "forced_dev_file": "bench/forced_dev.txt"
+}
