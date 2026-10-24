@@ -1,0 +1,191 @@
+[
+ {
+  "row": "r12",
+  "period": "2025-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当 金",
+  "gt_raw": "△2,979",
+  "pred_raw": "2,979",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r12",
+  "period": "2026-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当 金",
+  "gt_raw": "△0",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r13",
+  "period": "2026-03-31",
+  "gt_label": "流動資産合計",
+  "pred_label": "流動 資産合計",
+  "gt_raw": "3,377,407",
+  "pred_raw": "407",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r16",
+  "period": "2025-03-31",
+  "gt_label": "建物及び構築物",
+  "pred_label": "建物及び構築物",
+  "gt_raw": "2,121,360",
+  "pred_raw": "360",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r17",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△1,923,585",
+  "pred_raw": "1,923,585",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r17",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△1,640,253",
+  "pred_raw": "1,640,253",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r20",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△3,634,165",
+  "pred_raw": "3,634,165",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r20",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△1,914,091",
+  "pred_raw": "1,914,091",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r21",
+  "period": "2025-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬具(純額)",
+  "gt_raw": "390,757",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r21",
+  "period": "2026-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬具(純額)",
+  "gt_raw": "336,708",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r24",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△147,599",
+  "pred_raw": "147,599",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r24",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△172,066",
+  "pred_raw": "172,066",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r26",
+  "period": "2025-03-31",
+  "gt_label": "建設仮勘定",
+  "pred_label": "建設仮勘定",
+  "gt_raw": "－",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r27",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その和他",
+  "gt_raw": "848,814",
+  "pred_raw": "848,814",
+  "cause": "label misread -> path mismatch"
+ },
+ {
+  "row": "r27",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その和他",
+  "gt_raw": "446,126",
+  "pred_raw": "446,126",
+  "cause": "label misread -> path mismatch"
+ },
+ {
+  "row": "r28",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却 打計客",
+  "gt_raw": "△840,375",
+  "pred_raw": "840,375",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r28",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却 打計客",
+  "gt_raw": "△421,883",
+  "pred_raw": "421,883",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r29",
+  "period": "2025-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他 (純額)",
+  "gt_raw": "8,439",
+  "pred_raw": "8,439",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r29",
+  "period": "2026-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他 (純額)",
+  "gt_raw": "24,243",
+  "pred_raw": "24,243",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r37",
+  "period": "2026-03-31",
+  "gt_label": "関係会社株式",
+  "pred_label": "関係 会社株式",
+  "gt_raw": "1,123",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r38",
+  "period": "2025-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": "長期 貸付 金",
+  "gt_raw": "－",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ }
+]

@@ -1,0 +1,6 @@
+# Extra packages for the VLM runner (scripts/vlm_run.py) on a GPU machine or Google Colab.
+# torch comes preinstalled on Colab; elsewhere install a CUDA build of torch first.
+-r requirements.txt
+transformers>=4.57
+accelerate>=1.0
+bitsandbytes>=0.45

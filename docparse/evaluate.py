@@ -132,8 +132,10 @@ def score_validation(gt: dict, pred: dict) -> dict:
             1 - len(disagree) / max(len(gs.keys() | ps.keys()), 1), "differences": disagree}
 
 
-def evaluate(pdf: str, gt_stem: str, out_dir: str, page: int = 0, route: str | None = None) -> dict:
-    pred = parse_pdf(pdf, page, safe=True, force_route=route)      # failures become status "failed"
+def evaluate(pdf: str, gt_stem: str, out_dir: str, page: int = 0, route: str | None = None,
+             backend=None) -> dict:
+    """backend: optional visual-route backend (e.g. docparse.vlm.VLMBackend); default Tesseract."""
+    pred = parse_pdf(pdf, page, safe=True, force_route=route, ocr=backend)   # failures -> status "failed"
     paths = write_all(pred, out_dir, "prediction")
     gt = json.loads(Path(f"{gt_stem}.json").read_text(encoding="utf-8"))
     rep = {

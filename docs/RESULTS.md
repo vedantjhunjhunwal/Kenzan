@@ -136,7 +136,39 @@ fixed, with regression tests.
 - the PDF side (page finding, end-total check, alignment);
 - IFRS, 千円 and two-page balance sheets.
 
-## 5. Limitations
+## 5. Held-out v3: Tesseract baseline (VLM pending)
+
+A third degradation set was frozen before any VLM code existed: new seed, new rotation, noise and
+JPEG values, and pure-raster 250 and 175 dpi. The details and one logged correction are in
+`stress/FREEZE_LOG.txt`. Tesseract was run on it once, with the frozen v2 pipeline (`baselines/v2`,
+fingerprint `888416e5df3fbc7c`). Source: `stress/out_heldout_v3/results.json`.
+
+| Variant | Cell F1 | Calc parent | Checks failed | Decision |
+|---|--:|--:|--:|---|
+| raster 250 dpi | 75.5% | 72.1% | 8 | review |
+| raster 175 dpi | 81.1% | 81.4% | 10 | review |
+| rotation +0.8° | 74.6% | 74.4% | 10 | review |
+| rotation −1.2° | 81.9% | 90.7% | 9 | review |
+| noise σ=12 | 67.2% | 72.1% | 7 | review |
+| JPEG q=40 | 67.6% | 76.7% | 3 | review |
+| 250 dpi + 0.6° + σ=6 + q=55 | 39.4% | 62.8% | 7 | review |
+| 175 dpi − 1.1° + σ=9 + q=45 | 78.5% | 83.7% | 5 | review |
+
+- Mean cell F1 over the 8 degraded pages: **70.7%**. No page is fully correct and none is accepted,
+  so there are 0 false accepts.
+- Every page failed at least one check (A2). △ was lost 6–9 times per page.
+
+**The OCR-agreement rule can't accept anything on this set.** The planned "VLM + checks + OCR"
+arm only accepts a page if the Tesseract read has the same values per column as the VLM read. That
+was checked against the ground truth itself, with no VLM involved: on 0 of 8 pages does Tesseract
+agree with the correct values. The Tesseract read misses 15–22 of the correct values per page
+(`stress/out_heldout_v3/ocr_agreement_ceiling.json`). So that arm accepts no page here, even
+with a perfect VLM read. "VLM + checks" (A1–A5 alone) is reported next to it.
+
+**VLM arms: not run yet.** The code, the model choice and the frozen protocol are in
+[VLM.md](VLM.md).
+
+## 6. Limitations
 
 - **One reference page.** The born-digital 100% is a regression baseline, and "unseen" means unseen
   degradations of the same page, not unseen documents. One real filing confirms the benchmark
@@ -155,13 +187,14 @@ fixed, with regression tests.
 - **Not implemented.**
   - cross-page stitching (interface designed);
   - wrapped labels, 90° pages, two-column layouts;
-  - the VLM backend (stub);
+  - VLM results: the backend is implemented and tested with a fake model, but no real model has
+    been run ([VLM.md](VLM.md));
   - deskew beyond ±5°.
 - **Assumptions.**
   - Rounding is truncation (consistent with all checks).
   - jppfs element candidates on the reference page are unverified and excluded from scoring.
 
-## 6. Next steps
+## 7. Next steps
 
 1. **Sign and header robustness**, validated on a *new* held-out set:
    - a glyph-level △ detector, or a VLM on numeric-column crops;
@@ -191,12 +224,15 @@ PYTHON=.venv/bin/python bash scripts/run_all.sh
 1. the tests;
 2. the reference-page evaluation (`runs/eval_born_digital/`);
 3. the geometry variants (`stress/out_geometry/`);
-4. the seen and unseen stress sets with the current pipeline (`stress/out_v2_*`);
-5. the round-1 baseline on both sets (`stress/out_v1_*`).
+4. the seen, unseen and held-out v3 sets with the frozen v2 pipeline (`baselines/v2` →
+   `stress/out_v2_*`, `stress/out_heldout_v3`), plus the OCR-agreement ceiling;
+5. the round-1 baseline on seen and unseen (`stress/out_v1_*`);
+6. the VLM comparison, only if a `vlm_cache/` folder exists ([VLM.md](VLM.md));
+7. the claim audit (`scripts/audit_claims.py` → `docs/AUDIT.md`).
 
 The degraded PDFs are regenerated from the seeded specs. Expected pipeline fingerprints are
-`888416e5df3fbc7c` (current) and `9e905d908f7ad771` (round 1). Every metric reproduces exactly;
-only timings differ.
+`888416e5df3fbc7c` (v2) and `9e905d908f7ad771` (round 1). The current `docparse/` is v2 plus
+`vlm.py`, fingerprint `d0e040f00f51a9c8`. Every metric reproduces exactly; only timings differ.
 
 Individual commands:
 
