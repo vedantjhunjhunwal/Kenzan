@@ -1,0 +1,16 @@
+{
+ "label": "heldout_v3",
+ "note": "Third degradation set, written and hashed BEFORE any VLM code existed (the unseen set has been evaluated twice: round-1 and v2 code). Every dpi, rotation, noise and JPEG value is new (none appears in seen.json or unseen.json), and the seed is new. Same source page as the ground truth: unseen degradations, not unseen documents. Used once to compare Tesseract vs VLM vs VLM+checks.",
+ "seed": 271828,
+ "variants": [
+  ["born_digital", null, 0, 0, null],
+  ["raster_250", 250, 0, 0, null],
+  ["raster_175", 175, 0, 0, null],
+  ["rot_+0.8", 300, 0.8, 0, null],
+  ["rot_-1.2", 300, -1.2, 0, null],
+  ["noise_s12", 300, 0, 12, null],
+  ["jpeg_q40", 300, 0, 0, 40],
+  ["scan_250", 250, 0.6, 6, 55],
+  ["scan_175", 175, -1.1, 9, 45]
+ ]
+}
