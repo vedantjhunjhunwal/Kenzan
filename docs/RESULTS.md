@@ -205,8 +205,8 @@ with a perfect VLM read. "VLM + checks" (A1–A5 alone) is reported next to it.
    ([BENCHMARK.md](BENCHMARK.md)); IFRS template; cross-page `StatementAssembler`.
 4. **Accept-side measurement** on fully correct scans; review queue for active learning and VLM
    fine-tuning on XBRL-aligned crops.
-5. **Cost and latency** (development machine): born-digital well under 1 s/page; scan path
-   11–21 s/page (deskew + Tesseract at 300 dpi).
+5. **Cost and latency** (2 CPU cores, no GPU): born-digital well under 1 s/page; scan path
+   11–32 s/page across the committed runs (deskew + Tesseract at 300 dpi). Timings vary by machine.
 
 ## Reproducing
 

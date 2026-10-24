@@ -1,8 +1,18 @@
 {
+ "set": "seen",
+ "spec": "seen.json",
+ "spec_sha256": "377833578be84e5d",
  "code_fingerprint": "9e905d908f7ad771",
  "seed": 0,
  "results": [
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": true,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "born_digital",
    "params": {
     "dpi": null,
@@ -39,6 +49,13 @@
    "wrong_cells_by_cause": {}
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "raster_300",
    "params": {
     "dpi": 300,
@@ -50,7 +67,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 12.6,
+   "seconds": 19.5,
    "cells_correct": 60,
    "cells_gt": 74,
    "cells_pred": 69,
@@ -80,6 +97,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "raster_150",
    "params": {
     "dpi": 150,
@@ -91,7 +115,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 12.3,
+   "seconds": 19.3,
    "cells_correct": 60,
    "cells_gt": 74,
    "cells_pred": 71,
@@ -121,6 +145,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "raster_100",
    "params": {
     "dpi": 100,
@@ -132,7 +163,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 20.7,
+   "seconds": 32.4,
    "cells_correct": 0,
    "cells_gt": 74,
    "cells_pred": 18,
@@ -160,6 +191,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "rot_+1",
    "params": {
     "dpi": 300,
@@ -171,7 +209,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 12.5,
+   "seconds": 18.7,
    "cells_correct": 1,
    "cells_gt": 74,
    "cells_pred": 67,
@@ -200,6 +238,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "rot_-1",
    "params": {
     "dpi": 300,
@@ -211,7 +256,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 13.5,
+   "seconds": 21.0,
    "cells_correct": 0,
    "cells_gt": 74,
    "cells_pred": 33,
@@ -240,6 +285,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "rot_+2",
    "params": {
     "dpi": 300,
@@ -251,7 +303,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 12.1,
+   "seconds": 19.0,
    "cells_correct": 0,
    "cells_gt": 74,
    "cells_pred": 33,
@@ -280,6 +332,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "rot_-2",
    "params": {
     "dpi": 300,
@@ -291,7 +350,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 13.8,
+   "seconds": 20.1,
    "cells_correct": 0,
    "cells_gt": 74,
    "cells_pred": 35,
@@ -321,6 +380,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "noise_s15",
    "params": {
     "dpi": 300,
@@ -332,7 +398,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 19.0,
+   "seconds": 24.9,
    "cells_correct": 44,
    "cells_gt": 74,
    "cells_pred": 64,
@@ -363,6 +429,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "jpeg_q30",
    "params": {
     "dpi": 300,
@@ -374,7 +447,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 11.1,
+   "seconds": 17.3,
    "cells_correct": 62,
    "cells_gt": 74,
    "cells_pred": 71,
@@ -403,6 +476,13 @@
    }
   },
   {
+   "set": "seen",
+   "decision": "n/a",
+   "acceptance_reasons": [],
+   "fully_correct": false,
+   "false_accept": false,
+   "deskew_deg": null,
+   "statement_type_source": null,
    "variant": "scan_combo",
    "params": {
     "dpi": 150,
@@ -414,7 +494,7 @@
    "reason": null,
    "route": "visual",
    "backend": "ocr_tesseract",
-   "seconds": 16.2,
+   "seconds": 23.6,
    "cells_correct": 0,
    "cells_gt": 74,
    "cells_pred": 18,

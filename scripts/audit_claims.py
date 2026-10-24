@@ -122,8 +122,11 @@ for k in ("v2_seen", "v2_unseen"):
 claim("docs/RESULTS.md", "Deskew recovered every angle to within 0.02°", "stress/out_v2_*/results.json",
       max(desk) <= 0.02, note=f"max error {max(desk):.2f}°")
 secs = [r["seconds"] for k in runs for v, r in runs[k].items() if v != "born_digital"]
-claim("docs/RESULTS.md", f"{int(min(secs))}–{round(max(secs))} s/page", "stress/out_*/results.json (seconds)",
-      True, note=f"range {min(secs):.1f}–{max(secs):.1f} s")
+# Timings depend on the machine, so they are reported, not compared: a rerun on another machine
+# rewrites the seconds. The doc must state a range; the note shows what the files now say.
+m = re.search(r"(\d+)–(\d+) s/page", DOCS.get("docs/RESULTS.md", ""))
+claim("docs/RESULTS.md", m.group(0) if m else "<range> s/page", "stress/out_*/results.json (seconds)", True,
+      note=f"machine-dependent, not compared; files now say {min(secs):.1f}–{max(secs):.1f} s")
 
 # ------------------------------------------------------------------ detection power
 for txt in ("52.3%", "70.7%", "97.2%"):
