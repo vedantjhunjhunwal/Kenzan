@@ -31,8 +31,9 @@ It provides:
 - rounding-aware identity checks: a sign-aware truncation window, plus *coverage*, so a check that
   can't be evaluated never counts as a pass;
 - an acceptance rule that sends any page with a failed, missing or solver-derived check to review.
-  On the stress test it accepted no degraded page (0 false accepts) and accepted the born-digital
-  page;
+  On the stress test it accepted none of the 19 degraded pages and accepted the born-digital page.
+  So it made 0 false accepts, but only because it accepted nothing degraded: whether it accepts a
+  good scan is untested;
 - EDINET / XBRL tooling for ground truth at scale ("JP-BS-Bench"):
   - an extractor for hand-downloaded filings, with an optional API sampler;
   - a ground-truth builder from inline XBRL;
@@ -46,8 +47,8 @@ It provides:
 | Same page scaled / shifted / on A3 | all 100%, all accepted | `stress/out_geometry/` |
 | Scanned variants, **unseen** (held-out, 9) | mean cell F1 37.8% → **60.9%** (round 1 → current) | `stress/summary_all_runs.json` |
 | Scanned variants, seen (10; motivated the fixes, not evidence) | 31.7% → 72.7% | `stress/summary_all_runs.json` |
-| Acceptance on degraded pages | 0 of 19 accepted; **0 false accepts** | `stress/summary_all_runs.json` |
-| Real filing (Nintendo FY2026, XBRL) | 88 values, 0 mismatches vs tagged facts; 26/26 identity checks pass | `bench/results/S100Y9NX/` |
+| Acceptance on degraded pages | 0 of 19 degraded pages accepted, hence 0 false accepts (not an accept-side result) | `stress/summary_all_runs.json` |
+| Real filing (Nintendo FY2026): benchmark XBRL extractor + ground-truth builder only | 88 values, 0 mismatches vs tagged facts; 28 identity checks evaluated, 0 failed (26 template + 2 dynamic). PDF parser not yet run on this filing | `bench/results/S100Y9NX/` |
 
 Each number comes from the file named next to it; the full tables are in [docs/RESULTS.md](docs/RESULTS.md).
 The held-out set was hashed before the code it tests was written, and code fingerprints are logged
@@ -83,8 +84,8 @@ every result, including the stress sets.
 
 ## Limitations
 
-1. **One reference page.** "Unseen" means unseen *degradations* of one page, and only one real filing
-   has been processed. Generalization across filings is the purpose of JP-BS-Bench, and it is
+1. **One reference page.** "Unseen" means unseen *degradations* of one page. One real filing has been
+   run through the XBRL extractor and ground-truth builder, but not yet through the PDF parser. Generalization across filings is the purpose of JP-BS-Bench, and it is
    untested.
 2. **The scan path is weak.** OCR reads △ as other characters, and misread header labels break the
    calculation-tree rules. Best held-out cell F1 is about 85%. The checks catch these pages, but they

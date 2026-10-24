@@ -1,0 +1,14 @@
+False alarms on the clean page (evaluable checks failing):
+  exact      13/20
+  symmetric  0/20
+  truncate   0/20
+
+Detection rate by injected error (one error at a time; 3816 cases)
+  error type              cases   symmetric ±(n-1)   sign-aware
+  digit:hundreds+          2386            100.0%       100.0%
+  digit:ones                648             52.3%        70.7%
+  digit:tens                639             97.2%       100.0%
+  row:columns_swapped        35            100.0%       100.0%
+  row:dropped                36            100.0%       100.0%
+  sign:dropped_△             10             90.0%        90.0%
+  sign:spurious_△            62            100.0%       100.0%
