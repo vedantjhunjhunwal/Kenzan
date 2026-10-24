@@ -316,3 +316,41 @@ def test_check_pilot_on_synthetic_pilot(tmp_path, monkeypatch):
     assert f["found_by"] == "heading" and f["extra_pages"] == [] and f["fact_vs_printed_mismatch"] == 0
     assert f["first_page_has_title"] and f["last_page_has_total_label"] and f["match_rate"] == 1.0
     assert "printed_negative_xbrl_negative" in res["run"]["conventions_total"]
+
+
+# --------------------------------------------------------------------------- triage into dev / sealed test
+def _dl_zip(path, doc_id, code):
+    import io as _io
+    import zipfile as _zf
+    buf = _io.BytesIO()
+    with _zf.ZipFile(buf, "w") as z:
+        z.writestr("XbrlSearchDlInfo.csv", ("ダウンロードデータ作成日,2026年10月25日現在,件数,1件,\r\n"
+                                            "書類管理番号,書類名,EDINET(ファンド)コード,提出者(ファンド),提出者法人番号\r\n"
+                                            f"{doc_id},有価証券報告書,{code},テスト社,1\r\n").encode("cp932"))
+        z.writestr(f"{doc_id}/XBRL/PublicDoc/x.htm", "<html/>")
+    path.write_bytes(buf.getvalue())
+
+
+def test_triage_seals_test_filings_unopened(tmp_path, monkeypatch):
+    import triage as tr
+    test_code = next(f"E{n:05d}" for n in range(1, 999) if sp.hash_split(f"E{n:05d}") == "test")
+    dev_code = next(f"E{n:05d}" for n in range(1, 999) if sp.hash_split(f"E{n:05d}") == "dev")
+    dl = tmp_path / "downloads"
+    dl.mkdir()
+    _dl_zip(dl / "a.zip", "S100TEST", test_code)
+    _dl_zip(dl / "b.zip", "S100DEVV", dev_code)
+    doc = pymupdf.open()
+    doc.new_page()
+    doc.save(dl / "S100TEST.pdf")
+    monkeypatch.setattr(tr, "SEALED_RECORD", tmp_path / "SEALED_TEST.json")
+    monkeypatch.setattr(tr, "FREEZE_LOG", tmp_path / "FREEZE_LOG.txt")
+    monkeypatch.setattr(sp, "FORCED_DEV_FILE", tmp_path / "none.txt")
+    s = tr.triage(str(dl), str(tmp_path / "realdocs"))
+    assert [e["docID"] for e in s["dev"]] == ["S100DEVV"]
+    assert [e["docID"] for e in s["test_sealed"]] == ["S100TEST"] and s["test_sealed"][0]["has_pdf"]
+    sealed = tmp_path / "realdocs" / "sealed" / "S100TEST"
+    assert sorted(p.name for p in sealed.iterdir()) == ["S100TEST.pdf", "S100TEST_xbrl.zip"]
+    assert not (dl / "a.zip").exists() and (dl / "b.zip").exists()       # test moved out, dev copied
+    rec = json.loads((tmp_path / "SEALED_TEST.json").read_text(encoding="utf-8"))
+    assert set(rec["sealed"]["S100TEST"]["sha256"]) == {"S100TEST.pdf", "S100TEST_xbrl.zip"}
+    assert "SEALED" in (tmp_path / "FREEZE_LOG.txt").read_text(encoding="utf-8")
