@@ -1,7 +1,8 @@
 # Results
 
 Every number here is copied from a result file in this repository. The file is named under each
-table, and [Reproducing](#reproducing) regenerates them all. The definitions are in [METHOD.md](METHOD.md).
+table, and [Reproducing](#reproducing) regenerates them all. `scripts/audit_claims.py` re-checks every
+number against its file; the latest audit is in [AUDIT.md](AUDIT.md). The definitions are in [METHOD.md](METHOD.md).
 
 ## 1. Reference page (born-digital) and geometry variants
 
@@ -91,10 +92,16 @@ Source: `stress/summary_all_runs.json`, `stress/out_geometry/geometry_results.js
 Every degraded page failed at least one identity (A2), except seen raster 100 dpi. That page was
 caught by A3: its required checks couldn't be evaluated.
 
-**Caveat:** no degraded page was fully correct, so it isn't shown yet that the rule would *accept* a
-good scan.
+**0 false accepts here means 0 of 19 degraded pages accepted, hence 0 false accepts.** No degraded page was
+fully correct, so this is a reject-side result only. It doesn't show that the rule *accepts* a good
+scan, and with nothing degraded accepted, there is no false-accept *rate* to estimate.
 
 ## 4. Real-document results (JP-BS-Bench extractor)
+
+**What ran:** the benchmark's XBRL extractor (`bench/fetch_edinet.py --local`) and ground-truth builder
+(`bench/build_gt_xbrl.py`), on the filing's XBRL only. **The PDF parser (`docparse`) has not been run on
+this filing**: the PDF wasn't supplied, and `pilot_check.md` reports `pdf_missing`. Nothing in this
+section is evidence about parsing PDFs.
 
 **The filing.** Nintendo's 有価証券報告書 for the fiscal year ending 2026-03-31 (docID S100Y9NX,
 J-GAAP, 百万円). It's a dev document, forced into dev because it was inspected while debugging.
@@ -109,9 +116,10 @@ Notes: `bench/VERIFICATION.md`.
 
 | Check | Result |
 |---|---|
-| Balance sheet found | by its 【連結貸借対照表】 heading; 56 rows (44 with values), 88 values, both years, scale 百万円 |
+| Balance sheet found in the XBRL | by its 【連結貸借対照表】 heading; 56 rows (44 with values), 88 values, both years, scale 百万円 |
 | Values vs the plain XBRL instance (`.xbrl`) | 88 / 88 equal, 0 mismatches (extractor reads the inline HTML) |
-| Subtotals vs sum of parts | all 26 sum checks 0–3 above the sum (consistent with 百万円未満切捨て); 0 fail; template coverage 26 / 26 |
+| Identity checks on the ground truth | 28 checks evaluable, 0 failed: 26 template (24 sums + 2 equalities, one per year) + 2 dynamic sums. `pilot_check.md` shows the same as "0/28" (failed / evaluable). Template coverage 26 / 26 |
+| Subtotals vs sum of parts | all 26 sum checks are 0–3 above the sum of their parts (24 template + 2 dynamic; consistent with 百万円未満切捨て) |
 | 資産合計 = 負債純資産合計 | equal in both years |
 | Note marker in a value cell | 「※1 65,180」 read as 65,180 with ※1 as a footnote (not 165,180) |
 | Re-run reproducibility | an independent `--local` run reproduced `bs_rows.csv` exactly |

@@ -5,8 +5,9 @@ ground truth built automatically from each filing's XBRL. It is the planned test
 central claim: accounting identities can decide, without labels, which extracted pages may skip human
 review, and can guide extraction.
 
-**Status:** the tooling is built and tested. One real filing (Nintendo, S100Y9NX, dev) has been
-processed and independently verified ([RESULTS.md §4](RESULTS.md#4-real-document-results-jp-bs-bench-extractor)).
+**Status:** the tooling is built and tested. For one real filing (Nintendo, S100Y9NX, dev), the XBRL
+extractor and ground-truth builder have been run and independently verified; the PDF parser has not
+yet been run on it ([RESULTS.md §4](RESULTS.md#4-real-document-results-jp-bs-bench-extractor)).
 The full set isn't collected yet.
 
 ## 1. Design

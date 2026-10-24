@@ -29,3 +29,6 @@ if "$PY" -c "from docparse.extract import TesseractBackend; TesseractBackend().c
 else
   echo "   skipped: Japanese OCR not set up (bash scripts/setup_tesseract.sh)"
 fi
+
+echo "== 6. claim audit: every number in the docs vs its source file"
+"$PY" scripts/audit_claims.py
