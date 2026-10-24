@@ -1,0 +1,47 @@
+{
+ "question": "does the Tesseract read agree with the ground truth (per-period multiset of signed values and dashes)? If not, vlm+checks+ocr cannot accept a fully correct VLM read.",
+ "tesseract_results": "stress/out_heldout_v3/results.json",
+ "variants": {
+  "raster_250": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 17,
+   "ocr_cells_not_in_vlm": 12
+  },
+  "raster_175": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 16,
+   "ocr_cells_not_in_vlm": 11
+  },
+  "rot_+0.8": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 17,
+   "ocr_cells_not_in_vlm": 11
+  },
+  "rot_-1.2": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 15,
+   "ocr_cells_not_in_vlm": 11
+  },
+  "noise_s12": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 22,
+   "ocr_cells_not_in_vlm": 11
+  },
+  "jpeg_q40": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 19,
+   "ocr_cells_not_in_vlm": 10
+  },
+  "scan_250": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 22,
+   "ocr_cells_not_in_vlm": 11
+  },
+  "scan_175": {
+   "agree": false,
+   "vlm_cells_not_in_ocr": 20,
+   "ocr_cells_not_in_vlm": 7
+  }
+ },
+ "pages_where_a_perfect_read_could_pass_the_ocr_rule": 0
+}
