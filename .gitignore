@@ -1,0 +1,26 @@
+# environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OCR models (rebuilt by scripts/setup_tesseract.sh)
+tessdata/
+
+# regenerated inputs and scratch outputs
+stress/**/pdfs/
+/runs/
+/out/
+
+# raw EDINET downloads (rebuilt by bench/fetch_edinet.py) and run folders
+tests/fixtures/edinet/
+/downloads/
+/jpbs_*/
+_cache/
+*.part
+*.zip
+
+# secrets
+.env
+*.key

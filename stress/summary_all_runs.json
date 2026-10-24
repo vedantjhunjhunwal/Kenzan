@@ -1,0 +1,92 @@
+{
+ "seen_v1": {
+  "fingerprint": "9e905d908f7ad771",
+  "mean_f1_degraded": 0.31737850164339043,
+  "n_ge_0.8": 3,
+  "n_degraded": 10,
+  "accepted": [],
+  "false_accepts": 0,
+  "fully_correct_degraded": 0,
+  "value_correct": {
+   "born_digital": 74,
+   "raster_300": 61,
+   "raster_150": 61,
+   "raster_100": 0,
+   "rot_+1": 2,
+   "rot_-1": 0,
+   "rot_+2": 0,
+   "rot_-2": 0,
+   "noise_s15": 52,
+   "jpeg_q30": 62,
+   "scan_combo": 0
+  }
+ },
+ "seen_v2": {
+  "fingerprint": "888416e5df3fbc7c",
+  "mean_f1_degraded": 0.7273436207866941,
+  "n_ge_0.8": 7,
+  "n_degraded": 10,
+  "accepted": [
+   "born_digital"
+  ],
+  "false_accepts": 0,
+  "fully_correct_degraded": 0,
+  "value_correct": {
+   "born_digital": 74,
+   "raster_300": 62,
+   "raster_150": 62,
+   "raster_100": 0,
+   "rot_+1": 61,
+   "rot_-1": 62,
+   "rot_+2": 62,
+   "rot_-2": 61,
+   "noise_s15": 53,
+   "jpeg_q30": 62,
+   "scan_combo": 51
+  }
+ },
+ "unseen_v1": {
+  "fingerprint": "9e905d908f7ad771",
+  "mean_f1_degraded": 0.37813232127169283,
+  "n_ge_0.8": 1,
+  "n_degraded": 9,
+  "accepted": [],
+  "false_accepts": 0,
+  "fully_correct_degraded": 0,
+  "value_correct": {
+   "born_digital": 74,
+   "raster_200": 59,
+   "raster_120": 23,
+   "rot_+0.5": 56,
+   "rot_-0.5": 53,
+   "rot_+1.5": 0,
+   "rot_-1.5": 0,
+   "noise_s10": 51,
+   "jpeg_q50": 55,
+   "scan_200": 4
+  }
+ },
+ "unseen_v2": {
+  "fingerprint": "888416e5df3fbc7c",
+  "mean_f1_degraded": 0.6094367441494277,
+  "n_ge_0.8": 4,
+  "n_degraded": 9,
+  "accepted": [
+   "born_digital"
+  ],
+  "false_accepts": 0,
+  "fully_correct_degraded": 0,
+  "value_correct": {
+   "born_digital": 74,
+   "raster_200": 60,
+   "raster_120": 23,
+   "rot_+0.5": 62,
+   "rot_-0.5": 60,
+   "rot_+1.5": 61,
+   "rot_-1.5": 61,
+   "noise_s10": 52,
+   "jpeg_q50": 56,
+   "scan_200": 52
+  }
+ }
+}

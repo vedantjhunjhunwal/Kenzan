@@ -1,0 +1,25 @@
+{
+ "docID": "S100Y9NX",
+ "edinetCode": "E02367",
+ "secCode": "79740",
+ "filerName": "任天堂株式会社",
+ "periodStart": null,
+ "periodEnd": "2026-03-31",
+ "submitDateTime": null,
+ "docDescription": null,
+ "industry": "unknown",
+ "industry_code_dei": "cte",
+ "standard": "jgaap",
+ "unit": "百万円",
+ "pages": null,
+ "pdf_page_range_0based": null,
+ "bs_source_file": "0105010_honbun_jpcrp030000-asr-001_E02367-000_2026-03-31_01_2026-06-25_ixbrl.htm",
+ "bs_found_by": "heading",
+ "instants": [
+  "2025-03-31",
+  "2026-03-31"
+ ],
+ "bs_pages_sha256": null,
+ "source": "local",
+ "end_total_value_on_last_page": null
+}

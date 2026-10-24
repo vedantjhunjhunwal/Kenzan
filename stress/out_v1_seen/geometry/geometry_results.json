@@ -1,0 +1,54 @@
+[
+ {
+  "variant": "original",
+  "route": "born_digital",
+  "cells": "74/74",
+  "f1": 1.0,
+  "level": 1.0,
+  "pres_parent": 1.0,
+  "calc_parent": 1.0,
+  "row_type": 1.0,
+  "corrections": 1.0,
+  "checks_failed": 0,
+  "coverage": 0.46153846153846156
+ },
+ {
+  "variant": "scale80",
+  "route": "born_digital",
+  "cells": "74/74",
+  "f1": 1.0,
+  "level": 1.0,
+  "pres_parent": 1.0,
+  "calc_parent": 1.0,
+  "row_type": 1.0,
+  "corrections": 1.0,
+  "checks_failed": 0,
+  "coverage": 0.46153846153846156
+ },
+ {
+  "variant": "shift40",
+  "route": "born_digital",
+  "cells": "74/74",
+  "f1": 1.0,
+  "level": 1.0,
+  "pres_parent": 1.0,
+  "calc_parent": 1.0,
+  "row_type": 1.0,
+  "corrections": 1.0,
+  "checks_failed": 0,
+  "coverage": 0.46153846153846156
+ },
+ {
+  "variant": "larger_page",
+  "route": "born_digital",
+  "cells": "74/74",
+  "f1": 1.0,
+  "level": 1.0,
+  "pres_parent": 1.0,
+  "calc_parent": 1.0,
+  "row_type": 1.0,
+  "corrections": 1.0,
+  "checks_failed": 0,
+  "coverage": 0.46153846153846156
+ }
+]

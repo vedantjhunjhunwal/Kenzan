@@ -1,0 +1,668 @@
+[
+ {
+  "row": "r03",
+  "period": "2025-03-31",
+  "gt_label": "現金及び預金",
+  "pred_label": null,
+  "gt_raw": "2,002,429",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r03",
+  "period": "2026-03-31",
+  "gt_label": "現金及び預金",
+  "pred_label": null,
+  "gt_raw": "608,281",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r04",
+  "period": "2025-03-31",
+  "gt_label": "受取手形",
+  "pred_label": null,
+  "gt_raw": "20,659",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r04",
+  "period": "2026-03-31",
+  "gt_label": "受取手形",
+  "pred_label": null,
+  "gt_raw": "26,333",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r05",
+  "period": "2025-03-31",
+  "gt_label": "売掛金",
+  "pred_label": null,
+  "gt_raw": "2,019,476",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r05",
+  "period": "2026-03-31",
+  "gt_label": "売掛金",
+  "pred_label": null,
+  "gt_raw": "884,339",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r06",
+  "period": "2025-03-31",
+  "gt_label": "電子記録債権",
+  "pred_label": null,
+  "gt_raw": "564,667",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r06",
+  "period": "2026-03-31",
+  "gt_label": "電子記録債権",
+  "pred_label": null,
+  "gt_raw": "370,468",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r07",
+  "period": "2025-03-31",
+  "gt_label": "商品及び製品",
+  "pred_label": null,
+  "gt_raw": "589,488",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r07",
+  "period": "2026-03-31",
+  "gt_label": "商品及び製品",
+  "pred_label": null,
+  "gt_raw": "1,019,663",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r08",
+  "period": "2025-03-31",
+  "gt_label": "仕掛品",
+  "pred_label": null,
+  "gt_raw": "186,748",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r08",
+  "period": "2026-03-31",
+  "gt_label": "仕掛品",
+  "pred_label": null,
+  "gt_raw": "55,344",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r09",
+  "period": "2025-03-31",
+  "gt_label": "原材料及び貯蔵品",
+  "pred_label": null,
+  "gt_raw": "370,403",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r09",
+  "period": "2026-03-31",
+  "gt_label": "原材料及び貯蔵品",
+  "pred_label": null,
+  "gt_raw": "136,082",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r10",
+  "period": "2025-03-31",
+  "gt_label": "短期貸付金",
+  "pred_label": "短期 貸付 金",
+  "gt_raw": "7,530",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r10",
+  "period": "2026-03-31",
+  "gt_label": "短期貸付金",
+  "pred_label": "短期 貸付 金",
+  "gt_raw": "30,000",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r11",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "105,260",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r11",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "246,895",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r12",
+  "period": "2025-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当金",
+  "gt_raw": "△2,979",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r12",
+  "period": "2026-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当金",
+  "gt_raw": "△0",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r13",
+  "period": "2025-03-31",
+  "gt_label": "流動資産合計",
+  "pred_label": "流動 資産 合計",
+  "gt_raw": "5,863,684",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r13",
+  "period": "2026-03-31",
+  "gt_label": "流動資産合計",
+  "pred_label": "流動 資産 合計",
+  "gt_raw": "3,377,407",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r16",
+  "period": "2025-03-31",
+  "gt_label": "建物及び構築物",
+  "pred_label": "建物及び構築物",
+  "gt_raw": "2,121,360",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r16",
+  "period": "2026-03-31",
+  "gt_label": "建物及び構築物",
+  "pred_label": "建物及び構築物",
+  "gt_raw": "1,880,082",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r17",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん1,923,585",
+  "gt_raw": "△1,923,585",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r17",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん1,923,585",
+  "gt_raw": "△1,640,253",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r18",
+  "period": "2025-03-31",
+  "gt_label": "建物及び構築物（純額）",
+  "pred_label": "建物及び構築物(純額)",
+  "gt_raw": "197,775",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r18",
+  "period": "2026-03-31",
+  "gt_label": "建物及び構築物（純額）",
+  "pred_label": "建物及び構築物(純額)",
+  "gt_raw": "239,828",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r19",
+  "period": "2025-03-31",
+  "gt_label": "機械装置及び運搬具",
+  "pred_label": "機械装置及び運搬具",
+  "gt_raw": "4,024,922",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r19",
+  "period": "2026-03-31",
+  "gt_label": "機械装置及び運搬具",
+  "pred_label": "機械装置及び運搬具",
+  "gt_raw": "2,250,799",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r20",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん3,634,165",
+  "gt_raw": "△3,634,165",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r20",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん3,634,165",
+  "gt_raw": "△1,914,091",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r21",
+  "period": "2025-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬 具(純額)",
+  "gt_raw": "390,757",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r21",
+  "period": "2026-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬 具(純額)",
+  "gt_raw": "336,708",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r22",
+  "period": "2025-03-31",
+  "gt_label": "土地",
+  "pred_label": "土地",
+  "gt_raw": "768,976",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r22",
+  "period": "2026-03-31",
+  "gt_label": "土地",
+  "pred_label": "土地",
+  "gt_raw": "705,403",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r23",
+  "period": "2025-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資 産",
+  "gt_raw": "210,746",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r23",
+  "period": "2026-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資 産",
+  "gt_raw": "213,939",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r24",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん147,599",
+  "gt_raw": "△147,599",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r24",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん147,599",
+  "gt_raw": "△172,066",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r25",
+  "period": "2025-03-31",
+  "gt_label": "リース資産（純額）",
+  "pred_label": "リース資産(純額)",
+  "gt_raw": "63,146",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r25",
+  "period": "2026-03-31",
+  "gt_label": "リース資産（純額）",
+  "pred_label": "リース資産(純額)",
+  "gt_raw": "41,872",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r26",
+  "period": "2025-03-31",
+  "gt_label": "建設仮勘定",
+  "pred_label": "建設仮勘定",
+  "gt_raw": "－",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r26",
+  "period": "2026-03-31",
+  "gt_label": "建設仮勘定",
+  "pred_label": "建設仮勘定",
+  "gt_raw": "4,553",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r27",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "848,814",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r27",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "446,126",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r28",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん840,375",
+  "gt_raw": "△840,375",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r28",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "ん840,375",
+  "gt_raw": "△421,883",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r29",
+  "period": "2025-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他(純額)",
+  "gt_raw": "8,439",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r29",
+  "period": "2026-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他(純額)",
+  "gt_raw": "24,243",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r30",
+  "period": "2025-03-31",
+  "gt_label": "有形固定資産合計",
+  "pred_label": "有形固定 資産 合計",
+  "gt_raw": "1,429,094",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r30",
+  "period": "2026-03-31",
+  "gt_label": "有形固定資産合計",
+  "pred_label": "有形固定 資産 合計",
+  "gt_raw": "1,352,610",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r32",
+  "period": "2025-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "34,190",
+  "gt_raw": "34,190",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r32",
+  "period": "2026-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "34,190",
+  "gt_raw": "21,402",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r33",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "10,070",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r33",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "14,466",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r34",
+  "period": "2025-03-31",
+  "gt_label": "無形固定資産合計",
+  "pred_label": "無形固定 資産 合計",
+  "gt_raw": "44,261",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r34",
+  "period": "2026-03-31",
+  "gt_label": "無形固定資産合計",
+  "pred_label": "無形固定 資産 合計",
+  "gt_raw": "35,869",
+  "pred_raw": null,
+  "cause": "period header not recognised"
+ },
+ {
+  "row": "r36",
+  "period": "2025-03-31",
+  "gt_label": "投資有価証券",
+  "pred_label": null,
+  "gt_raw": "44,180",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r36",
+  "period": "2026-03-31",
+  "gt_label": "投資有価証券",
+  "pred_label": null,
+  "gt_raw": "218,836",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r37",
+  "period": "2025-03-31",
+  "gt_label": "関係会社株式",
+  "pred_label": null,
+  "gt_raw": "1,123",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r37",
+  "period": "2026-03-31",
+  "gt_label": "関係会社株式",
+  "pred_label": null,
+  "gt_raw": "1,123",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r38",
+  "period": "2025-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": null,
+  "gt_raw": "－",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r38",
+  "period": "2026-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": null,
+  "gt_raw": "62,000",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r39",
+  "period": "2025-03-31",
+  "gt_label": "退職給付に係る資産",
+  "pred_label": null,
+  "gt_raw": "18,404",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r39",
+  "period": "2026-03-31",
+  "gt_label": "退職給付に係る資産",
+  "pred_label": null,
+  "gt_raw": "16,435",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r40",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": null,
+  "gt_raw": "133,361",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r40",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": null,
+  "gt_raw": "70,967",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r41",
+  "period": "2025-03-31",
+  "gt_label": "投資その他の資産合計",
+  "pred_label": null,
+  "gt_raw": "197,069",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r41",
+  "period": "2026-03-31",
+  "gt_label": "投資その他の資産合計",
+  "pred_label": null,
+  "gt_raw": "369,362",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r42",
+  "period": "2025-03-31",
+  "gt_label": "固定資産合計",
+  "pred_label": null,
+  "gt_raw": "1,670,426",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r42",
+  "period": "2026-03-31",
+  "gt_label": "固定資産合計",
+  "pred_label": null,
+  "gt_raw": "1,757,841",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r43",
+  "period": "2025-03-31",
+  "gt_label": "資産合計",
+  "pred_label": null,
+  "gt_raw": "7,534,110",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ },
+ {
+  "row": "r43",
+  "period": "2026-03-31",
+  "gt_label": "資産合計",
+  "pred_label": null,
+  "gt_raw": "5,135,249",
+  "pred_raw": null,
+  "cause": "row not extracted"
+ }
+]

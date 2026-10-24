@@ -1,0 +1,326 @@
+[
+ {
+  "row": "r12",
+  "period": "2025-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当 金",
+  "gt_raw": "△2,979",
+  "pred_raw": "2,979",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r12",
+  "period": "2026-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当 金",
+  "gt_raw": "△0",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r16",
+  "period": "2025-03-31",
+  "gt_label": "建物及び構築物",
+  "pred_label": "建物及び構築物",
+  "gt_raw": "2,121,360",
+  "pred_raw": "2,121,360",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r16",
+  "period": "2026-03-31",
+  "gt_label": "建物及び構築物",
+  "pred_label": "建物及び構築物",
+  "gt_raw": "1,880,082",
+  "pred_raw": "1,880,082",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r17",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革泉計額",
+  "gt_raw": "△1,923,585",
+  "pred_raw": "1,923,585",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r17",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革泉計額",
+  "gt_raw": "△1,640,253",
+  "pred_raw": "1,640,253",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r18",
+  "period": "2025-03-31",
+  "gt_label": "建物及び構築物（純額）",
+  "pred_label": "建物及び構築物(純額)",
+  "gt_raw": "197,775",
+  "pred_raw": "197,775",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r18",
+  "period": "2026-03-31",
+  "gt_label": "建物及び構築物（純額）",
+  "pred_label": "建物及び構築物(純額)",
+  "gt_raw": "239,828",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r19",
+  "period": "2025-03-31",
+  "gt_label": "機械装置及び運搬具",
+  "pred_label": "機械装置及び運搬具",
+  "gt_raw": "4,024,922",
+  "pred_raw": "4,024,922",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r19",
+  "period": "2026-03-31",
+  "gt_label": "機械装置及び運搬具",
+  "pred_label": "機械装置及び運搬具",
+  "gt_raw": "2,250,799",
+  "pred_raw": "2,250,799",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r20",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△3,634,165",
+  "pred_raw": "634,165",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r20",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△1,914,091",
+  "pred_raw": "1,914,091",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r21",
+  "period": "2025-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬具(純額)",
+  "gt_raw": "390,757",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r21",
+  "period": "2026-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬具(純額)",
+  "gt_raw": "336,708",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r22",
+  "period": "2025-03-31",
+  "gt_label": "土地",
+  "pred_label": "土地",
+  "gt_raw": "768,976",
+  "pred_raw": "768,976",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r22",
+  "period": "2026-03-31",
+  "gt_label": "土地",
+  "pred_label": "土地",
+  "gt_raw": "705,403",
+  "pred_raw": "705,403",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r23",
+  "period": "2025-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資 産",
+  "gt_raw": "210,746",
+  "pred_raw": "210,746",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r23",
+  "period": "2026-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資 産",
+  "gt_raw": "213,939",
+  "pred_raw": "213,939",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r24",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△147,599",
+  "pred_raw": "147,599",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r24",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△172,066",
+  "pred_raw": "172,066",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r25",
+  "period": "2025-03-31",
+  "gt_label": "リース資産（純額）",
+  "pred_label": "リース資産(純額)",
+  "gt_raw": "63,146",
+  "pred_raw": "63,146",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r25",
+  "period": "2026-03-31",
+  "gt_label": "リース資産（純額）",
+  "pred_label": "リース資産(純額)",
+  "gt_raw": "41,872",
+  "pred_raw": "872",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r26",
+  "period": "2025-03-31",
+  "gt_label": "建設仮勘定",
+  "pred_label": "建設仮勘定",
+  "gt_raw": "－",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r26",
+  "period": "2026-03-31",
+  "gt_label": "建設仮勘定",
+  "pred_label": "建設仮勘定",
+  "gt_raw": "4,553",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r27",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "848,814",
+  "pred_raw": "814",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r27",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "446,126",
+  "pred_raw": "446,126",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r28",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△840,375",
+  "pred_raw": "840,375",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r28",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△421,883",
+  "pred_raw": "421,883",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r29",
+  "period": "2025-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他 (純額)",
+  "gt_raw": "8,439",
+  "pred_raw": "8,439",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r29",
+  "period": "2026-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他 (純額)",
+  "gt_raw": "24,243",
+  "pred_raw": "24,243",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r30",
+  "period": "2025-03-31",
+  "gt_label": "有形固定資産合計",
+  "pred_label": "有形固定 資産 合計",
+  "gt_raw": "1,429,094",
+  "pred_raw": "1,429,094",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r30",
+  "period": "2026-03-31",
+  "gt_label": "有形固定資産合計",
+  "pred_label": "有形固定 資産 合計",
+  "gt_raw": "1,352,610",
+  "pred_raw": "1,352,610",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r32",
+  "period": "2026-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資 産",
+  "gt_raw": "21,402",
+  "pred_raw": "402",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r37",
+  "period": "2026-03-31",
+  "gt_label": "関係会社株式",
+  "pred_label": "関係会社株式",
+  "gt_raw": "1,123",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r38",
+  "period": "2025-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": "長期貸付金",
+  "gt_raw": "－",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r38",
+  "period": "2026-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": "長期貸付金",
+  "gt_raw": "62,000",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ }
+]

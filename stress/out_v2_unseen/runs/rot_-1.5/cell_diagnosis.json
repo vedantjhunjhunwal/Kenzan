@@ -1,0 +1,119 @@
+[
+ {
+  "row": "r12",
+  "period": "2025-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当 金",
+  "gt_raw": "△2,979",
+  "pred_raw": "2,979",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r12",
+  "period": "2026-03-31",
+  "gt_label": "貸倒引当金",
+  "pred_label": "貸倒引当 金",
+  "gt_raw": "△0",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r13",
+  "period": "2026-03-31",
+  "gt_label": "流動資産合計",
+  "pred_label": "流動 資産合計",
+  "gt_raw": "3,377,407",
+  "pred_raw": "407",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r17",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△1,923,585",
+  "pred_raw": "1,923,585",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r17",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償革累計額",
+  "gt_raw": "△1,640,253",
+  "pred_raw": "1,640,253",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r20",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△3,634,165",
+  "pred_raw": "634,165",
+  "cause": "digits misread"
+ },
+ {
+  "row": "r20",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△1,914,091",
+  "pred_raw": "1,914,091",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r24",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△147,599",
+  "pred_raw": "147,599",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r24",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△172,066",
+  "pred_raw": "172,066",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r28",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△840,375",
+  "pred_raw": "840,375",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r28",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償序 泉計額",
+  "gt_raw": "△421,883",
+  "pred_raw": "421,883",
+  "cause": "sign lost (△ not read)"
+ },
+ {
+  "row": "r37",
+  "period": "2026-03-31",
+  "gt_label": "関係会社株式",
+  "pred_label": "関係 会社株式",
+  "gt_raw": "1,123",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ },
+ {
+  "row": "r38",
+  "period": "2025-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": "長期 貸付 金",
+  "gt_raw": "－",
+  "pred_raw": null,
+  "cause": "cell not extracted (column assignment)"
+ }
+]

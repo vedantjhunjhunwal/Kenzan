@@ -1,0 +1,94 @@
+{
+ "status": "ok",
+ "reason": null,
+ "route": {
+  "route": "born_digital",
+  "reasons": [
+   "text layer passes quality gate"
+  ],
+  "metrics": {
+   "chars": 854,
+   "known_char_ratio": 1.0,
+   "number_like_tokens": 76,
+   "number_parse_ratio": 0.9737,
+   "image_coverage": 0.0
+  },
+  "backend": "text_layer",
+  "backend_diagnostics": {}
+ },
+ "warnings": {},
+ "acceptance": {
+  "decision": "accept",
+  "reasons": [],
+  "sections_present": [
+   "資産"
+  ],
+  "required_template_checks": 12,
+  "cells_with_unknown_correction_status": 0
+ },
+ "cells": {
+  "gt_cells": 74,
+  "pred_cells": 74,
+  "correct": 74,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "differences": [],
+  "info": []
+ },
+ "structure": {
+  "presentation_level": 1.0,
+  "presentation_parent": 1.0,
+  "calc_parent": 1.0,
+  "row_type": 1.0,
+  "rows_matched": "43/43",
+  "differences": []
+ },
+ "corrections": {
+  "accuracy": 1.0,
+  "decided": 74,
+  "cells": 74,
+  "positives_gt": 2,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "differences": []
+ },
+ "validation": {
+  "pred_summary": {
+   "template": {
+    "checks": 26,
+    "evaluable": 12,
+    "passed": 12,
+    "exact": 2,
+    "within_tolerance": 10,
+    "failed": 0,
+    "consistency": 1.0
+   },
+   "dynamic": {
+    "checks": 8,
+    "evaluable": 8,
+    "passed": 8,
+    "exact": 5,
+    "within_tolerance": 3,
+    "failed": 0,
+    "consistency": 1.0
+   },
+   "solver": {
+    "checks": 0,
+    "evaluable": 0,
+    "passed": 0,
+    "exact": 0,
+    "within_tolerance": 0,
+    "failed": 0,
+    "consistency": null
+   },
+   "coverage": 0.46153846153846156,
+   "template_expected": 26,
+   "template_evaluable": 12,
+   "consistency_rule_based": 1.0
+  },
+  "status_agreement_with_gt": 1.0,
+  "differences": []
+ }
+}

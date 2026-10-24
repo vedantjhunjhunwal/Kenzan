@@ -1,0 +1,3482 @@
+{
+ "status": "ok",
+ "reason": null,
+ "metadata": {
+  "company": null,
+  "company_code": null,
+  "revision": "訂正後",
+  "statement_type": "consolidated_balance_sheet",
+  "statement_title_ja": "連結貸借対照表",
+  "unit_ja": "千円",
+  "unit_multiplier": 1000,
+  "currency": "JPY",
+  "decimals": -3,
+  "rounding_convention": "truncate (assumed)",
+  "source": {
+   "file": "rot_+0.5.pdf",
+   "page_index": 0,
+   "printed_page": null
+  },
+  "sections_present": [
+   "資産の部"
+  ],
+  "route": {
+   "route": "visual",
+   "reasons": [
+    "too little text (0 chars)",
+    "no number-like tokens in the text layer",
+    "page is mostly image (100%); text layer is likely an OCR overlay"
+   ],
+   "metrics": {
+    "chars": 0,
+    "known_char_ratio": 0.0,
+    "number_like_tokens": 0,
+    "number_parse_ratio": 0.0,
+    "image_coverage": 0.9999
+   },
+   "backend": "ocr_tesseract"
+  },
+  "layout": {
+   "char_size": 7.919999999999999,
+   "column_right_edges": [
+    397.0,
+    522.0
+   ],
+   "orphan_tokens": [
+    {
+     "line": 17,
+     "texts": [
+      "ん",
+      "人へ"
+     ]
+    },
+    {
+     "line": 22,
+     "texts": [
+      "人",
+      "人"
+     ]
+    },
+    {
+     "line": 23,
+     "texts": [
+      "oo"
+     ]
+    },
+    {
+     "line": 25,
+     "texts": [
+      "ん",
+      "人へ"
+     ]
+    },
+    {
+     "line": 26,
+     "texts": [
+      "336,.708"
+     ]
+    },
+    {
+     "line": 29,
+     "texts": [
+      "人へ",
+      "人へ"
+     ]
+    },
+    {
+     "line": 36,
+     "texts": [
+      "24.243"
+     ]
+    },
+    {
+     "line": 44,
+     "texts": [
+      "1.123"
+     ]
+    }
+   ],
+   "row_pitch": 12.120000000000118,
+   "body_rows": 46,
+   "header_lines": 6,
+   "tight_rows": [
+    26,
+    39,
+    40
+   ],
+   "indent_levels_x0": [
+    60.7,
+    75.7,
+    87.8,
+    103.0,
+    114.9,
+    391.4,
+    499.1
+   ]
+  },
+  "corrections": {
+   "underline_source": "none (no vector data)"
+  },
+  "warnings": {}
+ },
+ "periods": [
+  {
+   "id": "prior",
+   "label_ja": "前連結会計年度",
+   "context": "instant",
+   "date": "2025-03-31"
+  },
+  {
+   "id": "col1",
+   "label_ja": null,
+   "context": "instant",
+   "date": "2026-03-31"
+  }
+ ],
+ "rows": [
+  {
+   "row_id": "r01",
+   "label_ja": "資産の部",
+   "label_norm": "資産の部",
+   "label_path": "資産の部",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 0,
+   "presentation_parent": null,
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    60.7,
+    145.2,
+    96.5,
+    161.5
+   ],
+   "label_x0": 60.72,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r02",
+   "label_ja": "流動資産",
+   "label_norm": "流動資産",
+   "label_path": "資産の部/流動資産",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 1,
+   "presentation_parent": "r01",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    73.7,
+    157.4,
+    108.7,
+    173.8
+   ],
+   "label_x0": 73.67999999999999,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r03",
+   "label_ja": "現金及び預金",
+   "label_norm": "現金及び預金",
+   "label_path": "資産の部/流動資産/現金及び預金",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    86.6,
+    173.0,
+    139.7,
+    184.1
+   ],
+   "label_x0": 86.64,
+   "cells": {
+    "prior": {
+     "raw_text": "2,002,429",
+     "reported_value": 2002429,
+     "value": 2002429000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.455,
+     "bbox": [
+      355.2,
+      172.8,
+      394.8,
+      180.2
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "608,281",
+     "reported_value": 608281,
+     "value": 608281000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.913,
+     "bbox": [
+      489.1,
+      171.6,
+      519.4,
+      179.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r04",
+   "label_ja": "受取手形",
+   "label_norm": "受取手形",
+   "label_path": "資産の部/流動資産/受取手形",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    86.6,
+    186.2,
+    121.7,
+    194.4
+   ],
+   "label_x0": 86.64,
+   "cells": {
+    "prior": {
+     "raw_text": "20,659",
+     "reported_value": 20659,
+     "value": 20659000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.461,
+     "bbox": [
+      368.9,
+      184.8,
+      395.0,
+      192.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "26,333",
+     "reported_value": 26333,
+     "value": 26333000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.897,
+     "bbox": [
+      493.9,
+      183.6,
+      520.1,
+      191.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r05",
+   "label_ja": "売掛金",
+   "label_norm": "売掛金",
+   "label_path": "資産の部/流動資産/売掛金",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    86.9,
+    198.2,
+    112.8,
+    206.4
+   ],
+   "label_x0": 86.88,
+   "cells": {
+    "prior": {
+     "raw_text": "2,019,476",
+     "reported_value": 2019476,
+     "value": 2019476000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.461,
+     "bbox": [
+      355.4,
+      196.8,
+      395.3,
+      204.2
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "884,339",
+     "reported_value": 884339,
+     "value": 884339000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.919,
+     "bbox": [
+      489.4,
+      195.6,
+      520.1,
+      203.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r06",
+   "label_ja": "電子記録債権",
+   "label_norm": "電子記録債権",
+   "label_path": "資産の部/流動資産/電子記録債権",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    86.9,
+    209.8,
+    139.9,
+    218.2
+   ],
+   "label_x0": 86.88,
+   "cells": {
+    "prior": {
+     "raw_text": "564,667",
+     "reported_value": 564667,
+     "value": 564667000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.455,
+     "bbox": [
+      364.6,
+      208.8,
+      395.0,
+      216.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "370,468",
+     "reported_value": 370468,
+     "value": 370468000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.916,
+     "bbox": [
+      489.6,
+      207.6,
+      520.3,
+      215.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r07",
+   "label_ja": "商品及び製品",
+   "label_norm": "商品及び製品",
+   "label_path": "資産の部/流動資産/商品及び製品",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    87.1,
+    221.0,
+    139.7,
+    232.3
+   ],
+   "label_x0": 87.11999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "589,488",
+     "reported_value": 589488,
+     "value": 589488000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.448,
+     "bbox": [
+      364.8,
+      220.8,
+      395.3,
+      228.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "1,019,663",
+     "reported_value": 1019663,
+     "value": 1019663000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.895,
+     "bbox": [
+      481.2,
+      219.6,
+      520.3,
+      227.3
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r08",
+   "label_ja": "仕掛 品",
+   "label_norm": "仕掛品",
+   "label_path": "資産の部/流動資産/仕掛品",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    86.9,
+    234.2,
+    112.8,
+    242.6
+   ],
+   "label_x0": 86.88,
+   "cells": {
+    "prior": {
+     "raw_text": "186,748",
+     "reported_value": 186748,
+     "value": 186748000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.458,
+     "bbox": [
+      365.5,
+      232.8,
+      395.3,
+      240.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "55,344",
+     "reported_value": 55344,
+     "value": 55344000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.908,
+     "bbox": [
+      494.4,
+      231.6,
+      520.6,
+      239.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r09",
+   "label_ja": "原材料及び貯蔵 品",
+   "label_norm": "原材料及び貯蔵品",
+   "label_path": "資産の部/流動資産/原材料及び貯蔵品",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    87.1,
+    245.0,
+    157.7,
+    256.3
+   ],
+   "label_x0": 87.11999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "370,403",
+     "reported_value": 370403,
+     "value": 370403000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.459,
+     "bbox": [
+      364.8,
+      244.8,
+      395.5,
+      252.2
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "136,082",
+     "reported_value": 136082,
+     "value": 136082000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.911,
+     "bbox": [
+      490.6,
+      243.6,
+      520.6,
+      251.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r10",
+   "label_ja": "短期貸付 金",
+   "label_norm": "短期貸付金",
+   "label_path": "資産の部/流動資産/短期貸付金",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    87.4,
+    257.0,
+    131.3,
+    268.3
+   ],
+   "label_x0": 87.36,
+   "cells": {
+    "prior": {
+     "raw_text": "7,530",
+     "reported_value": 7530,
+     "value": 7530000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.459,
+     "bbox": [
+      373.9,
+      256.8,
+      395.8,
+      264.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "30,000",
+     "reported_value": 30000,
+     "value": 30000000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.917,
+     "bbox": [
+      494.6,
+      255.6,
+      520.8,
+      263.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r11",
+   "label_ja": "その他",
+   "label_norm": "その他",
+   "label_path": "資産の部/流動資産/その他",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    87.6,
+    270.2,
+    113.5,
+    278.4
+   ],
+   "label_x0": 87.6,
+   "cells": {
+    "prior": {
+     "raw_text": "105,260",
+     "reported_value": 105260,
+     "value": 105260000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.46,
+     "bbox": [
+      365.8,
+      268.8,
+      395.8,
+      276.2
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "246,895",
+     "reported_value": 246895,
+     "value": 246895000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.921,
+     "bbox": [
+      490.1,
+      267.6,
+      520.8,
+      275.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r12",
+   "label_ja": "貸倒引当金",
+   "label_norm": "貸倒引当金",
+   "label_path": "資産の部/流動資産/貸倒引当金",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r13",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    87.4,
+    281.0,
+    132.2,
+    292.3
+   ],
+   "label_x0": 87.36,
+   "cells": {
+    "prior": {
+     "raw_text": "2,979",
+     "reported_value": 2979,
+     "value": 2979000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.404,
+     "bbox": [
+      374.2,
+      280.8,
+      395.8,
+      288.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "0",
+     "reported_value": 0,
+     "value": 0,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.966,
+     "bbox": [
+      517.2,
+      279.6,
+      520.8,
+      285.8
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r13",
+   "label_ja": "流動 資産合計",
+   "label_norm": "流動資産合計",
+   "label_path": "資産の部/流動資産/流動資産合計",
+   "label_en": null,
+   "row_type": "subtotal",
+   "presentation_level": 2,
+   "presentation_parent": "r02",
+   "calc_parent": "r46",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": "r02",
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    87.6,
+    294.7,
+    140.6,
+    303.1
+   ],
+   "label_x0": 87.6,
+   "cells": {
+    "prior": {
+     "raw_text": "5,863,684",
+     "reported_value": 5863684,
+     "value": 5863684000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.45,
+     "bbox": [
+      356.4,
+      293.5,
+      396.0,
+      301.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "3,377,407",
+     "reported_value": 3377407,
+     "value": 3377407000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.925,
+     "bbox": [
+      481.4,
+      292.3,
+      521.0,
+      300.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r14",
+   "label_ja": "固定資産",
+   "label_norm": "固定資産",
+   "label_path": "資産の部/固定資産",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 1,
+   "presentation_parent": "r01",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    75.4,
+    303.1,
+    109.9,
+    319.4
+   ],
+   "label_x0": 75.36,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r15",
+   "label_ja": "有形 固定 資産",
+   "label_norm": "有形固定資産",
+   "label_path": "資産の部/固定資産/有形固定資産",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 2,
+   "presentation_parent": "r14",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    87.8,
+    319.7,
+    140.9,
+    328.3
+   ],
+   "label_x0": 87.83999999999999,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r16",
+   "label_ja": "建物及び構築物",
+   "label_norm": "建物及び構築物",
+   "label_path": "資産の部/固定資産/有形固定資産/建物及び構築物",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r15",
+   "calc_parent": "r18",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    101.0,
+    330.2,
+    163.0,
+    341.8
+   ],
+   "label_x0": 101.03999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "2,121,360",
+     "reported_value": 2121360,
+     "value": 2121360000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.459,
+     "bbox": [
+      356.6,
+      330.2,
+      396.2,
+      337.7
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "1,880,082",
+     "reported_value": 1880082,
+     "value": 1880082000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.909,
+     "bbox": [
+      482.2,
+      329.0,
+      521.3,
+      336.7
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r17",
+   "label_ja": "工宮万当 海再届",
+   "label_norm": "工宮万当海再届",
+   "label_path": "資産の部/固定資産/有形固定資産/建物及び構築物/工宮万当海再届",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 4,
+   "presentation_parent": "r16",
+   "calc_parent": "r18",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    114.0,
+    343.2,
+    176.2,
+    351.6
+   ],
+   "label_x0": 113.99999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "1,923,585",
+     "reported_value": 1923585,
+     "value": 1923585000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.446,
+     "bbox": [
+      357.4,
+      342.2,
+      396.2,
+      349.7
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "1,640,253",
+     "reported_value": 1640253,
+     "value": 1640253000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.917,
+     "bbox": [
+      482.4,
+      341.0,
+      521.3,
+      348.7
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r18",
+   "label_ja": "建物及び構築物(純額)",
+   "label_norm": "建物及び構築物(純額)",
+   "label_path": "資産の部/固定資産/有形固定資産/建物及び構築物/建物及び構築物(純額)",
+   "label_en": null,
+   "row_type": "subtotal",
+   "presentation_level": 4,
+   "presentation_parent": "r16",
+   "calc_parent": "r31",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    114.2,
+    351.1,
+    206.9,
+    367.2
+   ],
+   "label_x0": 114.24,
+   "cells": {
+    "prior": {
+     "raw_text": "197,775",
+     "reported_value": 197775,
+     "value": 197775000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.332,
+     "bbox": [
+      366.5,
+      355.0,
+      396.5,
+      362.4
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r19",
+   "label_ja": "機械装置及び運搬具",
+   "label_norm": "機械装置及び運搬具",
+   "label_path": "資産の部/固定資産/有形固定資産/機械装置及び運搬具",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r15",
+   "calc_parent": "r21",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    101.0,
+    367.7,
+    181.4,
+    379.2
+   ],
+   "label_x0": 101.03999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "4,024,922",
+     "reported_value": 4024922,
+     "value": 4024922000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.454,
+     "bbox": [
+      356.9,
+      367.7,
+      396.5,
+      375.4
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "2,250,799",
+     "reported_value": 2250799,
+     "value": 2250799000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.919,
+     "bbox": [
+      481.9,
+      366.5,
+      521.5,
+      374.2
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r20",
+   "label_ja": "減価償著打計額",
+   "label_norm": "減価償著打計額",
+   "label_path": "資産の部/固定資産/有形固定資産/機械装置及び運搬具/減価償著打計額",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 4,
+   "presentation_parent": "r19",
+   "calc_parent": "r21",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    114.2,
+    380.6,
+    176.6,
+    389.0
+   ],
+   "label_x0": 114.24,
+   "cells": {
+    "prior": {
+     "raw_text": "3,634,165",
+     "reported_value": 3634165,
+     "value": 3634165000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.267,
+     "bbox": [
+      357.1,
+      379.7,
+      396.7,
+      387.1
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "1,914,091",
+     "reported_value": 1914091,
+     "value": 1914091000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.735,
+     "bbox": [
+      482.6,
+      378.7,
+      521.0,
+      386.2
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r21",
+   "label_ja": "機械装置及び運搬具(純額)",
+   "label_norm": "機械装置及び運搬具(純額)",
+   "label_path": "資産の部/固定資産/有形固定資産/機械装置及び運搬具/機械装置及び運搬具(純額)",
+   "label_en": null,
+   "row_type": "subtotal",
+   "presentation_level": 4,
+   "presentation_parent": "r19",
+   "calc_parent": "r31",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    114.2,
+    388.6,
+    224.9,
+    404.6
+   ],
+   "label_x0": 114.24,
+   "cells": {
+    "prior": {
+     "raw_text": "390,757",
+     "reported_value": 390757,
+     "value": 390757000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.45,
+     "bbox": [
+      366.2,
+      392.4,
+      396.7,
+      399.8
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r22",
+   "label_ja": "土地",
+   "label_norm": "土地",
+   "label_path": "資産の部/固定資産/有形固定資産/土地",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r15",
+   "calc_parent": "r31",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    102.0,
+    407.0,
+    118.8,
+    414.5
+   ],
+   "label_x0": 101.99999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "768,976",
+     "reported_value": 768976,
+     "value": 768976000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.911,
+     "bbox": [
+      366.2,
+      405.4,
+      397.0,
+      412.8
+     ],
+     "warnings": [],
+     "checked": false
+    },
+    "col1": {
+     "raw_text": "705,403",
+     "reported_value": 705403,
+     "value": 705403000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.909,
+     "bbox": [
+      491.3,
+      404.4,
+      522.0,
+      411.6
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r23",
+   "label_ja": "リース資 産",
+   "label_norm": "リース資産",
+   "label_path": "資産の部/固定資産/有形固定資産/リース資産",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r15",
+   "calc_parent": "r25",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.7,
+    418.3,
+    145.9,
+    426.7
+   ],
+   "label_x0": 103.67999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "210,746",
+     "reported_value": 210746,
+     "value": 210746000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.457,
+     "bbox": [
+      366.2,
+      417.4,
+      397.2,
+      424.8
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "213,939",
+     "reported_value": 213939,
+     "value": 213939000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.458,
+     "bbox": [
+      491.3,
+      416.2,
+      522.0,
+      423.6
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r24",
+   "label_ja": "減価償厚 累計和額",
+   "label_norm": "減価償厚累計和額",
+   "label_path": "資産の部/固定資産/有形固定資産/リース資産/減価償厚累計和額",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 4,
+   "presentation_parent": "r23",
+   "calc_parent": "r25",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    114.7,
+    430.3,
+    176.9,
+    439.0
+   ],
+   "label_x0": 114.72,
+   "cells": {
+    "prior": {
+     "raw_text": "147,599",
+     "reported_value": 147599,
+     "value": 147599000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.461,
+     "bbox": [
+      367.2,
+      429.4,
+      397.2,
+      436.8
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "172,066",
+     "reported_value": 172066,
+     "value": 172066000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.453,
+     "bbox": [
+      492.2,
+      428.4,
+      522.2,
+      435.6
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r25",
+   "label_ja": "リース資産(純額)",
+   "label_norm": "リース資産(純額)",
+   "label_path": "資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)",
+   "label_en": null,
+   "row_type": "subtotal",
+   "presentation_level": 4,
+   "presentation_parent": "r23",
+   "calc_parent": "r31",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    116.9,
+    441.8,
+    190.1,
+    453.4
+   ],
+   "label_x0": 116.88,
+   "cells": {
+    "prior": {
+     "raw_text": "63,146",
+     "reported_value": 63146,
+     "value": 63146000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.46,
+     "bbox": [
+      371.0,
+      442.1,
+      397.2,
+      449.5
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "41,872",
+     "reported_value": 41872,
+     "value": 41872000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.453,
+     "bbox": [
+      496.1,
+      440.9,
+      522.2,
+      448.6
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r26",
+   "label_ja": "",
+   "label_norm": "",
+   "label_path": "資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)/",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 6,
+   "presentation_parent": "r25",
+   "calc_parent": "r31",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": null,
+   "label_x0": 500.64,
+   "cells": {
+    "col1": {
+     "raw_text": "4,553",
+     "reported_value": 4553,
+     "value": 4553000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.921,
+     "bbox": [
+      500.6,
+      453.8,
+      522.2,
+      461.0
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r27",
+   "label_ja": "建設仮勘定",
+   "label_norm": "建設仮勘定",
+   "label_path": "資産の部/固定資産/有形固定資産/建設仮勘定",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 3,
+   "presentation_parent": "r15",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    102.2,
+    455.0,
+    146.2,
+    466.3
+   ],
+   "label_x0": 102.24,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r28",
+   "label_ja": "その他",
+   "label_norm": "その他",
+   "label_path": "資産の部/固定資産/有形固定資産/その他",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r15",
+   "calc_parent": "r30",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    102.5,
+    469.0,
+    128.4,
+    477.1
+   ],
+   "label_x0": 102.47999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "848,814",
+     "reported_value": 848814,
+     "value": 848814000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.454,
+     "bbox": [
+      366.7,
+      467.5,
+      397.7,
+      475.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "446,126",
+     "reported_value": 446126,
+     "value": 446126000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.921,
+     "bbox": [
+      491.8,
+      466.3,
+      522.5,
+      473.8
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r29",
+   "label_ja": "減価償却 打計客",
+   "label_norm": "減価償却打計客",
+   "label_path": "資産の部/固定資産/有形固定資産/その他/減価償却打計客",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 4,
+   "presentation_parent": "r28",
+   "calc_parent": "r30",
+   "calc_parent_source": "rule",
+   "calc_rule": "net_block",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    115.2,
+    480.5,
+    177.4,
+    489.1
+   ],
+   "label_x0": 115.19999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "840,375",
+     "reported_value": 840375,
+     "value": 840375000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.352,
+     "bbox": [
+      358.3,
+      479.5,
+      397.4,
+      487.0
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "421,883",
+     "reported_value": 421883,
+     "value": 421883000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.424,
+     "bbox": [
+      483.4,
+      478.3,
+      522.5,
+      485.8
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r30",
+   "label_ja": "その他(純額)",
+   "label_norm": "その他(純額)",
+   "label_path": "資産の部/固定資産/有形固定資産/その他/その他(純額)",
+   "label_en": null,
+   "row_type": "total",
+   "presentation_level": 4,
+   "presentation_parent": "r28",
+   "calc_parent": null,
+   "calc_parent_source": "unresolved",
+   "calc_rule": "block_not_closed",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    115.7,
+    488.9,
+    172.1,
+    505.0
+   ],
+   "label_x0": 115.67999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "8,439",
+     "reported_value": 8439,
+     "value": 8439000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.424,
+     "bbox": [
+      375.8,
+      492.5,
+      397.7,
+      499.9
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r31",
+   "label_ja": "有形 固定 資産 合計",
+   "label_norm": "有形固定資産合計",
+   "label_path": "資産の部/固定資産/有形固定資産/有形固定資産合計",
+   "label_en": null,
+   "row_type": "subtotal",
+   "presentation_level": 3,
+   "presentation_parent": "r15",
+   "calc_parent": "r45",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": "r15",
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    102.7,
+    506.2,
+    173.5,
+    514.8
+   ],
+   "label_x0": 102.72,
+   "cells": {
+    "prior": {
+     "raw_text": "1,429,094",
+     "reported_value": 1429094,
+     "value": 1429094000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.91,
+     "bbox": [
+      358.8,
+      505.2,
+      397.9,
+      512.9
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "1,352,610",
+     "reported_value": 1352610,
+     "value": 1352610000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.901,
+     "bbox": [
+      483.8,
+      504.2,
+      523.0,
+      511.7
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r32",
+   "label_ja": "無形同定 資産",
+   "label_norm": "無形同定資産",
+   "label_path": "資産の部/固定資産/無形同定資産",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 2,
+   "presentation_parent": "r14",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    89.8,
+    514.6,
+    142.6,
+    530.9
+   ],
+   "label_x0": 89.75999999999999,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r33",
+   "label_ja": "リース資 産",
+   "label_norm": "リース資産",
+   "label_path": "資産の部/固定資産/無形同定資産/リース資産",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r32",
+   "calc_parent": "r35",
+   "calc_parent_source": "solver",
+   "calc_rule": "contiguous_run:2",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    104.6,
+    531.1,
+    146.9,
+    539.3
+   ],
+   "label_x0": 104.63999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "34,190",
+     "reported_value": 34190,
+     "value": 34190000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.897,
+     "bbox": [
+      372.0,
+      529.9,
+      398.2,
+      537.4
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "21,402",
+     "reported_value": 21402,
+     "value": 21402000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.913,
+     "bbox": [
+      496.8,
+      529.0,
+      523.0,
+      536.2
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r34",
+   "label_ja": "その他",
+   "label_norm": "その他",
+   "label_path": "資産の部/固定資産/無形同定資産/その他",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r32",
+   "calc_parent": "r35",
+   "calc_parent_source": "solver",
+   "calc_rule": "contiguous_run:2",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.2,
+    543.4,
+    128.9,
+    551.5
+   ],
+   "label_x0": 103.19999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "10,070",
+     "reported_value": 10070,
+     "value": 10070000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.912,
+     "bbox": [
+      372.5,
+      541.9,
+      398.2,
+      549.4
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "14,466",
+     "reported_value": 14466,
+     "value": 14466000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.923,
+     "bbox": [
+      497.8,
+      541.0,
+      523.2,
+      548.4
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r35",
+   "label_ja": "無形 固定 資産 合計",
+   "label_norm": "無形固定資産合計",
+   "label_path": "資産の部/固定資産/無形同定資産/無形固定資産合計",
+   "label_en": null,
+   "row_type": "total",
+   "presentation_level": 3,
+   "presentation_parent": "r32",
+   "calc_parent": null,
+   "calc_parent_source": "unresolved",
+   "calc_rule": "block_not_closed",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.0,
+    555.6,
+    174.0,
+    564.2
+   ],
+   "label_x0": 102.96,
+   "cells": {
+    "prior": {
+     "raw_text": "44,261",
+     "reported_value": 44261,
+     "value": 44261000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.898,
+     "bbox": [
+      372.0,
+      554.6,
+      397.7,
+      562.1
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "35,869",
+     "reported_value": 35869,
+     "value": 35869000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.909,
+     "bbox": [
+      497.3,
+      553.7,
+      523.2,
+      561.1
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null,
+   "solver_alternatives": 1
+  },
+  {
+   "row_id": "r36",
+   "label_ja": "投資その他の資産",
+   "label_norm": "投資その他の資産",
+   "label_path": "資産の部/固定資産/投資その他の資産",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 2,
+   "presentation_parent": "r14",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    90.0,
+    563.5,
+    161.5,
+    579.8
+   ],
+   "label_x0": 90.0,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r37",
+   "label_ja": "投資有価証券",
+   "label_norm": "投資有価証券",
+   "label_path": "資産の部/固定資産/投資その他の資産/投資有価証券",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r36",
+   "calc_parent": "r44",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.2,
+    580.6,
+    156.2,
+    589.0
+   ],
+   "label_x0": 103.19999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "44,180",
+     "reported_value": 44180,
+     "value": 44180000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.907,
+     "bbox": [
+      372.2,
+      579.4,
+      398.4,
+      586.8
+     ],
+     "warnings": [],
+     "checked": false
+    },
+    "col1": {
+     "raw_text": "218,836",
+     "reported_value": 218836,
+     "value": 218836000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.881,
+     "bbox": [
+      492.7,
+      578.4,
+      523.4,
+      585.6
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r38",
+   "label_ja": "関係 会社株式",
+   "label_norm": "関係会社株式",
+   "label_path": "資産の部/固定資産/投資その他の資産/関係会社株式",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r36",
+   "calc_parent": "r44",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.7,
+    592.6,
+    156.7,
+    601.0
+   ],
+   "label_x0": 103.67999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "1,123",
+     "reported_value": 1123,
+     "value": 1123000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.784,
+     "bbox": [
+      377.5,
+      591.4,
+      398.6,
+      598.8
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r39",
+   "label_ja": "",
+   "label_norm": "",
+   "label_path": "資産の部/固定資産/投資その他の資産/関係会社株式/",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 6,
+   "presentation_parent": "r38",
+   "calc_parent": "r44",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": null,
+   "label_x0": 497.52,
+   "cells": {
+    "col1": {
+     "raw_text": "62,000",
+     "reported_value": 62000,
+     "value": 62000000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.584,
+     "bbox": [
+      497.5,
+      602.4,
+      523.7,
+      609.8
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r40",
+   "label_ja": "",
+   "label_norm": "",
+   "label_path": "資産の部/固定資産/投資その他の資産/関係会社株式/#2",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 5,
+   "presentation_parent": "r38",
+   "calc_parent": "r44",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": null,
+   "label_x0": 391.44,
+   "cells": {
+    "prior": {
+     "raw_text": "ー",
+     "reported_value": null,
+     "value": null,
+     "decimals": null,
+     "is_negative": false,
+     "is_nil": true,
+     "is_corrected": null,
+     "confidence": 0.898,
+     "bbox": [
+      391.4,
+      606.2,
+      397.7,
+      606.7
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r41",
+   "label_ja": "長期 貸付金",
+   "label_norm": "長期貸付金",
+   "label_path": "資産の部/固定資産/投資その他の資産/長期貸付金",
+   "label_en": null,
+   "row_type": "header",
+   "presentation_level": 3,
+   "presentation_parent": "r36",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.4,
+    604.6,
+    147.4,
+    613.0
+   ],
+   "label_x0": 103.44,
+   "cells": {},
+   "total_status": null
+  },
+  {
+   "row_id": "r42",
+   "label_ja": "退職給付に係る資産",
+   "label_norm": "退職給付に係る資産",
+   "label_path": "資産の部/固定資産/投資その他の資産/退職給付に係る資産",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r36",
+   "calc_parent": null,
+   "calc_parent_source": "unresolved",
+   "calc_rule": "block_not_closed",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.4,
+    611.5,
+    183.6,
+    627.8
+   ],
+   "label_x0": 103.44,
+   "cells": {
+    "prior": {
+     "raw_text": "18,404",
+     "reported_value": 18404,
+     "value": 18404000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.8,
+     "bbox": [
+      373.2,
+      615.4,
+      398.9,
+      622.8
+     ],
+     "warnings": [],
+     "checked": false
+    },
+    "col1": {
+     "raw_text": "16,435",
+     "reported_value": 16435,
+     "value": 16435000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.564,
+     "bbox": [
+      498.2,
+      614.4,
+      523.7,
+      621.8
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r43",
+   "label_ja": "その他",
+   "label_norm": "その他",
+   "label_path": "資産の部/固定資産/投資その他の資産/その他",
+   "label_en": null,
+   "row_type": "line_item",
+   "presentation_level": 3,
+   "presentation_parent": "r36",
+   "calc_parent": null,
+   "calc_parent_source": "unresolved",
+   "calc_rule": "block_not_closed",
+   "closes_header": null,
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.9,
+    628.8,
+    129.6,
+    637.0
+   ],
+   "label_x0": 103.91999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "133,361",
+     "reported_value": 133361,
+     "value": 133361000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.902,
+     "bbox": [
+      368.9,
+      627.6,
+      398.4,
+      634.8
+     ],
+     "warnings": [],
+     "checked": false
+    },
+    "col1": {
+     "raw_text": "70,967",
+     "reported_value": 70967,
+     "value": 70967000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.891,
+     "bbox": [
+      497.8,
+      626.4,
+      523.9,
+      633.8
+     ],
+     "warnings": [],
+     "checked": false
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r44",
+   "label_ja": "投資その他の資産合計",
+   "label_norm": "投資その他の資産合計",
+   "label_path": "資産の部/固定資産/投資その他の資産/投資その他の資産合計",
+   "label_en": null,
+   "row_type": "subtotal",
+   "presentation_level": 3,
+   "presentation_parent": "r36",
+   "calc_parent": "r45",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": "r36",
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    103.7,
+    636.2,
+    192.7,
+    652.6
+   ],
+   "label_x0": 103.67999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "197,069",
+     "reported_value": 197069,
+     "value": 197069000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.645,
+     "bbox": [
+      368.9,
+      640.1,
+      398.9,
+      647.5
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "369,362",
+     "reported_value": 369362,
+     "value": 369362000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.574,
+     "bbox": [
+      493.4,
+      639.1,
+      523.9,
+      646.6
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r45",
+   "label_ja": "固定 資産合計",
+   "label_norm": "固定資産合計",
+   "label_path": "資産の部/固定資産/固定資産合計",
+   "label_en": null,
+   "row_type": "subtotal",
+   "presentation_level": 2,
+   "presentation_parent": "r14",
+   "calc_parent": "r46",
+   "calc_parent_source": "rule",
+   "calc_rule": "closing_total",
+   "closes_header": "r14",
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    91.2,
+    654.0,
+    143.8,
+    662.6
+   ],
+   "label_x0": 91.19999999999999,
+   "cells": {
+    "prior": {
+     "raw_text": "1,670,426",
+     "reported_value": 1670426,
+     "value": 1670426000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.915,
+     "bbox": [
+      360.0,
+      652.8,
+      399.1,
+      660.5
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "1,757,841",
+     "reported_value": 1757841,
+     "value": 1757841000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.916,
+     "bbox": [
+      485.0,
+      651.8,
+      523.7,
+      659.3
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  },
+  {
+   "row_id": "r46",
+   "label_ja": "資産合計",
+   "label_norm": "資産合計",
+   "label_path": "資産の部/資産合計",
+   "label_en": null,
+   "row_type": "total",
+   "presentation_level": 1,
+   "presentation_parent": "r01",
+   "calc_parent": null,
+   "calc_parent_source": null,
+   "calc_rule": null,
+   "closes_header": "r01",
+   "footnote_refs": [],
+   "xbrl_candidate": null,
+   "xbrl_confidence": null,
+   "xbrl_verified": false,
+   "human_verification": null,
+   "label_bbox": [
+    78.0,
+    667.2,
+    113.0,
+    675.4
+   ],
+   "label_x0": 78.0,
+   "cells": {
+    "prior": {
+     "raw_text": "7,534,110",
+     "reported_value": 7534110,
+     "value": 7534110000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.91,
+     "bbox": [
+      359.5,
+      665.5,
+      399.4,
+      673.2
+     ],
+     "warnings": [],
+     "checked": true
+    },
+    "col1": {
+     "raw_text": "5,135,249",
+     "reported_value": 5135249,
+     "value": 5135249000,
+     "decimals": -3,
+     "is_negative": false,
+     "is_nil": false,
+     "is_corrected": null,
+     "confidence": 0.879,
+     "bbox": [
+      484.6,
+      664.6,
+      524.2,
+      672.0
+     ],
+     "warnings": [],
+     "checked": true
+    }
+   },
+   "total_status": null
+  }
+ ],
+ "checks": [
+  {
+   "check_id": "T01:流動資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r13",
+   "child_rows": [
+    "r03",
+    "r04",
+    "r05",
+    "r06",
+    "r07",
+    "r08",
+    "r09",
+    "r10",
+    "r11",
+    "r12"
+   ],
+   "printed": 5863684,
+   "computed": 5869639,
+   "diff": -5955,
+   "window": [
+    0,
+    9
+   ],
+   "status": "fail",
+   "reason": "",
+   "p": 10,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T01:流動資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r13",
+   "child_rows": [
+    "r03",
+    "r04",
+    "r05",
+    "r06",
+    "r07",
+    "r08",
+    "r09",
+    "r10",
+    "r11",
+    "r12"
+   ],
+   "printed": 3377407,
+   "computed": 3377405,
+   "diff": 2,
+   "window": [
+    0,
+    9
+   ],
+   "status": "within_tolerance",
+   "reason": "",
+   "p": 10,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T02:有形固定資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r31",
+   "child_rows": [
+    "r18",
+    "r21",
+    "r22",
+    "r25",
+    "r26"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['r26']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T02:有形固定資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r31",
+   "child_rows": [
+    "r18",
+    "r21",
+    "r22",
+    "r25",
+    "r26"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['r18', 'r21']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T03:無形固定資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r35",
+   "child_rows": [
+    "r33",
+    "r34"
+   ],
+   "printed": 44261,
+   "computed": 44260,
+   "diff": 1,
+   "window": [
+    0,
+    1
+   ],
+   "status": "within_tolerance",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "solver",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T03:無形固定資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r35",
+   "child_rows": [
+    "r33",
+    "r34"
+   ],
+   "printed": 35869,
+   "computed": 35868,
+   "diff": 1,
+   "window": [
+    0,
+    1
+   ],
+   "status": "within_tolerance",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "solver",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T04:投資その他の資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r44",
+   "child_rows": [
+    "r37",
+    "r38",
+    "r39",
+    "r40"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['r39']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T04:投資その他の資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r44",
+   "child_rows": [
+    "r37",
+    "r38",
+    "r39",
+    "r40"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['r38', 'r40']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T05:固定資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r45",
+   "child_rows": [
+    "r31",
+    "r35",
+    "r44"
+   ],
+   "printed": 1670426,
+   "computed": 1670424,
+   "diff": 2,
+   "window": [
+    0,
+    2
+   ],
+   "status": "within_tolerance",
+   "reason": "",
+   "p": 3,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T05:固定資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r45",
+   "child_rows": [
+    "r31",
+    "r35",
+    "r44"
+   ],
+   "printed": 1757841,
+   "computed": 1757841,
+   "diff": 0,
+   "window": [
+    0,
+    2
+   ],
+   "status": "exact",
+   "reason": "",
+   "p": 3,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T06:資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r46",
+   "child_rows": [
+    "r13",
+    "r45"
+   ],
+   "printed": 7534110,
+   "computed": 7534110,
+   "diff": 0,
+   "window": [
+    0,
+    1
+   ],
+   "status": "exact",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T06:資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r46",
+   "child_rows": [
+    "r13",
+    "r45"
+   ],
+   "printed": 5135249,
+   "computed": 5135248,
+   "diff": 1,
+   "window": [
+    0,
+    1
+   ],
+   "status": "within_tolerance",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T07:流動負債合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "流動負債合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['流動負債合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T07:流動負債合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "流動負債合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['流動負債合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T08:固定負債合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "固定負債合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['固定負債合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T08:固定負債合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "固定負債合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['固定負債合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T09:負債合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "負債合計",
+   "child_rows": [
+    "流動負債合計",
+    "固定負債合計"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['負債合計', '流動負債合計', '固定負債合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T09:負債合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "負債合計",
+   "child_rows": [
+    "流動負債合計",
+    "固定負債合計"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['負債合計', '流動負債合計', '固定負債合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T10:株主資本合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "株主資本合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['株主資本合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T10:株主資本合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "株主資本合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['株主資本合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T11:純資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "純資産合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['純資産合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T11:純資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "純資産合計",
+   "child_rows": [],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['純資産合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T12:負債純資産合計",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "負債純資産合計",
+   "child_rows": [
+    "負債合計",
+    "純資産合計"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['負債純資産合計', '負債合計', '純資産合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T12:負債純資産合計",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "負債純資産合計",
+   "child_rows": [
+    "負債合計",
+    "純資産合計"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['負債純資産合計', '負債合計', '純資産合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "T13:資産合計",
+   "period": "2025-03-31",
+   "kind": "equality",
+   "total_row": "r46",
+   "child_rows": [
+    "負債純資産合計"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['負債純資産合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "T13:資産合計",
+   "period": "2026-03-31",
+   "kind": "equality",
+   "total_row": "r46",
+   "child_rows": [
+    "負債純資産合計"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['負債純資産合計']",
+   "p": 0,
+   "q": 0,
+   "category": "template",
+   "is_template": true,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/建物及び構築物/建物及び構築物(純額)",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r18",
+   "child_rows": [
+    "r16",
+    "r17"
+   ],
+   "printed": 197775,
+   "computed": 4044945,
+   "diff": -3847170,
+   "window": [
+    0,
+    1
+   ],
+   "status": "fail",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/建物及び構築物/建物及び構築物(純額)",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r18",
+   "child_rows": [
+    "r16",
+    "r17"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['r18']",
+   "p": 0,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/機械装置及び運搬具/機械装置及び運搬具(純額)",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r21",
+   "child_rows": [
+    "r19",
+    "r20"
+   ],
+   "printed": 390757,
+   "computed": 7659087,
+   "diff": -7268330,
+   "window": [
+    0,
+    1
+   ],
+   "status": "fail",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/機械装置及び運搬具/機械装置及び運搬具(純額)",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r21",
+   "child_rows": [
+    "r19",
+    "r20"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['r21']",
+   "p": 0,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r25",
+   "child_rows": [
+    "r23",
+    "r24"
+   ],
+   "printed": 63146,
+   "computed": 358345,
+   "diff": -295199,
+   "window": [
+    0,
+    1
+   ],
+   "status": "fail",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r25",
+   "child_rows": [
+    "r23",
+    "r24"
+   ],
+   "printed": 41872,
+   "computed": 386005,
+   "diff": -344133,
+   "window": [
+    0,
+    1
+   ],
+   "status": "fail",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "col1"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/その他/その他(純額)",
+   "period": "2025-03-31",
+   "kind": "sum",
+   "total_row": "r30",
+   "child_rows": [
+    "r28",
+    "r29"
+   ],
+   "printed": 8439,
+   "computed": 1689189,
+   "diff": -1680750,
+   "window": [
+    0,
+    1
+   ],
+   "status": "fail",
+   "reason": "",
+   "p": 2,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "prior"
+  },
+  {
+   "check_id": "D:資産の部/固定資産/有形固定資産/その他/その他(純額)",
+   "period": "2026-03-31",
+   "kind": "sum",
+   "total_row": "r30",
+   "child_rows": [
+    "r28",
+    "r29"
+   ],
+   "printed": null,
+   "computed": null,
+   "diff": null,
+   "window": null,
+   "status": "not_evaluable",
+   "reason": "rows not present: ['r30']",
+   "p": 0,
+   "q": 0,
+   "category": "dynamic",
+   "is_template": false,
+   "period_id": "col1"
+  }
+ ],
+ "check_summary": {
+  "template": {
+   "checks": 24,
+   "evaluable": 6,
+   "passed": 5,
+   "exact": 2,
+   "within_tolerance": 3,
+   "failed": 1,
+   "consistency": 0.8333333333333334
+  },
+  "dynamic": {
+   "checks": 8,
+   "evaluable": 5,
+   "passed": 0,
+   "exact": 0,
+   "within_tolerance": 0,
+   "failed": 5,
+   "consistency": 0.0
+  },
+  "solver": {
+   "checks": 2,
+   "evaluable": 2,
+   "passed": 2,
+   "exact": 0,
+   "within_tolerance": 2,
+   "failed": 0,
+   "consistency": 1.0
+  },
+  "coverage": 0.3076923076923077,
+  "template_expected": 26,
+  "template_evaluable": 8,
+  "consistency_rule_based": 0.45454545454545453
+ }
+}
