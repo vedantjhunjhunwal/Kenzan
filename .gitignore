@@ -24,3 +24,6 @@ _cache/
 # secrets
 .env
 *.key
+
+# real filings: dev copies and the sealed test set (never committed)
+/realdocs/
