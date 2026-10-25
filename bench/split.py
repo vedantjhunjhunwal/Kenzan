@@ -81,4 +81,9 @@ def force_dev(run_list: str) -> int:
 
 if __name__ == "__main__":
     cmd, *args = sys.argv[1:]
-    print(annotate(*args) if cmd == "annotate" else force_dev(*args))
+    if cmd == "which":              # python bench/split.py which E00436 E00919 ...  (reads nothing else)
+        forced = load_forced_dev()
+        for c in args:
+            print(c.upper(), split_of(c, forced), "(forced_dev)" if c.upper() in forced else "(hash)")
+    else:
+        print(annotate(*args) if cmd == "annotate" else force_dev(*args))
