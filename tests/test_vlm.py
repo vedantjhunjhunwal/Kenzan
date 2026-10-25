@@ -212,3 +212,54 @@ def test_text_layer_page_without_unit_line_goes_to_review():
     d = parse_page(page)
     assert d["metadata"]["unit_ja"] is None
     assert d["acceptance"]["decision"] == "review" and any(x.startswith("A6") for x in d["acceptance"]["reasons"])
+
+
+# --------------------------------------------------------------------------- amendment A9 + fixes (2026-10-25)
+@needs_ocr
+@pytest.mark.parametrize("label,col,new", [("現金及び預金", 0, "2,002,428"), ("受取手形", 1, "26,334")])
+def test_a9_single_ones_digit_error_is_caught_by_per_cell_agreement(tmp_path, label, col, new):
+    """The user's case: a last-digit error inside the truncation window passes every identity check;
+    A9 catches it wherever Tesseract read that cell."""
+    t = _gt_table()
+    next(r for r in t["rows"] if r["label"] == label)["values"][col] = new
+    pred = parse_pdf(str(_scan_pdf(tmp_path)), force_route="visual",
+                     ocr=_backend(tmp_path, json.dumps(t, ensure_ascii=False)))
+    cc = pred["metadata"]["route"]["backend_diagnostics"]["cross_check"]
+    assert not any(r.startswith("A2") for r in pred["acceptance"]["reasons"])     # checks alone miss it
+    assert pred["acceptance"]["decision"] == "review"
+    assert any(r.startswith("A9") for r in pred["acceptance"]["reasons"])
+    assert any(d["vlm"] == new for d in cc["cell_disagreements"])
+
+
+@needs_ocr
+def test_a9_perfect_read_on_clean_scan_agrees_cell_by_cell(tmp_path):
+    pred = parse_pdf(str(_scan_pdf(tmp_path)), force_route="visual",
+                     ocr=_backend(tmp_path, json.dumps(_gt_table(), ensure_ascii=False)))
+    cc = pred["metadata"]["route"]["backend_diagnostics"]["cross_check"]
+    assert cc["cells_ok"] and cc["cells_compared"] > 0 and not cc["cell_disagreements"]
+
+
+def test_a9_blank_ocr_cells_do_not_block():
+    t = {"heading_lines": [], "columns": ["前(2025年3月31日)", "当(2026年3月31日)"],
+         "rows": [{"label": "現金", "indent": 0, "values": ["1,000", "2,000"]}]}
+    second = {"status": "ok", "n_columns": 2, "rows": [{"label_norm": "現金", "values": {1: 2000}, "signed": {1: 2000}}]}
+    assert vlm.cell_agreement(t, second, {0: 0})["cells_ok"]                      # col 0 blank in OCR
+    second["rows"][0]["values"] = {0: 1001, 1: 2000}
+    res = vlm.cell_agreement(t, second, {0: 0})
+    assert not res["cells_ok"] and res["cell_disagreements"][0]["col"] == 0
+
+
+@needs_ocr
+def test_unit_is_read_on_a_positively_rotated_scan(tmp_path):
+    """rot_+1 (seen set): the header band is cut above the period-header lines; before the fix
+    psm 6 garbled the unit line when the column headers were in the same band."""
+    import sys
+    import numpy as np
+    sys.path.insert(0, str(ROOT / "stress"))
+    from run_stress import make_variant
+    pdf = tmp_path / "rot_+1.pdf"
+    make_variant(FIX, pdf, 300, 1.0, 0, None, np.random.default_rng(0))
+    pred = parse_pdf(str(pdf), force_route="visual",
+                     ocr=_backend(tmp_path, json.dumps(_gt_table(), ensure_ascii=False)))
+    cc = pred["metadata"]["route"]["backend_diagnostics"]["cross_check"]
+    assert cc["ocr_unit"] == "千円" and not any("unit" in p for p in cc["problems"])

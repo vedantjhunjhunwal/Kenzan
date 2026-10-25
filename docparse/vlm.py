@@ -200,24 +200,36 @@ def second_reading(page: pymupdf.Page, image_sha: str, ocr=None) -> dict:
     except Exception as e:                                   # noqa: BLE001
         return {"status": "unavailable", "reason": type(e).__name__}
     lay = analyze(merge_tokens(content.spans))
-    band_unit, band_text = None, ""
-    try:                                                     # header band read on its own (psm 6)
-        band_text = header_band_text(page, lay.body[0].y0 if lay.body else 0.25 * page.rect.height)
-        u = parse_unit(band_text)
-        band_unit = u[0] if u else None
-    except Exception:                                        # noqa: BLE001
-        pass
+    band_unit, band_cut = None, None
+    body_top = lay.body[0].y0 if lay.body else 0.25 * page.rect.height
+    # Cut the band ABOVE the period-header lines when they can be found: with the column headers in
+    # the same band, psm 6 garbles the right-aligned unit line (seen rot_+1 / rot_+2, and the full
+    # page on raster_300). Fallback: the band down to the table body.
+    lines = merge_tokens(content.spans)
+    header_top = next((min(t.bbox[1] for t in ln) for ln in lines
+                       if min(t.bbox[1] for t in ln) < body_top
+                       and (parse_dates("".join(t.text for t in ln)) or "年度" in "".join(t.text for t in ln))), None)
+    for cut in [c for c in (header_top - 2 if header_top else None, body_top) if c]:
+        try:
+            u = parse_unit(header_band_text(page, cut, pad=0))
+        except Exception:                                    # noqa: BLE001
+            u = None
+        if u:
+            band_unit, band_cut = u[0], round(cut, 1)
+            break
     rows = []
     for br in lay.body:
-        vals = {}
+        vals, signed = {}, {}
         for ci, tok in br.values.items():
             pv = parse_value(tok.text)
             if pv is not None and pv.reported_value is not None:
                 vals[ci] = abs(pv.reported_value)
+                signed[ci] = pv.reported_value
         rows.append({"label_norm": label_norm(br.label_text)[0],
-                     "x0": br.label_tokens[0].x0 if br.label_tokens else None, "values": vals})
+                     "x0": br.label_tokens[0].x0 if br.label_tokens else None, "values": vals,
+                     "signed": signed})
     out = {"status": "ok", "unit": band_unit or (lay.unit[0] if lay.unit else None),
-           "unit_source": "header band" if band_unit else ("full page" if lay.unit else None),
+           "unit_source": f"header band (cut at {band_cut} pt)" if band_unit else ("full page" if lay.unit else None),
            "dates": [c.period.get("date") if c.period else None for c in lay.columns],
            "n_columns": len(lay.columns), "char_size": lay.char_size, "rows": rows,
            "deskew_deg": content.diagnostics.get("deskew_deg")}
@@ -225,7 +237,7 @@ def second_reading(page: pymupdf.Page, image_sha: str, ocr=None) -> dict:
     return out
 
 
-def header_band_text(page: pymupdf.Page, body_top_pt: float, dpi: int = 300) -> str:
+def header_band_text(page: pymupdf.Page, body_top_pt: float, dpi: int = 300, pad: float = 4) -> str:
     """OCR of the strip above the table body alone (the full-page pass garbles the small unit line:
     on the clean reference page it read 「（単位：千円）」 as noise). Same render, deskew and
     model as the full-page pass; psm 6; fixed before any held-out VLM output."""
@@ -237,7 +249,7 @@ def header_band_text(page: pymupdf.Page, body_top_pt: float, dpi: int = 300) -> 
     be.check_setup()
     pix = page.get_pixmap(dpi=dpi, colorspace=pymupdf.csGRAY)
     img, _ = _deskew(Image.frombytes("L", (pix.width, pix.height), pix.samples))
-    cut = min(img.height, int((body_top_pt + 4) * dpi / 72))
+    cut = min(img.height, int((body_top_pt + pad) * dpi / 72))
     with tempfile.TemporaryDirectory() as td:
         f = os.path.join(td, "band.png")
         img.crop((0, 0, img.width, cut)).save(f)
@@ -258,18 +270,59 @@ def align_rows(vlm_labels: list[str], ocr_labels: list[str]) -> dict[int, int]:
     return m
 
 
-def derive_levels(table: dict, second: dict) -> tuple[list[int] | None, str]:
+def alignment(table: dict, second: dict) -> dict[int, int]:
+    if second.get("status") != "ok":
+        return {}
+    return align_rows([label_norm(r["label"])[0] for r in table["rows"]], [r["label_norm"] for r in second["rows"]])
+
+
+def derive_levels(table: dict, second: dict, m: dict[int, int] | None = None) -> tuple[list[int] | None, str]:
     """Levels for every VLM row from the OCR label x0 of its aligned row, or None (with why)."""
     if second.get("status") != "ok":
         return None, "no second reading"
     from .hierarchy import cluster_1d
-    m = align_rows([label_norm(r["label"])[0] for r in table["rows"]], [r["label_norm"] for r in second["rows"]])
+    m = alignment(table, second) if m is None else m
     xs = [second["rows"][m[i]]["x0"] if i in m else None for i in range(len(table["rows"]))]
     missing = sum(x is None for x in xs)
     if missing:
         return None, f"{missing} of {len(xs)} rows not matched to a page row"
     centers = cluster_1d(xs, tol=0.4 * second["char_size"])
     return [min(range(len(centers)), key=lambda k: abs(centers[k] - x)) for x in xs], "page geometry"
+
+
+A9_COMPARE = "magnitude"      # "magnitude" (the rule) or "signed" (dev measurement only)
+
+
+def cell_agreement(table: dict, second: dict, m: dict[int, int], compare: str | None = None) -> dict:
+    """A9: wherever the OCR reads a number in an aligned row/column, it must equal the VLM value."""
+    compare = compare or A9_COMPARE
+    if second.get("status") != "ok":
+        return {"cells_ok": False, "cells_compared": 0, "cell_disagreements": [],
+                "cell_disagreements_summary": "per-cell agreement: no second reading"}
+    ncol = len(table["columns"])
+    if second.get("n_columns") != ncol:
+        return {"cells_ok": False, "cells_compared": 0, "cell_disagreements": [],
+                "cell_disagreements_summary": f"per-cell agreement: column count differs (VLM {ncol}, OCR "
+                                              f"{second.get('n_columns')})"}
+    dis, n = [], 0
+    for i, r in enumerate(table["rows"]):
+        if i not in m:
+            continue
+        o = second["rows"][m[i]]
+        for k in range(ncol):
+            ov = (o["signed"] if compare == "signed" else o["values"]).get(k)
+            if ov is None:
+                continue                                   # OCR blank / dash / text: does not block
+            n += 1
+            pv = parse_value(r["values"][k]) if r["values"][k] else None
+            vv = None if pv is None or pv.reported_value is None else (
+                pv.reported_value if compare == "signed" else abs(pv.reported_value))
+            if vv != ov:
+                dis.append({"row": i, "label": r["label"], "col": k, "vlm": r["values"][k], "ocr": ov})
+    summ = (f"{len(dis)} of {n} OCR-read cells disagree with the VLM, e.g. "
+            + "; ".join(f"{d['label']} col{d['col']}: VLM {d['vlm']} vs OCR {d['ocr']}" for d in dis[:3])) if dis else ""
+    return {"cells_ok": not dis and n > 0, "cells_compared": n, "cell_disagreements": dis[:50],
+            "cell_disagreements_summary": summ or ("per-cell agreement: no cell read by OCR" if n == 0 else "")}
 
 
 def cross_check(table: dict, second: dict, levels_why: str, levels_ok: bool) -> dict:
@@ -341,15 +394,19 @@ class VLMBackend:
     def read(self, page: pymupdf.Page) -> PageContent:
         image, how = page_image(page)
         raw, info = self.response_for(image)
+        return self.content_from_response(page, raw, how, info)
+
+    def content_from_response(self, page: pymupdf.Page, raw: str, how: str, info: dict) -> PageContent:
         table = parse_response(raw)                       # VLMSchemaError -> page failed -> review
         second = (second_reading(page, info["image_sha256"]) if self.second_reader == "tesseract"
                   else {"status": "unavailable", "reason": "no second reader configured"})
-        levels, why = derive_levels(table, second)
+        m = alignment(table, second)
+        levels, why = derive_levels(table, second, m)
         vlm_indent = [r["indent"] for r in table["rows"]]
         if levels is not None:                            # geometry wins over the model's indent field
             for r, lv in zip(table["rows"], levels):
                 r["indent"] = lv
-        cc = cross_check(table, second, why, levels is not None)
+        cc = cross_check(table, second, why, levels is not None) | cell_agreement(table, second, m)
         diag = {"model": self.model, "settings_key": settings_key(self.model, self.settings),
                 "image_source": how, "vlm_rows": len(table["rows"]), "cross_check": cc,
                 "indent_changed_rows": sum(a != b for a, b in zip(vlm_indent, [r["indent"] for r in table["rows"]])),

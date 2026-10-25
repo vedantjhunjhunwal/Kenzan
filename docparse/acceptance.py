@@ -17,6 +17,14 @@ ACCEPT only if all of these hold; anything else goes to REVIEW (with every reaso
       unit, the column dates in order, the column assignment of the values, and the indentation
       (levels taken from the page geometry for every row). Anything unconfirmed -> review.
 
+  A9  VLM route only: per-cell agreement. Wherever the second reading (Tesseract) reads a number
+      in a cell of an aligned row and column, its magnitude must equal the VLM value's magnitude;
+      cells Tesseract leaves blank (or reads as a dash or as text) don't block. Signs are compared
+      by the identity checks only, because Tesseract often loses △.
+  A10 no subtotal or total row left with an unresolved calc parent (calc_parent_source
+      "unresolved"): its place in the calculation tree is unknown, and the template checks, which
+      match totals by label, cannot see that.
+
 A6-A8 were added on 2026-10-25 (amendment in stress/FREEZE_LOG.txt) after the VLM smoke page and
 fake-runner cases showed that A1-A5 accept pages with swapped columns, a wrong unit, or a wrong
 hierarchy whenever the values themselves are consistent.
@@ -28,7 +36,8 @@ from __future__ import annotations
 
 from .registry import sections_present
 
-AMENDMENT = "A6-A8 (2026-10-25)"
+AMENDMENT = "A6-A10 (2026-10-25)"
+DISABLED: set[str] = set()     # dev measurement only (stress/vlm_dev_seen.py ablations); always empty in use
 
 
 def period_order_problem(periods: list[dict]) -> str | None:
@@ -87,7 +96,17 @@ def decide(doc: dict, allow_solver: bool = False) -> dict:
         if not cc.get("ok"):
             reasons.append("A8 VLM read not confirmed by the second reading: "
                            + ("; ".join(cc.get("problems", [])) or "no cross-check recorded")[:300])
+        if not cc.get("cells_ok", False):
+            reasons.append("A9 " + (cc.get("cell_disagreements_summary") or "per-cell agreement with the second "
+                                    "reading not established"))
+    unresolved = [r["row_id"] for r in doc.get("rows", []) if r.get("row_type") in ("subtotal", "total")
+                  and r.get("calc_parent_source") == "unresolved"]
+    if doc.get("status") == "ok" and unresolved:
+        reasons.append(f"A10 {len(unresolved)} subtotal/total row(s) with an unresolved calc parent: "
+                       + ", ".join(unresolved[:8]))
     unknown_corr = sum(1 for r in doc.get("rows", []) for c in r["cells"].values() if c.get("is_corrected") is None)
+    if DISABLED:
+        reasons = [r for r in reasons if r.split()[0] not in DISABLED]
     return {"decision": "accept" if not reasons else "review", "reasons": reasons, "rule": f"A1-A5 + {AMENDMENT}",
             "sections_present": sorted(present), "required_template_checks": len(required),
             "cells_with_unknown_correction_status": unknown_corr}

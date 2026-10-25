@@ -1,0 +1,2379 @@
+{
+ "status": "ok",
+ "reason": null,
+ "route": {
+  "route": "visual",
+  "reasons": [
+   "too little text (0 chars)",
+   "no number-like tokens in the text layer",
+   "page is mostly image (100%); text layer is likely an OCR overlay"
+  ],
+  "metrics": {
+   "chars": 0,
+   "known_char_ratio": 0.0,
+   "number_like_tokens": 0,
+   "number_parse_ratio": 0.0,
+   "image_coverage": 0.9999
+  },
+  "backend": "vlm",
+  "backend_diagnostics": {
+   "model": "Qwen/Qwen3-VL-8B-Instruct",
+   "settings_key": "2350000f0897",
+   "image_source": "embedded:png",
+   "vlm_rows": 43,
+   "cache": "written",
+   "cache_file": "vlm_cache/Qwen_Qwen3-VL-8B-Instruct/bffc9ac653d366817669_2350000f0897.json",
+   "image_sha256": "bffc9ac653d3668176691f04b5fe37f577c1d904bb49f5273bfa092d5f561fab",
+   "run_info": {
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "quant": "4bit",
+    "gpu": "Tesla T4",
+    "gpu_gb": 14.6,
+    "transformers": "5.20.2",
+    "torch": "2.11.0+cu130",
+    "compute_dtype": "float16",
+    "gpu_capability": [
+     7,
+     5
+    ],
+    "model_revision": null,
+    "fed_image_size": [
+     1555,
+     2200
+    ],
+    "new_tokens": 1648,
+    "hit_token_limit": false,
+    "seconds": 270.8
+   }
+  }
+ },
+ "warnings": {},
+ "acceptance": {
+  "decision": "accept",
+  "reasons": [],
+  "sections_present": [
+   "資産"
+  ],
+  "required_template_checks": 12,
+  "cells_with_unknown_correction_status": 74
+ },
+ "cells": {
+  "gt_cells": 74,
+  "pred_cells": 74,
+  "correct": 20,
+  "precision": 0.2702702702702703,
+  "recall": 0.2702702702702703,
+  "f1": 0.2702702702702703,
+  "differences": [
+   {
+    "key": [
+     "資産の部/固定資産/固定資産合計",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産合計",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/固定資産合計",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産合計",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/その他",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/その他",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/その他",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/その他",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/その他",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/その他",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/その他",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/その他",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/投資その他の資産合計",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/投資その他の資産合計",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/投資その他の資産合計",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/投資その他の資産合計",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/投資有価証券",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/投資有価証券",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/投資有価証券",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/投資有価証券",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/退職給付に係る資産",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/退職給付に係る資産",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/退職給付に係る資産",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/退職給付に係る資産",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/長期貸付金",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/長期貸付金",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/長期貸付金",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/長期貸付金",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/関係会社株式",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/関係会社株式",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/投資その他の資産/関係会社株式",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/関係会社株式",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/その他",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/その他",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/その他",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/その他",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/その他",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/その他",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/その他",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/その他",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/その他/その他(純額)",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/その他(純額)",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/その他/その他(純額)",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/その他(純額)",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/その他/減価償却累計額",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/その他/減価償却累計額",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/リース資産",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/リース資産",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/リース資産",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/リース資産",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/無形固定資産/リース資産",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/リース資産",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/リース資産(純額)",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/リース資産(純額)",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/リース資産/減価償却累計額",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/リース資産/減価償却累計額",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/土地",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/土地",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/土地",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/土地",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建物及び構築物",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/建物及び構築物",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建物及び構築物",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/建物及び構築物",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建物及び構築物/建物及び構築物(純額)",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/建物及び構築物(純額)",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建物及び構築物/建物及び構築物(純額)",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/建物及び構築物(純額)",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建物及び構築物/減価償却累計額",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建物及び構築物/減価償却累計額",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建設仮勘定",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/建設仮勘定",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/建設仮勘定",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/建設仮勘定",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/有形固定資産合計",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産合計",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/有形固定資産合計",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産合計",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/機械装置及び運搬具",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/機械装置及び運搬具",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/機械装置及び運搬具",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/機械装置及び運搬具",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/機械装置及び運搬具/機械装置及び運搬具(純額)",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/機械装置及び運搬具(純額)",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/機械装置及び運搬具/機械装置及び運搬具(純額)",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/機械装置及び運搬具(純額)",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/機械装置及び運搬具/減価償却累計額",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/有形固定資産/機械装置及び運搬具/減価償却累計額",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/減価償却累計額#2",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#3",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額#4",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/減価償却累計額",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/無形固定資産/その他",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/その他",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/その他",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/その他",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/無形固定資産/その他",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "投資その他の資産/その他",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/その他",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/その他",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/無形固定資産/リース資産",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/有形固定資産/リース資産",
+      "2025-03-31"
+     ],
+     [
+      "固定資産/無形固定資産/リース資産",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/無形固定資産/リース資産",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/無形固定資産/リース資産",
+      "2026-03-31"
+     ],
+     [
+      "固定資産/有形固定資産/リース資産",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/無形固定資産/無形固定資産合計",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/無形固定資産合計",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/固定資産/無形固定資産/無形固定資産合計",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "固定資産/無形固定資産合計",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/流動資産/流動資産合計",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "資産の部/流動資産合計",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/流動資産/流動資産合計",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "資産の部/流動資産合計",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/資産合計",
+     "2025-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "資産合計",
+      "2025-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "資産の部/資産合計",
+     "2026-03-31"
+    ],
+    "kind": "path_mismatch",
+    "pred_keys_same_label": [
+     [
+      "資産合計",
+      "2026-03-31"
+     ]
+    ]
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/その他",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/その他",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/その他(純額)",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/その他(純額)",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/リース資産",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/リース資産",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/リース資産(純額)",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/リース資産(純額)",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/土地",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/土地",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/建物及び構築物",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/建物及び構築物",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/建物及び構築物(純額)",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/建物及び構築物(純額)",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/建設仮勘定",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/建設仮勘定",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/機械装置及び運搬具",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/機械装置及び運搬具",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/機械装置及び運搬具(純額)",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/機械装置及び運搬具(純額)",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額#2",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額#2",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額#3",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額#3",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額#4",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産/減価償却累計額#4",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産合計",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/有形固定資産合計",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/無形固定資産/その他",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/無形固定資産/その他",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/無形固定資産/リース資産",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/無形固定資産/リース資産",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/無形固定資産合計",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産/無形固定資産合計",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産合計",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "固定資産合計",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/その他",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/その他",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/投資その他の資産合計",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/投資その他の資産合計",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/投資有価証券",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/投資有価証券",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/退職給付に係る資産",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/退職給付に係る資産",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/長期貸付金",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/長期貸付金",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/関係会社株式",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "投資その他の資産/関係会社株式",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "資産の部/流動資産合計",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "資産の部/流動資産合計",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "資産合計",
+     "2025-03-31"
+    ],
+    "kind": "extra"
+   },
+   {
+    "key": [
+     "資産合計",
+     "2026-03-31"
+    ],
+    "kind": "extra"
+   }
+  ],
+  "info": []
+ },
+ "structure": {
+  "presentation_level": 0.27906976744186046,
+  "presentation_parent": 0.6511627906976745,
+  "calc_parent": 0.9302325581395349,
+  "row_type": 0.9302325581395349,
+  "rows_matched": "43/43",
+  "differences": [
+   {
+    "row": "r13",
+    "label": "流動資産合計",
+    "field": "presentation_level",
+    "gt": 2,
+    "pred": 1
+   },
+   {
+    "row": "r13",
+    "label": "流動資産合計",
+    "field": "presentation_parent",
+    "gt": "r02",
+    "pred": "r01"
+   },
+   {
+    "row": "r13",
+    "label": "流動資産合計",
+    "field": "calc_parent",
+    "gt": "r43",
+    "pred": null
+   },
+   {
+    "row": "r13",
+    "label": "流動資産合計",
+    "field": "row_type",
+    "gt": "subtotal",
+    "pred": "total"
+   },
+   {
+    "row": "r14",
+    "label": "固定資産",
+    "field": "presentation_level",
+    "gt": 1,
+    "pred": 0
+   },
+   {
+    "row": "r14",
+    "label": "固定資産",
+    "field": "presentation_parent",
+    "gt": "r01",
+    "pred": null
+   },
+   {
+    "row": "r15",
+    "label": "有形固定資産",
+    "field": "presentation_level",
+    "gt": 2,
+    "pred": 1
+   },
+   {
+    "row": "r16",
+    "label": "建物及び構築物",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r17",
+    "label": "減価償却累計額",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r17",
+    "label": "減価償却累計額",
+    "field": "presentation_parent",
+    "gt": "r16",
+    "pred": "r15"
+   },
+   {
+    "row": "r18",
+    "label": "建物及び構築物（純額）",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r18",
+    "label": "建物及び構築物（純額）",
+    "field": "presentation_parent",
+    "gt": "r16",
+    "pred": "r15"
+   },
+   {
+    "row": "r19",
+    "label": "機械装置及び運搬具",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r20",
+    "label": "減価償却累計額",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r20",
+    "label": "減価償却累計額",
+    "field": "presentation_parent",
+    "gt": "r19",
+    "pred": "r15"
+   },
+   {
+    "row": "r21",
+    "label": "機械装置及び運搬具（純額）",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r21",
+    "label": "機械装置及び運搬具（純額）",
+    "field": "presentation_parent",
+    "gt": "r19",
+    "pred": "r15"
+   },
+   {
+    "row": "r22",
+    "label": "土地",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r23",
+    "label": "リース資産",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r24",
+    "label": "減価償却累計額",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r24",
+    "label": "減価償却累計額",
+    "field": "presentation_parent",
+    "gt": "r23",
+    "pred": "r15"
+   },
+   {
+    "row": "r25",
+    "label": "リース資産（純額）",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r25",
+    "label": "リース資産（純額）",
+    "field": "presentation_parent",
+    "gt": "r23",
+    "pred": "r15"
+   },
+   {
+    "row": "r26",
+    "label": "建設仮勘定",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r27",
+    "label": "その他",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r28",
+    "label": "減価償却累計額",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r28",
+    "label": "減価償却累計額",
+    "field": "presentation_parent",
+    "gt": "r27",
+    "pred": "r15"
+   },
+   {
+    "row": "r29",
+    "label": "その他（純額）",
+    "field": "presentation_level",
+    "gt": 4,
+    "pred": 2
+   },
+   {
+    "row": "r29",
+    "label": "その他（純額）",
+    "field": "presentation_parent",
+    "gt": "r27",
+    "pred": "r15"
+   },
+   {
+    "row": "r30",
+    "label": "有形固定資産合計",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r30",
+    "label": "有形固定資産合計",
+    "field": "presentation_parent",
+    "gt": "r15",
+    "pred": "r14"
+   },
+   {
+    "row": "r30",
+    "label": "有形固定資産合計",
+    "field": "calc_parent",
+    "gt": "r42",
+    "pred": null
+   },
+   {
+    "row": "r30",
+    "label": "有形固定資産合計",
+    "field": "row_type",
+    "gt": "subtotal",
+    "pred": "total"
+   },
+   {
+    "row": "r31",
+    "label": "無形固定資産",
+    "field": "presentation_level",
+    "gt": 2,
+    "pred": 1
+   },
+   {
+    "row": "r32",
+    "label": "リース資産",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r33",
+    "label": "その他",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 2
+   },
+   {
+    "row": "r34",
+    "label": "無形固定資産合計",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r34",
+    "label": "無形固定資産合計",
+    "field": "presentation_parent",
+    "gt": "r31",
+    "pred": "r14"
+   },
+   {
+    "row": "r34",
+    "label": "無形固定資産合計",
+    "field": "calc_parent",
+    "gt": "r42",
+    "pred": null
+   },
+   {
+    "row": "r34",
+    "label": "無形固定資産合計",
+    "field": "row_type",
+    "gt": "subtotal",
+    "pred": "total"
+   },
+   {
+    "row": "r35",
+    "label": "投資その他の資産",
+    "field": "presentation_level",
+    "gt": 2,
+    "pred": 0
+   },
+   {
+    "row": "r35",
+    "label": "投資その他の資産",
+    "field": "presentation_parent",
+    "gt": "r14",
+    "pred": null
+   },
+   {
+    "row": "r36",
+    "label": "投資有価証券",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r37",
+    "label": "関係会社株式",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r38",
+    "label": "長期貸付金",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r39",
+    "label": "退職給付に係る資産",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r40",
+    "label": "その他",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r41",
+    "label": "投資その他の資産合計",
+    "field": "presentation_level",
+    "gt": 3,
+    "pred": 1
+   },
+   {
+    "row": "r42",
+    "label": "固定資産合計",
+    "field": "presentation_level",
+    "gt": 2,
+    "pred": 0
+   },
+   {
+    "row": "r42",
+    "label": "固定資産合計",
+    "field": "presentation_parent",
+    "gt": "r14",
+    "pred": null
+   },
+   {
+    "row": "r43",
+    "label": "資産合計",
+    "field": "presentation_level",
+    "gt": 1,
+    "pred": 0
+   },
+   {
+    "row": "r43",
+    "label": "資産合計",
+    "field": "presentation_parent",
+    "gt": "r01",
+    "pred": null
+   }
+  ]
+ },
+ "corrections": {
+  "accuracy": 0.0,
+  "decided": 0,
+  "cells": 74,
+  "positives_gt": 2,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "differences": [
+   {
+    "row": "r03",
+    "label": "現金及び預金",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r03",
+    "label": "現金及び預金",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r04",
+    "label": "受取手形",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r04",
+    "label": "受取手形",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r05",
+    "label": "売掛金",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r05",
+    "label": "売掛金",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r06",
+    "label": "電子記録債権",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r06",
+    "label": "電子記録債権",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r07",
+    "label": "商品及び製品",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r07",
+    "label": "商品及び製品",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r08",
+    "label": "仕掛品",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r08",
+    "label": "仕掛品",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r09",
+    "label": "原材料及び貯蔵品",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r09",
+    "label": "原材料及び貯蔵品",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r10",
+    "label": "短期貸付金",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r10",
+    "label": "短期貸付金",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r11",
+    "label": "その他",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r11",
+    "label": "その他",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r12",
+    "label": "貸倒引当金",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r12",
+    "label": "貸倒引当金",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r13",
+    "label": "流動資産合計",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r13",
+    "label": "流動資産合計",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r16",
+    "label": "建物及び構築物",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r16",
+    "label": "建物及び構築物",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r17",
+    "label": "減価償却累計額",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r17",
+    "label": "減価償却累計額",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r18",
+    "label": "建物及び構築物（純額）",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r18",
+    "label": "建物及び構築物（純額）",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r19",
+    "label": "機械装置及び運搬具",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r19",
+    "label": "機械装置及び運搬具",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r20",
+    "label": "減価償却累計額",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r20",
+    "label": "減価償却累計額",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r21",
+    "label": "機械装置及び運搬具（純額）",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r21",
+    "label": "機械装置及び運搬具（純額）",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r22",
+    "label": "土地",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r22",
+    "label": "土地",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r23",
+    "label": "リース資産",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r23",
+    "label": "リース資産",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r24",
+    "label": "減価償却累計額",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r24",
+    "label": "減価償却累計額",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r25",
+    "label": "リース資産（純額）",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r25",
+    "label": "リース資産（純額）",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r26",
+    "label": "建設仮勘定",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r26",
+    "label": "建設仮勘定",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r27",
+    "label": "その他",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r27",
+    "label": "その他",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r28",
+    "label": "減価償却累計額",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r28",
+    "label": "減価償却累計額",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r29",
+    "label": "その他（純額）",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r29",
+    "label": "その他（純額）",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r30",
+    "label": "有形固定資産合計",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r30",
+    "label": "有形固定資産合計",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r32",
+    "label": "リース資産",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r32",
+    "label": "リース資産",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r33",
+    "label": "その他",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r33",
+    "label": "その他",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r34",
+    "label": "無形固定資産合計",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r34",
+    "label": "無形固定資産合計",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r36",
+    "label": "投資有価証券",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r36",
+    "label": "投資有価証券",
+    "period": "2026-03-31",
+    "gt": true,
+    "pred": null
+   },
+   {
+    "row": "r37",
+    "label": "関係会社株式",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r37",
+    "label": "関係会社株式",
+    "period": "2026-03-31",
+    "gt": true,
+    "pred": null
+   },
+   {
+    "row": "r38",
+    "label": "長期貸付金",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r38",
+    "label": "長期貸付金",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r39",
+    "label": "退職給付に係る資産",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r39",
+    "label": "退職給付に係る資産",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r40",
+    "label": "その他",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r40",
+    "label": "その他",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r41",
+    "label": "投資その他の資産合計",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r41",
+    "label": "投資その他の資産合計",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r42",
+    "label": "固定資産合計",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r42",
+    "label": "固定資産合計",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r43",
+    "label": "資産合計",
+    "period": "2025-03-31",
+    "gt": false,
+    "pred": null
+   },
+   {
+    "row": "r43",
+    "label": "資産合計",
+    "period": "2026-03-31",
+    "gt": false,
+    "pred": null
+   }
+  ]
+ },
+ "validation": {
+  "pred_summary": {
+   "template": {
+    "checks": 26,
+    "evaluable": 12,
+    "passed": 12,
+    "exact": 2,
+    "within_tolerance": 10,
+    "failed": 0,
+    "consistency": 1.0
+   },
+   "dynamic": {
+    "checks": 8,
+    "evaluable": 8,
+    "passed": 8,
+    "exact": 5,
+    "within_tolerance": 3,
+    "failed": 0,
+    "consistency": 1.0
+   },
+   "solver": {
+    "checks": 0,
+    "evaluable": 0,
+    "passed": 0,
+    "exact": 0,
+    "within_tolerance": 0,
+    "failed": 0,
+    "consistency": null
+   },
+   "coverage": 0.46153846153846156,
+   "template_expected": 26,
+   "template_evaluable": 12,
+   "consistency_rule_based": 1.0
+  },
+  "status_agreement_with_gt": 0.6190476190476191,
+  "differences": [
+   {
+    "check": [
+     "D:固定資産/有形固定資産/その他(純額)",
+     "2025-03-31"
+    ],
+    "gt": null,
+    "pred": "exact"
+   },
+   {
+    "check": [
+     "D:固定資産/有形固定資産/その他(純額)",
+     "2026-03-31"
+    ],
+    "gt": null,
+    "pred": "exact"
+   },
+   {
+    "check": [
+     "D:固定資産/有形固定資産/リース資産(純額)",
+     "2025-03-31"
+    ],
+    "gt": null,
+    "pred": "within_tolerance"
+   },
+   {
+    "check": [
+     "D:固定資産/有形固定資産/リース資産(純額)",
+     "2026-03-31"
+    ],
+    "gt": null,
+    "pred": "within_tolerance"
+   },
+   {
+    "check": [
+     "D:固定資産/有形固定資産/建物及び構築物(純額)",
+     "2025-03-31"
+    ],
+    "gt": null,
+    "pred": "exact"
+   },
+   {
+    "check": [
+     "D:固定資産/有形固定資産/建物及び構築物(純額)",
+     "2026-03-31"
+    ],
+    "gt": null,
+    "pred": "within_tolerance"
+   },
+   {
+    "check": [
+     "D:固定資産/有形固定資産/機械装置及び運搬具(純額)",
+     "2025-03-31"
+    ],
+    "gt": null,
+    "pred": "exact"
+   },
+   {
+    "check": [
+     "D:固定資産/有形固定資産/機械装置及び運搬具(純額)",
+     "2026-03-31"
+    ],
+    "gt": null,
+    "pred": "exact"
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/その他/その他(純額)",
+     "2025-03-31"
+    ],
+    "gt": "exact",
+    "pred": null
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/その他/その他(純額)",
+     "2026-03-31"
+    ],
+    "gt": "exact",
+    "pred": null
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)",
+     "2025-03-31"
+    ],
+    "gt": "within_tolerance",
+    "pred": null
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/リース資産/リース資産(純額)",
+     "2026-03-31"
+    ],
+    "gt": "within_tolerance",
+    "pred": null
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/建物及び構築物/建物及び構築物(純額)",
+     "2025-03-31"
+    ],
+    "gt": "exact",
+    "pred": null
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/建物及び構築物/建物及び構築物(純額)",
+     "2026-03-31"
+    ],
+    "gt": "within_tolerance",
+    "pred": null
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/機械装置及び運搬具/機械装置及び運搬具(純額)",
+     "2025-03-31"
+    ],
+    "gt": "exact",
+    "pred": null
+   },
+   {
+    "check": [
+     "D:資産の部/固定資産/有形固定資産/機械装置及び運搬具/機械装置及び運搬具(純額)",
+     "2026-03-31"
+    ],
+    "gt": "exact",
+    "pred": null
+   }
+  ]
+ }
+}
