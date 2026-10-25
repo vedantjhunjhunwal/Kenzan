@@ -263,3 +263,15 @@ def test_unit_is_read_on_a_positively_rotated_scan(tmp_path):
                      ocr=_backend(tmp_path, json.dumps(_gt_table(), ensure_ascii=False)))
     cc = pred["metadata"]["route"]["backend_diagnostics"]["cross_check"]
     assert cc["ocr_unit"] == "千円" and not any("unit" in p for p in cc["problems"])
+
+
+def test_a9_suffix_variant_accepts_lost_leading_groups_only():
+    """A9-suffix (pre-registered dev candidate): the OCR digit string must be a suffix of the VLM's."""
+    t = {"heading_lines": [], "columns": ["前(2025年3月31日)", "当(2026年3月31日)"],
+         "rows": [{"label": "x", "indent": 0, "values": ["3,377,407", "4,553"]}]}
+    sec = {"status": "ok", "n_columns": 2, "rows": [{"label_norm": "x", "values": {0: 407, 1: 4553},
+                                                    "signed": {0: 407, 1: 4553}}]}
+    assert not vlm.cell_agreement(t, sec, {0: 0}, "magnitude")["cells_ok"]      # strict: 407 != 3377407
+    assert vlm.cell_agreement(t, sec, {0: 0}, "suffix")["cells_ok"]             # suffix: '3377407' ends with '407'
+    sec["rows"][0]["values"][1] = 4554                                         # last digit differs
+    assert not vlm.cell_agreement(t, sec, {0: 0}, "suffix")["cells_ok"]

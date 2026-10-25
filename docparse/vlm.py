@@ -290,7 +290,8 @@ def derive_levels(table: dict, second: dict, m: dict[int, int] | None = None) ->
     return [min(range(len(centers)), key=lambda k: abs(centers[k] - x)) for x in xs], "page geometry"
 
 
-A9_COMPARE = "magnitude"      # "magnitude" (the rule) or "signed" (dev measurement only)
+A9_COMPARE = "magnitude"      # "magnitude" = A9-strict (the rule); "signed" and "suffix" (A9-suffix:
+                              # OCR digit string must be a suffix of the VLM's) are dev candidates
 
 
 def cell_agreement(table: dict, second: dict, m: dict[int, int], compare: str | None = None) -> dict:
@@ -317,7 +318,11 @@ def cell_agreement(table: dict, second: dict, m: dict[int, int], compare: str | 
             pv = parse_value(r["values"][k]) if r["values"][k] else None
             vv = None if pv is None or pv.reported_value is None else (
                 pv.reported_value if compare == "signed" else abs(pv.reported_value))
-            if vv != ov:
+            if compare == "suffix":
+                agree = vv is not None and str(vv).endswith(str(ov))
+            else:
+                agree = vv == ov
+            if not agree:
                 dis.append({"row": i, "label": r["label"], "col": k, "vlm": r["values"][k], "ocr": ov})
     summ = (f"{len(dis)} of {n} OCR-read cells disagree with the VLM, e.g. "
             + "; ".join(f"{d['label']} col{d['col']}: VLM {d['vlm']} vs OCR {d['ocr']}" for d in dis[:3])) if dis else ""
