@@ -117,3 +117,17 @@ def test_cache_key_is_the_embedded_image_bytes(tmp_path):
     assert how.startswith("embedded:")
     _, how2 = vlm.page_image(pymupdf.open(FIX)[0])                      # born-digital: rendered
     assert how2 == "render:300dpi"
+
+
+def test_smoke_gate_passes_a_correct_read_and_stops_a_bad_one(tmp_path):
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("vlm_run", ROOT / "scripts/vlm_run.py")
+    vr = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(vr)
+    good = vr.smoke(_backend(tmp_path / "a", json.dumps(_gt_table(), ensure_ascii=False)), tmp_path / "a")
+    assert good["passed"] and good["cells_correct"] == 74
+    t = _gt_table()
+    for r in t["rows"][2:7]:                                   # 10 cells wrong -> below 70/74
+        r["values"] = ["1", "2"]
+    bad = vr.smoke(_backend(tmp_path / "b", json.dumps(t, ensure_ascii=False)), tmp_path / "b")
+    assert not bad["passed"] and bad["cells_correct"] < vr.SMOKE_MIN_CELLS

@@ -138,6 +138,8 @@ fixed, with regression tests.
 
 ## 5. Held-out v3: Tesseract baseline (VLM pending)
 
+**Held-out v3 is 8 new degradations of the same reference page, not new documents.** It tests robustness to unseen scan conditions, not generalization across filings.
+
 A third degradation set was frozen before any VLM code existed: new seed, new rotation, noise and
 JPEG values, and pure-raster 250 and 175 dpi. The details and one logged correction are in
 `stress/FREEZE_LOG.txt`. Tesseract was run on it once, with the frozen v2 pipeline (`baselines/v2`,
@@ -164,6 +166,10 @@ was checked against the ground truth itself, with no VLM involved: on 0 of 8 pag
 agree with the correct values. The Tesseract read misses 15–22 of the correct values per page
 (`stress/out_heldout_v3/ocr_agreement_ceiling.json`). So that arm accepts no page here, even
 with a perfect VLM read. "VLM + checks" (A1–A5 alone) is reported next to it.
+
+Any accept from "VLM + checks" has no OCR agreement behind it. It rests on the identity checks alone, and on this page they catch only 70.7% of single ones-digit errors (`gt/out/detection_power.txt`, from `gt/detection_power.py`). This arm was frozen after the Tesseract output on v3 had been compared with the v3 ground truth, but before any VLM output existed (`stress/FREEZE_LOG.txt`, "VLM METHOD FROZEN").
+
+**Planned: held-out v3b, real-filing pages.** Once the filings in `bench/DOWNLOADS.md` are triaged, the balance-sheet pages of the sealed test filings will be rasterized with the v3 degradation parameters and scored against their XBRL ground truth. The pages, spec and code fingerprint will be locked before any of them is run, and each will be run once. That would be the first scan evidence on documents other than the reference page.
 
 **VLM arms: not run yet.** The code, the model choice and the frozen protocol are in
 [VLM.md](VLM.md).
@@ -232,7 +238,7 @@ PYTHON=.venv/bin/python bash scripts/run_all.sh
 
 The degraded PDFs are regenerated from the seeded specs. Expected pipeline fingerprints are
 `888416e5df3fbc7c` (v2) and `9e905d908f7ad771` (round 1). The current `docparse/` is v2 plus
-`vlm.py`, fingerprint `d0e040f00f51a9c8`. Every metric reproduces exactly; only timings differ.
+`vlm.py`, fingerprint `c3f58073874eed9c`. Every metric reproduces exactly; only timings differ.
 
 Individual commands:
 

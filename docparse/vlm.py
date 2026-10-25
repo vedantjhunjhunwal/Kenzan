@@ -225,8 +225,9 @@ class VLMBackend:
 class TransformersRunner:
     """Runs an open VLM with Hugging Face transformers (Colab or a local GPU). Greedy decoding.
 
-    quant: "4bit" (bitsandbytes nf4, ~7 GB for an 8B model: fits a free Colab T4; the default) or
-    "none" (bf16, ~18 GB: L4 / A100). It is part of the cache key, so the two never mix.
+    quant: "4bit" (bitsandbytes nf4 weights, fp16 compute, ~7 GB for an 8B model by estimate: a free
+    Colab T4; the default) or "none" (bf16 on Ampere or newer, ~18 GB: L4 / A100). quant is part of
+    the cache key, so the two never mix. The compute dtype is recorded with every response.
     """
 
     def __init__(self, model: str = DEFAULT_MODEL, quant: str = "4bit"):
@@ -238,22 +239,24 @@ class TransformersRunner:
         if quant not in ("4bit", "none"):
             raise ValueError("quant must be '4bit' or 'none'")
         self.quant = quant
-        kw = {"device_map": "auto"}
+        # Compute dtype: fp16 on pre-Ampere GPUs (T4 = compute capability 7.5 has no native bf16;
+        # torch may report emulated bf16 as "supported", so the capability is checked instead).
+        cap = torch.cuda.get_device_capability(0) if torch.cuda.is_available() else (0, 0)
+        dtype = torch.bfloat16 if (self.quant == "none" and cap[0] >= 8) else torch.float16
+        kw = {"device_map": "auto", "torch_dtype": dtype}
         if self.quant == "4bit":
             from transformers import BitsAndBytesConfig
-            # the vision encoder stays in fp16 (small, and it is what reads the digits)
+            # the vision encoder stays unquantized in fp16 (small, and it is what reads the digits)
             kw["quantization_config"] = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
                                                            bnb_4bit_compute_dtype=torch.float16,
                                                            llm_int8_skip_modules=["visual", "lm_head"])
-        else:
-            kw["torch_dtype"] = torch.bfloat16 if torch.cuda.is_available() and torch.cuda.is_bf16_supported() \
-                else torch.float16
         self.processor = AutoProcessor.from_pretrained(model)
         self.model = AutoModelForImageTextToText.from_pretrained(model, **kw).eval()
         import transformers
         self.info = {"model": model, "quant": self.quant, "gpu": torch.cuda.get_device_name(0)
                      if torch.cuda.is_available() else "cpu", "gpu_gb": round(gpu_gb, 1),
                      "transformers": transformers.__version__, "torch": torch.__version__,
+                     "compute_dtype": str(dtype).replace("torch.", ""), "gpu_capability": list(cap),
                      "model_revision": getattr(self.model.config, "_commit_hash", None)}
 
     def __call__(self, image: bytes, prompt: str, settings: dict) -> tuple[str, dict]:
