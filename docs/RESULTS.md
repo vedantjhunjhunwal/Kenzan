@@ -96,6 +96,8 @@ caught by A3: its required checks couldn't be evaluated.
 fully correct, so this is a reject-side result only. It doesn't show that the rule *accepts* a good
 scan, and with nothing degraded accepted, there is no false-accept *rate* to estimate.
 
+**These runs used acceptance rule A1–A5, which had holes.** Identity checks are invariant to the unit and to swapping whole value columns, and template checks match totals by label, not by tree position. So A1–A5 would accept a page with a wrong unit, swapped columns, or a wrong hierarchy if its values were consistent. Fake-VLM tables and the VLM smoke page (§5) showed this. Rules A6–A8 (unit read from the page; column periods parsed in order; on the VLM route, a second OCR reading that confirms unit, columns and indentation) fix it, and are tested in `tests/test_vlm.py` and `tests/test_round2.py`. The frozen held-out sets above have **not** been re-scored with A6–A8. The geometry variants were re-run with A6–A8 and are still all accepted.
+
 ## 4. Real-document results (JP-BS-Bench extractor)
 
 **What ran:** the benchmark's XBRL extractor (`bench/fetch_edinet.py --local`) and ground-truth builder
@@ -171,8 +173,7 @@ Any accept from "VLM + checks" has no OCR agreement behind it. It rests on the i
 
 **Planned: held-out v3b, real-filing pages.** Once the filings in `bench/DOWNLOADS.md` are triaged, the balance-sheet pages of the sealed test filings will be rasterized with the v3 degradation parameters and scored against their XBRL ground truth. The pages, spec and code fingerprint will be locked before any of them is run, and each will be run once. That would be the first scan evidence on documents other than the reference page.
 
-**VLM arms: not run yet.** The code, the model choice and the frozen protocol are in
-[VLM.md](VLM.md).
+**VLM arms: not run.** The VLM was run once on Colab (commit fcaa41d), on the smoke page only: the clean reference page at 300 dpi, which is not held-out. It scored 20/74 cells path-keyed, below the pre-registered 70/74 gate, so held-out v3 was not run. Its values were all right (74/74 value-correct); the indentation was wrong on 31 of 43 rows, so 54 correct values sat on wrong label paths. Rule A1–A5 still accepted the page: a structure-level false accept (`stress/out_vlm_smoke/diagnosis.md`). Details and the amendment that followed are in [VLM.md](VLM.md).
 
 ## 6. Limitations
 
@@ -190,11 +191,11 @@ Any accept from "VLM + checks" has no OCR agreement behind it. It rests on the i
   - Path-keyed scoring cascades on ancestor misreads; this is shown as a separate diagnostic.
   - A second, AI-based ground-truth review was reported by the user and did not run in the project.
 - **Acceptance untested on good scans** (see above).
+- **"0 false accepts" was measured with rule A1–A5**, which could not detect column swaps, unit errors, or wrong hierarchies with consistent values. A6–A8 fix this; held-out sets not re-scored.
 - **Not implemented.**
   - cross-page stitching (interface designed);
   - wrapped labels, 90° pages, two-column layouts;
-  - VLM results: the backend is implemented and tested with a fake model, but no real model has
-    been run ([VLM.md](VLM.md));
+  - VLM results on held-out pages: the one real run stopped at the smoke gate ([VLM.md](VLM.md));
   - deskew beyond ±5°.
 - **Assumptions.**
   - Rounding is truncation (consistent with all checks).

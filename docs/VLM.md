@@ -1,8 +1,61 @@
 # VLM path (scan route)
 
-**Status: code and protocol are done; the model has not been run.** This workspace has no GPU and
-can't reach Hugging Face, so the model runs on Colab (or any GPU) and its raw responses are cached.
-Scoring is offline. No VLM number appears anywhere in this repository until that cache exists.
+**Status: run once, on the smoke page only; it failed the gate, so no held-out page has a VLM
+result.** This workspace has no GPU and can't reach Hugging Face. The model runs on Colab and its
+raw responses are cached; scoring is offline.
+
+## Run 1: smoke test only (2026-10-25)
+
+| | |
+|---|---|
+| Code | commit fcaa41d, pushed to GitHub before any VLM output existed |
+| Hardware | Colab Tesla T4; 4-bit weights, fp16 compute; transformers 5.20.2, torch 2.11.0+cu130 |
+| Page | the clean reference page at 300 dpi (dev, not held-out) |
+| Result | **20/74** cells path-keyed, below the 70/74 gate; **74/74** value-correct; status ok; **accepted** by A1–A5 |
+| Time | 270.8 s for one page, 1648 new tokens |
+
+Every value, label, column header and the unit line were read correctly. The indentation was wrong
+on 31 of 43 rows, so 54 correct values sat on wrong label paths. Rule A1–A5 still accepted the page,
+because its checks match totals by label and only reject solver links. That makes it a false accept
+at the structure level. Full diagnosis: `stress/out_vlm_smoke/diagnosis.md`.
+
+**Limits of this run's record:**
+
+- `vlm_cache.zip` never reached this workspace, so its sha256 isn't recorded. The response was read
+  through Colab's file viewer; the copy kept here has a browser-computed sha256, and replaying it
+  offline reproduces 20/74 and the accept.
+- The model revision was not recorded: `config._commit_hash` was null. The runner now takes it from
+  huggingface_hub.
+
+## Amendment A6–A8 (after run 1, before any held-out VLM run)
+
+This was motivated by the smoke page, which is not held-out, and by fake-runner cases. It is logged
+in `stress/FREEZE_LOG.txt`.
+
+- **A6.** The unit must be read from the page.
+- **A7.** Every value column must map to a parsed period end, in a consistent order.
+- **A8 (VLM route).** A second reading of the same page by Tesseract must confirm four things:
+  - the unit, read from an OCR pass on the header band;
+  - the column dates;
+  - the column assignment of the values: each VLM column must overlap most with the same OCR
+    column;
+  - the indentation. Levels are now taken from the page geometry: the OCR label x0 of each aligned
+    row. The model's `indent` field is no longer used. If any row can't be aligned, the page goes to
+    review.
+
+Fake-runner results after the amendment (`tests/test_vlm.py`):
+
+| Case | Decision |
+|---|---|
+| exact table; all indents 0; 減価償却累計額 one step less | accept, 74/74 cells, structure 100% |
+| values in swapped columns | review (A8) |
+| unit line 百万円 instead of 千円 | review (A8) |
+| no heading lines | review (A6) |
+
+**The smoke response re-scored offline under A6–A8.** These are the same response bytes as above,
+with no new model call: 74/74 path-keyed, structure 100%, accepted
+(`stress/out_vlm_smoke/rescore_A6_A8/`). This is not the gate's official rerun. The gate is rerun
+at the start of the next Colab run, and v3 runs only if it passes there.
 
 ## Design
 
@@ -16,7 +69,7 @@ Scoring is offline. No VLM number appears anywhere in this repository until that
    a missing or extra key, a wrong type, or a value the shared number parser rejects. A response is
    never repaired.
 4. The table is laid out as synthetic positioned text. From there everything is the existing
-   pipeline: layout, hierarchy, identity checks and acceptance rule A1–A5.
+   pipeline: layout, hierarchy, identity checks and acceptance rule A1–A8.
 5. The model never sees the checks. There's no re-prompting or best-of-N on a failed check, so the
    read is verified, not optimised against the verifier.
 6. Responses are cached under the sha256 of the image bytes plus the model, settings and prompt hash.
@@ -60,7 +113,7 @@ Held-out v3 is **8 new degradations of the same reference page, not new document
    `stress/out_heldout_v3/results.json`.
 3. **VLM arms** are scored by `stress/run_vlm_compare.py`:
    - VLM alone (no checks);
-   - VLM + checks (A1–A5);
+   - VLM + checks (A1–A8 since the amendment; before it, A1–A5);
    - VLM + checks + OCR agreement.
 4. **Key question:** does any scan become fully correct *and* accepted, with 0 false accepts?
 
