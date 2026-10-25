@@ -1,0 +1,28 @@
+{
+ "page": "clean reference page rendered at 300 dpi (not a held-out page)",
+ "image_sha256": "bffc9ac653d3668176691f04b5fe37f577c1d904bb49f5273bfa092d5f561fab",
+ "model": "Qwen/Qwen3-VL-8B-Instruct",
+ "settings_key": "2350000f0897",
+ "status": "ok",
+ "reason": null,
+ "cells_correct": 20,
+ "cells_gt": 74,
+ "f1": 0.2702702702702703,
+ "decision": "accept",
+ "threshold": 70,
+ "passed": false,
+ "run_info": {
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "quant": "4bit",
+  "gpu": "Tesla T4",
+  "gpu_gb": 14.6,
+  "transformers": "5.20.2",
+  "torch": "2.11.0+cu130",
+  "compute_dtype": "float16",
+  "gpu_capability": [
+   7,
+   5
+  ],
+  "model_revision": null
+ }
+}

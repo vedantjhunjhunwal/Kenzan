@@ -166,5 +166,49 @@ def test_a8_vlm_without_confirmed_cross_check_is_review():
                                                                                        "problems": ["unit"]}}}
     d = decide(doc)
     assert d["decision"] == "review" and any(r.startswith("A8") for r in d["reasons"])
-    doc["metadata"]["route"]["backend_diagnostics"]["cross_check"] = {"ok": True, "problems": []}
+    doc["metadata"]["route"]["backend_diagnostics"]["cross_check"] = {"ok": True, "problems": [], "cells_ok": True}
     assert decide(doc)["decision"] == "accept"
+
+
+def test_a10_unresolved_subtotal_means_review():
+    rows = [{"row_id": "r1", "label_norm": "資産の部", "cells": {}},
+            {"row_id": "r2", "label_norm": "流動資産合計", "cells": {}, "row_type": "total",
+             "calc_parent": None, "calc_parent_source": "unresolved"}]
+    d = decide(_doc([_chk("T01", "exact")], rows=rows))
+    assert d["decision"] == "review" and any(r.startswith("A10") for r in d["reasons"])
+
+
+def test_a10_top_level_grand_total_is_fine():
+    rows = [{"row_id": "r1", "label_norm": "資産の部", "cells": {}},
+            {"row_id": "r2", "label_norm": "資産合計", "cells": {}, "row_type": "total",
+             "calc_parent": None, "calc_parent_source": None}]
+    assert decide(_doc([_chk("T01", "exact")], rows=rows))["decision"] == "accept"
+
+
+def test_a10_catches_the_vlm_smoke_hierarchy(tmp_path):
+    """Replay of the real VLM smoke response (wrong indentation) without the geometry fix:
+    A1-A5 accepted it; A10 must now send it to review."""
+    import io as _io
+    import json as _json
+    from pathlib import Path as _P
+    from docparse import vlm
+    from docparse.pipeline import parse_pdf
+    root = _P(__file__).resolve().parents[1]
+    rec = _json.loads((root / "stress/out_vlm_smoke/smoke_response.colab_viewer.json").read_text(encoding="utf-8"))
+    page = pymupdf.open(FIXTURES / "balance_sheet_after_correction.pdf")[0]
+    pix = page.get_pixmap(dpi=100, colorspace=pymupdf.csGRAY)
+    buf = _io.BytesIO()
+    Image.frombytes("L", (pix.width, pix.height), pix.samples).save(buf, format="PNG")
+    doc = pymupdf.open()
+    p = doc.new_page(width=page.rect.width, height=page.rect.height)
+    p.insert_image(p.rect, stream=buf.getvalue())
+    pdf = tmp_path / "scan.pdf"
+    doc.save(pdf)
+
+    class Replay:
+        def __call__(self, image, prompt, settings):
+            return rec["raw_text"], {}
+    be = vlm.VLMBackend(tmp_path / "c", "replay", runner=Replay(), second_reader=None)
+    d = parse_pdf(str(pdf), force_route="visual", ocr=be)
+    assert d["acceptance"]["decision"] == "review"
+    assert any(x.startswith("A10") for x in d["acceptance"]["reasons"]), d["acceptance"]["reasons"]

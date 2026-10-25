@@ -1,0 +1,440 @@
+{
+ "fingerprint": "31be56cdd4707f60",
+ "pages": {
+  "jpeg_q30": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     2,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 4,
+    "A10": 2
+   }
+  },
+  "noise_s15": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     1,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 10,
+    "A10": 2
+   }
+  },
+  "raster_100": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A8 VLM read not confirmed by the second reading: column dates differ or missing (VLM ['2025-03-31', '2026-03-31'], OCR [None, None]); indentation not confirmed: 20 of 43 rows not matched to a page row"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A8": 3816,
+    "A3": 5,
+    "A10": 2
+   }
+  },
+  "raster_150": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "raster_300": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     1,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 6,
+    "A10": 2
+   }
+  },
+  "rot_+1": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_+2": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_-1": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_-2": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "scan_combo": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     190,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A8": 11,
+    "A3": 5,
+    "A10": 2
+   }
+  }
+ },
+ "n_cases": 3816,
+ "disabled": [
+  "A9"
+ ],
+ "a9_compare": "magnitude",
+ "summary": {
+  "perfect_read_accepted": "9/10",
+  "perfect_read_rejected": {
+   "raster_100": [
+    "A8 VLM read not confirmed by the second reading: column dates differ or missing (VLM ['2025-03-31', '2026-03-31'], OCR [None, None]); indentation not confirmed: 20 of 43 rows not matched to a page row"
+   ]
+  },
+  "injected_accepted_all_pages": {
+   "digit:hundreds+": "0/23860",
+   "digit:ones": "1710/6480",
+   "digit:tens": "0/6390",
+   "row:columns_swapped": "0/350",
+   "row:dropped": "4/360",
+   "sign:dropped_△": "9/100",
+   "sign:spurious_△": "0/620"
+  },
+  "injected_accepted_total": "1723/38160",
+  "injected_accepted_total_on_accepted_pages": "1723/34344",
+  "injected_accepted_on_pages_where_perfect_read_is_accepted": {
+   "digit:hundreds+": "0/21474",
+   "digit:ones": "1710/5832",
+   "digit:tens": "0/5751",
+   "row:columns_swapped": "0/315",
+   "row:dropped": "4/324",
+   "sign:dropped_△": "9/90",
+   "sign:spurious_△": "0/558"
+  }
+ }
+}

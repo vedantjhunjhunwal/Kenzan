@@ -5,7 +5,7 @@
 <p align="center">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/python-3.11%2B-blue">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
-  <img alt="Tests: 125 passed, 7 skipped" src="https://img.shields.io/badge/tests-125%20passed%2C%207%20skipped-brightgreen">
+  <img alt="Tests: 133 passed, 7 skipped" src="https://img.shields.io/badge/tests-133%20passed%2C%207%20skipped-brightgreen">
 </p>
 
 Kenzan turns pages of Japanese financial statements into verified tables, and uses accounting
@@ -81,10 +81,18 @@ or `bash scripts/setup_tesseract.sh`.
 .venv/bin/python -m pytest -q tests
 ```
 
-Expected: **125 passed, 7 skipped** (with the Japanese OCR model). The seven skipped tests need a real EDINET filing (Nintendo,
-docID S100Y9NX), which isn't redistributed here. Download its XBRL zip from EDINET to
-`tests/fixtures/edinet/S100Y9NX_xbrl.zip` and all 132 run. `bash scripts/run_all.sh` reproduces
-every result, including the stress sets.
+Expected:
+
+| Environment | Result |
+|---|---|
+| with the Japanese OCR model (`bash scripts/setup_tesseract.sh`) | **133 passed, 7 skipped** |
+| without the `jpn` model | **119 passed, 21 skipped** (the OCR and VLM second-reading tests skip) |
+| with the model and the Nintendo XBRL zip | **140 passed** |
+
+The seven tests that always skip without it need a real EDINET filing (Nintendo, docID S100Y9NX),
+which isn't redistributed here: download its XBRL zip from EDINET to
+`tests/fixtures/edinet/S100Y9NX_xbrl.zip`. `bash scripts/run_all.sh` reproduces every result,
+including the stress sets.
 
 ## Limitations
 
