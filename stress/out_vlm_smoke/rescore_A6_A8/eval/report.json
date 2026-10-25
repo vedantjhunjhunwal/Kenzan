@@ -60,7 +60,7 @@
     "rows": 43
    },
    "cache": "written",
-   "cache_file": "/tmp/claude-0/-home-claude/8ab20d58-a4eb-54a1-9872-33878757114e/scratchpad/rescore/cache/Qwen_Qwen3-VL-8B-Instruct/bffc9ac653d366817669_2350000f0897.json",
+   "cache_file": "<replay-cache>/Qwen_Qwen3-VL-8B-Instruct/bffc9ac653d366817669_2350000f0897.json",
    "image_sha256": "bffc9ac653d3668176691f04b5fe37f577c1d904bb49f5273bfa092d5f561fab",
    "run_info": {
     "replay": "transcribed Colab response",
