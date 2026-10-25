@@ -102,6 +102,14 @@ with no new model call: 74/74 path-keyed, structure 100%, accepted
 (`stress/out_vlm_smoke/rescore_A6_A8/`). This is not the gate's official rerun. The gate is rerun
 at the start of the next Colab run, and v3 runs only if it passes there.
 
+## Code after the VLM freeze (2026-10-25)
+
+The notebook stays pinned to commit bd96a9b: the frozen method for VLM run 2. The code after it adds
+the wrapped-label reconstruction and rule A11 ([RESULTS.md §8](RESULTS.md#8-wrapped-labels-and-spanning-headers-synthetic-layout-fixtures)).
+That code is **not** the frozen VLM method. On the dev measurement it behaves the same: 1/10
+perfect reads and 21/38160 injected errors accepted, page for page
+(`stress/out_vlm_dev_seen/a9_strict_parser_14deea7/`).
+
 ## Design
 
 `docparse/vlm.py`:

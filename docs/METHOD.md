@@ -23,10 +23,33 @@ A balance-sheet page is a tree with numbers on it, not a grid. A useful parser h
 
 | Level | Metric | Notes |
 |---|---|---|
-| 1. Cells | Precision / recall / F1 on `(label_path, period_end)` → `(reported_value, is_nil, is_negative)` | Exact match at page precision (thousands as printed), so unit-conversion bugs can't hide. Keyed on `label_path` because `label_ja` repeats (その他 ×4, 減価償却累計額 ×4). |
+| 1. Cells | Precision / recall / F1 on `(label_path, period_end)` → `(reported_value, is_nil, is_negative)` | Exact match at page precision (thousands as printed). Keyed on `label_path` because `label_ja` repeats (その他 ×4, 減価償却累計額 ×4). **Blind to the unit**: a page read with the wrong unit still scores 100% here (corrected 2026-10-25: this row used to say unit bugs "can't hide"; the per-dimension metric below scores the unit). |
 | 2. Structure | Accuracy of presentation level / presentation parent / calc parent / row type | Rows aligned by label sequence, independent of paths, so structure errors are measured apart from value errors. |
 | 2b. Corrections | `is_corrected` accuracy plus positive-class precision/recall | 2 of 74 cells are positive on the reference page. `None` (unknown, e.g. scans) counts as wrong. |
 | 3. Label-free | **Consistency** = passed / evaluable identity checks; **coverage** = evaluable / expected template checks | Registry of 13 J-GAAP balance-sheet identities × periods. A missing row is `not_evaluable`, never a pass. Checks whose structure came from the solver fallback are reported separately. |
+
+### Per-dimension scores and complete-page correctness (added 2026-10-25)
+
+The three levels above are kept unchanged, so older results stay comparable. Next to them,
+`docparse/evaluate.py:score_dimensions` scores each dimension on its own, so that one error can't
+hide behind another:
+
+| Dimension | What is compared | Independent of |
+|---|---|---|
+| `values_printed` | printed value, sign, nil, per cell; rows aligned by label sequence, then by position inside unmatched gaps; columns by position | labels, paths, period dates |
+| `labels`, `paths` | `label_norm`, `label_path` per aligned row | values |
+| `structure_*` | presentation level and parent, calc parent, row type per aligned row | values |
+| `unit` | `unit_ja` and multiplier | — |
+| `periods_columns`, `periods_cells` | per column: period-end date and context; per cell: the value sits under the right date | — |
+| `scaled_values` | per cell: the yen amount (printed × multiplier) under the right date | — |
+| `rows_matched`, `no_extra` | every ground-truth row found; no extra rows or cells | — |
+
+**`page_correct`** is true only when the page status is `ok` and every dimension is 1.0.
+**`overall_score`** is the mean of the dimensions, so it is 1.0 only on a correct page.
+`is_corrected` is reported as `page_correct_incl_corrections` but not required, because scans can't
+determine it. Regression tests (`tests/test_metrics_dimensions.py`) show that a wrong unit, swapped
+period dates, swapped value columns, a wrong sign, a missing cell or row, an extra row or cell, a
+misread label, and a wrong presentation or calc parent all score below 1.0.
 
 ### Rounding-aware tolerance
 
@@ -89,15 +112,16 @@ PDF page
  └─ router ── text-quality gate: chars decode, numbers parse, page not mostly image
      ├─ born_digital → TextLayerBackend: spans + glyph boxes + horizontal vector segments
      └─ visual       → render 300 dpi → deskew (projection profile) → Tesseract jpn (tessdata_best)
-                                                                     [VLMBackend: stub]
+                                                                     [or VLM, docs/VLM.md]
  └─ merge       split on whitespace; join touching runs and number fragments (△ joins its digits)
  └─ layout      lines grouped with a robust line height; value columns from right edges;
-                period headers (Western/和暦); unit, title, 訂正 marker; body rows
+                period headers (Western/和暦); unit, title, 訂正 marker; body rows;
+                wrapped labels joined (row spans), column-spanning header cells, uncertain layouts flagged
  └─ normalize   NFKC labels + footnote refs; △/▲ → negative; dash glyphs → nil; unit → yen + decimals
  └─ hierarchy   indent → presentation tree; rules → calc tree; solver fallback (contiguous runs, every period)
  └─ corrections glyph-width underline → is_corrected; column-width rules excluded; None without vectors
  └─ validate    statement type from title, else from content; registry checks → consistency, coverage
- └─ acceptance  accept / review with reasons (A1–A10)
+ └─ acceptance  accept / review with reasons (A1–A11)
  └─ export      JSON + wide CSV + long CSV (same schema as the ground truth); status ok / no_table / failed
 ```
 
@@ -121,8 +145,12 @@ height and skew are learned per page, with tolerances relative to font size.
 | A8 | VLM route only: a second reading of the same page (Tesseract; header band for the unit) confirms the unit, the column dates, the column assignment of the values, and the indentation (taken from page geometry for every row) |
 | A9 | VLM route only: per-cell agreement. Wherever Tesseract reads a number in an aligned cell, its magnitude equals the VLM value's magnitude; cells Tesseract leaves blank don't block (signs are left to the identity checks, because Tesseract often loses △) |
 | A10 | no subtotal or total row with an unresolved calc parent |
+| A11 | the layout reconstruction is certain: no label-only line that may belong to the row above or below, no label-only line with nothing indented under it, no column-spanning header that carries a date (added 2026-10-25) |
 
 **Amendments A6–A8 and A9–A10 (2026-10-25).** Identity checks are invariant to the unit and to swapping whole columns, and template checks match totals by label, not by tree position. So A1–A5 accepted pages with a wrong unit, swapped columns, or a wrong hierarchy whenever the values were consistent. This was found with a fake VLM runner and with the VLM smoke page (the clean reference page, not held-out); see `stress/out_vlm_smoke/diagnosis.md` and `stress/FREEZE_LOG.txt`. Earlier "0 false accepts" results were obtained with A1–A5.
+
+**Amendment A11 (2026-10-25)** comes with the wrapped-label reconstruction below: a page whose layout
+the rules can't decide is an unsupported layout and goes to review, instead of being parsed on a guess.
 
 Cross-section checks (e.g. 資産合計 = 負債純資産合計) are required only when every section they need is
 on the page. `is_corrected = None` (scans) doesn't block acceptance but is reported.
@@ -148,6 +176,22 @@ on the page. `is_corrected = None` (scans) doesn't block acceptance but is repor
   The solver fallback only considers contiguous runs, the same run must fit every period (a period
   that can't be evaluated rejects it), and its checks are reported separately. Memo rows (「うち…」)
   are never summed. Rows still open at page end are `unresolved`, not guessed.
+- **Wrapped labels and spans (2026-10-25).** A label-only line (no value in any column) is a section
+  header when the next line is indented deeper. Otherwise it is joined to a neighbouring row:
+  - to the row below when that row starts at the same x (or one hanging indent deeper) and carries
+    the values ("values on the last line");
+  - to the row above when that row carries the values and this line starts at most one hanging indent
+    deeper ("values on the first line").
+
+  A join also needs the two lines closer than 0.8 × the page's row pitch: lines inside one cell sit
+  closer than rows. A line placed like a continuation but spaced like a row may equally be a row
+  whose values are missing (seen on noisy scans), so it is flagged `ambiguous_wrap` and the page goes
+  to review (A11). A joined row records its physical lines (`row_span`: line count, one box per line,
+  which line holds the values). Header tokens record the value columns they cover (`header_cells`);
+  a token over two or more columns is a column-spanning cell and never becomes part of one column's
+  period text. This covers single-table statement pages; it is not general PDF table support (no
+  multi-table pages, no vertical text, no ruled-grid recovery, no cells that span value columns in
+  the table body).
 - **Corrections.** An underline counts when it is as wide as the glyphs; column-width rules are
   excluded, with thickness as the tie-breaker. No vector data gives `None`, not `False`.
 - **Coverage.** The denominator is a fixed registry, so coverage means the same thing on every filing.

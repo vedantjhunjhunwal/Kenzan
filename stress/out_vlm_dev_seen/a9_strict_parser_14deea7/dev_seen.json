@@ -1,0 +1,490 @@
+{
+ "fingerprint": "14deea7864c83094",
+ "pages": {
+  "jpeg_q30": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 1 of 70 OCR-read cells disagree with the VLM, e.g. 建設仮勘定 col1: VLM 4,553 vs OCR 553"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3815,
+    "A3": 5,
+    "A8": 4,
+    "A10": 2
+   }
+  },
+  "noise_s15": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 3 of 62 OCR-read cells disagree with the VLM, e.g. 売掛金 col1: VLM 884,339 vs OCR 894339; 減価償却累計額 col1: VLM △1,640,253 vs OCR 640258; 有形固定資産合計 col1: VLM 1,352,610 vs OCR 610"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3816,
+    "A3": 5,
+    "A8": 10,
+    "A10": 2
+   }
+  },
+  "raster_100": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A8 VLM read not confirmed by the second reading: column dates differ or missing (VLM ['2025-03-31', '2026-03-31'], OCR [None, None]); indentation not confirmed: 20 of 43 rows not matched to a page row",
+    "A9 6 of 7 OCR-read cells disagree with the VLM, e.g. 現金及び預金 col0: VLM 2,002,429 vs OCR 429; その他 col1: VLM 14,466 vs OCR 346; 無形固定資産合計 col0: VLM 44,261 vs OCR 261"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A8": 3816,
+    "A9": 3816,
+    "A3": 5,
+    "A10": 2
+   }
+  },
+  "raster_150": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 1 of 70 OCR-read cells disagree with the VLM, e.g. 建設仮勘定 col1: VLM 4,553 vs OCR 553"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3815,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "raster_300": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     19,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     1,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3495,
+    "A3": 5,
+    "A8": 6,
+    "A10": 2
+   }
+  },
+  "rot_+1": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 1 of 71 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3815,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_+2": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 2 of 72 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407; 建物及び構築物 col0: VLM 2,121,360 vs OCR 360"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3816,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_-1": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 2 of 71 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407; 建物及び構築物 col0: VLM 2,121,360 vs OCR 360"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3816,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_-2": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 2 of 71 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407; 建物及び構築物 col0: VLM 2,121,360 vs OCR 360"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3816,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "scan_combo": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 3 of 61 OCR-read cells disagree with the VLM, e.g. 建物及び構築物 col1: VLM 1,880,082 vs OCR 880082; 退職給付に係る資産 col0: VLM 18,404 vs OCR 404; 資産合計 col0: VLM 7,534,110 vs OCR 110"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3816,
+    "A8": 11,
+    "A3": 5,
+    "A10": 2
+   }
+  }
+ },
+ "n_cases": 3816,
+ "disabled": [],
+ "a9_compare": "magnitude",
+ "summary": {
+  "perfect_read_accepted": "1/10",
+  "perfect_read_rejected": {
+   "jpeg_q30": [
+    "A9 1 of 70 OCR-read cells disagree with the VLM, e.g. 建設仮勘定 col1: VLM 4,553 vs OCR 553"
+   ],
+   "noise_s15": [
+    "A9 3 of 62 OCR-read cells disagree with the VLM, e.g. 売掛金 col1: VLM 884,339 vs OCR 894339; 減価償却累計額 col1: VLM △1,640,253 vs OCR 640258; 有形固定資産合計 col1: VLM 1,352,610 vs OCR 610"
+   ],
+   "raster_100": [
+    "A8 VLM read not confirmed by the second reading: column dates differ or missing (VLM ['2025-03-31', '2026-03-31'], OCR [None, None]); indentation not confirmed: 20 of 43 rows not matched to a page row",
+    "A9 6 of 7 OCR-read cells disagree with the VLM, e.g. 現金及び預金 col0: VLM 2,002,429 vs OCR 429; その他 col1: VLM 14,466 vs OCR 346; 無形固定資産合計 col0: VLM 44,261 vs OCR 261"
+   ],
+   "raster_150": [
+    "A9 1 of 70 OCR-read cells disagree with the VLM, e.g. 建設仮勘定 col1: VLM 4,553 vs OCR 553"
+   ],
+   "rot_+1": [
+    "A9 1 of 71 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407"
+   ],
+   "rot_+2": [
+    "A9 2 of 72 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407; 建物及び構築物 col0: VLM 2,121,360 vs OCR 360"
+   ],
+   "rot_-1": [
+    "A9 2 of 71 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407; 建物及び構築物 col0: VLM 2,121,360 vs OCR 360"
+   ],
+   "rot_-2": [
+    "A9 2 of 71 OCR-read cells disagree with the VLM, e.g. 流動資産合計 col1: VLM 3,377,407 vs OCR 407; 建物及び構築物 col0: VLM 2,121,360 vs OCR 360"
+   ],
+   "scan_combo": [
+    "A9 3 of 61 OCR-read cells disagree with the VLM, e.g. 建物及び構築物 col1: VLM 1,880,082 vs OCR 880082; 退職給付に係る資産 col0: VLM 18,404 vs OCR 404; 資産合計 col0: VLM 7,534,110 vs OCR 110"
+   ]
+  },
+  "injected_accepted_all_pages": {
+   "digit:hundreds+": "0/23860",
+   "digit:ones": "19/6480",
+   "digit:tens": "0/6390",
+   "row:columns_swapped": "0/350",
+   "row:dropped": "1/360",
+   "sign:dropped_△": "1/100",
+   "sign:spurious_△": "0/620"
+  },
+  "injected_accepted_total": "21/38160",
+  "injected_accepted_total_on_accepted_pages": "21/3816",
+  "injected_accepted_on_pages_where_perfect_read_is_accepted": {
+   "digit:hundreds+": "0/2386",
+   "digit:ones": "19/648",
+   "digit:tens": "0/639",
+   "row:columns_swapped": "0/35",
+   "row:dropped": "1/36",
+   "sign:dropped_△": "1/10",
+   "sign:spurious_△": "0/62"
+  }
+ }
+}

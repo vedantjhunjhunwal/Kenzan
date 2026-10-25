@@ -8,7 +8,10 @@ review, and can guide extraction.
 **Status:** the tooling is built and tested. For one real filing (Nintendo, S100Y9NX, dev), the XBRL
 extractor and ground-truth builder have been run and independently verified; the PDF parser has not
 yet been run on it ([RESULTS.md §4](RESULTS.md#4-real-document-results-jp-bs-bench-extractor)).
-The full set isn't collected yet.
+The full set isn't collected yet. On 2026-10-25 a download attempt was blocked by the session's
+network policy (EDINET not reachable), so no filing was added. The runner that puts the PDF parser
+on the collected filings, `bench/eval_real.py`, exists and is tested on a synthetic filing only
+([RESULTS.md §9](RESULTS.md#9-real-documents-through-the-pdf-parser-not-run)).
 
 ## 1. Design
 

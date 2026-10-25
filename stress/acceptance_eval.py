@@ -163,7 +163,10 @@ def corruptions(clean: dict):
     yield "unit_wrong", "unit", unit_wrong
     yield "unit_removed", "unit", lambda sp: [s for s in sp if "単位" not in s.text]
     if d:
-        date_lines = {h["line"] for h in lay["header_cells"] if parse_dates(h["text"]) or "年" in h["text"]}
+        line_text = defaultdict(str)
+        for h in lay["header_cells"]:
+            line_text[h["line"]] += h["text"]
+        date_lines = {ln for ln, t in line_text.items() if parse_dates(t)}   # not the 年度 label line
         dated = [h for h in lay["header_cells"] if h["line"] in date_lines and h["colspan"] == 1]
         allh = [h for h in lay["header_cells"] if h["colspan"] == 1]
 
@@ -308,6 +311,17 @@ def main(out_dir: str) -> dict:
                 b["incorrect_accepted"] += 1
                 if len(b["examples_accepted"]) < 3:
                     b["examples_accepted"].append(f"{r['page']}: {r['target']} ({', '.join(r['failed_dims'])})")
+    # the view that measures detection: runs on pages whose clean parse is correct AND accepted (a page
+    # that is in review anyway can't show whether a corruption would have been caught)
+    accepted_clean = {c["page"] for c in clean_rows if c["page_correct"] and c["decision"] == "accept"}
+    on_accepted = defaultdict(lambda: {"runs": 0, "accepted": 0, "caught_by": defaultdict(int)})
+    for r in runs:
+        if r["page"] in accepted_clean and not r["page_correct"]:
+            b = on_accepted[r["type"]]
+            b["runs"] += 1
+            b["accepted"] += r["decision"] == "accept"
+            for reason in (r["reasons"] if r["decision"] == "review" else []):
+                b["caught_by"][reason] += 1
     correct = [c for c in clean_rows if c["page_correct"]]
     incorrect_runs = [r for r in runs if not r["page_correct"]]
     summary = {
@@ -323,8 +337,13 @@ def main(out_dir: str) -> dict:
         "corrupted_incorrect_accepted": sum(r["decision"] == "accept" for r in incorrect_runs),
         "corrupted_no_op": len(runs) - len(incorrect_runs),
         "edits_not_applied": len(not_applied),
+        "pages_accepted_clean": len(accepted_clean),
+        "runs_on_pages_accepted_clean": sum(b["runs"] for b in on_accepted.values()),
+        "accepted_on_pages_accepted_clean": sum(b["accepted"] for b in on_accepted.values()),
     }
-    res = {"summary": summary, "clean_pages": clean_rows, "by_type": dict(by_type), "runs": runs,
+    res = {"summary": summary, "clean_pages": clean_rows, "by_type": dict(by_type),
+           "by_type_on_pages_accepted_clean": {t: {**b, "caught_by": dict(b["caught_by"])}
+                                               for t, b in on_accepted.items()}, "runs": runs,
            "not_applied": not_applied}
     (out / "results.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     (out / "results.md").write_text(to_markdown(res), encoding="utf-8")
@@ -342,7 +361,15 @@ def to_markdown(res: dict) -> str:
     L += ["", f"Correct pages accepted (coverage): **{s['correct_pages_accepted']}/{s['correct_pages']}**; "
               f"correct pages sent to review: **{s['correct_pages_sent_to_review']}/{s['correct_pages']}**; "
               f"incorrect clean parses accepted: **{s['incorrect_clean_pages_accepted']}/{s['incorrect_clean_pages']}**.",
-          "", "## Corrupted reads of the correct pages", "",
+          "", f"## Detection: corrupted reads of the {s['pages_accepted_clean']} pages accepted when clean", "",
+          "| Corruption | Runs | Incorrect and accepted | Rate | Caught by (reasons on the review runs) |",
+          "|---|--:|--:|--:|---|"]
+    for t, b in res["by_type_on_pages_accepted_clean"].items():
+        cb = ", ".join(f"{k} {v}" for k, v in sorted(b["caught_by"].items())) or "–"
+        L.append(f"| {t} | {b['runs']} | {b['accepted']} | {b['accepted'] / b['runs']:.1%} | {cb} |")
+    n, a = s["runs_on_pages_accepted_clean"], s["accepted_on_pages_accepted_clean"]
+    L += [f"| **all** | {n} | {a} | {a / n:.1%} | |", "",
+          "## All corrupted reads of the correct pages (including the page that is in review anyway)", "",
           "| Corruption | Runs | Output incorrect | Incorrect and accepted | Rate | No-op (output still correct) |",
           "|---|--:|--:|--:|--:|--:|"]
     for t, b in res["by_type"].items():
