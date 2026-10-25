@@ -97,7 +97,7 @@ PDF page
  └─ hierarchy   indent → presentation tree; rules → calc tree; solver fallback (contiguous runs, every period)
  └─ corrections glyph-width underline → is_corrected; column-width rules excluded; None without vectors
  └─ validate    statement type from title, else from content; registry checks → consistency, coverage
- └─ acceptance  accept / review with reasons (A1–A5)
+ └─ acceptance  accept / review with reasons (A1–A8)
  └─ export      JSON + wide CSV + long CSV (same schema as the ground truth); status ok / no_table / failed
 ```
 
@@ -116,6 +116,11 @@ height and skew are learned per page, with tolerances relative to font size.
 | A3 | zero not-evaluable template checks among those whose sections are all on the page |
 | A4 | coverage is not n/a (statement type recognised, template exists) |
 | A5 | no calc-parent links from the solver fallback (`allow_solver=False` by default): those links are chosen by the same arithmetic the checks test |
+| A6 | the unit was read from the page (a unit line such as （単位：千円）) |
+| A7 | every value column maps to a period-end date parsed from its header; the dates are distinct, in one direction, and 前… is earlier than 当… |
+| A8 | VLM route only: a second reading of the same page (Tesseract; header band for the unit) confirms the unit, the column dates, the column assignment of the values, and the indentation (taken from page geometry for every row) |
+
+**Amendment A6–A8 (2026-10-25).** Identity checks are invariant to the unit and to swapping whole columns, and template checks match totals by label, not by tree position. So A1–A5 accepted pages with a wrong unit, swapped columns, or a wrong hierarchy whenever the values were consistent. This was found with a fake VLM runner and with the VLM smoke page (the clean reference page, not held-out); see `stress/out_vlm_smoke/diagnosis.md` and `stress/FREEZE_LOG.txt`. Earlier "0 false accepts" results were obtained with A1–A5.
 
 Cross-section checks (e.g. 資産合計 = 負債純資産合計) are required only when every section they need is
 on the page. `is_corrected = None` (scans) doesn't block acceptance but is reported.

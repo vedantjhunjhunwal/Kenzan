@@ -5,7 +5,7 @@
 <p align="center">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/python-3.11%2B-blue">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
-  <img alt="Tests: 111 passed, 7 skipped" src="https://img.shields.io/badge/tests-111%20passed%2C%207%20skipped-brightgreen">
+  <img alt="Tests: 125 passed, 7 skipped" src="https://img.shields.io/badge/tests-125%20passed%2C%207%20skipped-brightgreen">
 </p>
 
 Kenzan turns pages of Japanese financial statements into verified tables, and uses accounting
@@ -51,7 +51,7 @@ It provides:
 | Scanned variants, seen (10; motivated the fixes, not evidence) | 31.7% → 72.7% | `stress/summary_all_runs.json` |
 | Acceptance on degraded pages | 0 of 19 degraded pages accepted, hence 0 false accepts (not an accept-side result) | `stress/summary_all_runs.json` |
 | Held-out v3: 8 new degradations of the same page, not new documents (frozen before any VLM code), Tesseract | mean cell F1 70.7%; 0 of 8 accepted, 0 false accepts | `stress/out_heldout_v3/results.json` |
-| VLM on the same 8 scans | **not run yet** (code, model choice and protocol ready: [docs/VLM.md](docs/VLM.md)) | — |
+| VLM on the same 8 scans | **not run**: the smoke test on the clean page failed the gate (20/74 path-keyed, 74/74 value-correct; wrong indentation) | `stress/out_vlm_smoke/` |
 | Real filing (Nintendo FY2026): benchmark XBRL extractor + ground-truth builder only | 88 values, 0 mismatches vs tagged facts; 28 identity checks evaluated, 0 failed (26 template + 2 dynamic). PDF parser not yet run on this filing | `bench/results/S100Y9NX/` |
 
 Each number comes from the file named next to it; the full tables are in [docs/RESULTS.md](docs/RESULTS.md).
@@ -81,9 +81,9 @@ or `bash scripts/setup_tesseract.sh`.
 .venv/bin/python -m pytest -q tests
 ```
 
-Expected: **111 passed, 7 skipped**. The seven skipped tests need a real EDINET filing (Nintendo,
+Expected: **125 passed, 7 skipped** (with the Japanese OCR model). The seven skipped tests need a real EDINET filing (Nintendo,
 docID S100Y9NX), which isn't redistributed here. Download its XBRL zip from EDINET to
-`tests/fixtures/edinet/S100Y9NX_xbrl.zip` and all 118 run. `bash scripts/run_all.sh` reproduces
+`tests/fixtures/edinet/S100Y9NX_xbrl.zip` and all 132 run. `bash scripts/run_all.sh` reproduces
 every result, including the stress sets.
 
 ## Limitations
@@ -94,7 +94,11 @@ every result, including the stress sets.
 2. **The scan path is weak.** OCR reads △ as other characters, and misread header labels break the
    calculation-tree rules. Best held-out cell F1 is about 85%. The checks catch these pages, but they
    don't repair them.
-3. **Accept-side untested on scans.** No degraded page was fully correct, so it isn't shown yet that
+3. **The "0 false accepts" results used an older rule.** Acceptance rule A1–A5 could not detect
+   swapped value columns, a wrong unit, or a wrong hierarchy when the values are consistent (found
+   on the VLM smoke page and with a fake VLM). Rules A6–A8 fix this; the frozen held-out sets have
+   not been re-scored with them.
+4. **Accept-side untested on scans.** No degraded page was fully correct, so it isn't shown yet that
    the rule accepts a *good* scan. Ground truth and pipeline also share label-normalization code.
 
 ## AI assistance
