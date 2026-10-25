@@ -53,11 +53,18 @@ def smoke(be: vlm.VLMBackend, cache: Path) -> dict:
     pdf.parent.mkdir(parents=True, exist_ok=True)
     doc.save(pdf)
     rep = evaluate(str(pdf), str(GT), str(cache / "smoke" / "eval"), backend=be)
+    # value-correct cells (positional diagnostic): path-keyed misses whose value is nevertheless right
+    sys.path.insert(0, str(ROOT / "stress"))
+    from run_stress import diagnose
+    pred = json.loads((cache / "smoke" / "eval" / "prediction.json").read_text(encoding="utf-8"))
+    diag = diagnose(json.loads(Path(f"{GT}.json").read_text(encoding="utf-8")), pred)
+    value_correct = rep["cells"]["correct"] + sum("path mismatch" in d["cause"] for d in diag)
     res = {"page": "clean reference page rendered at 300 dpi (not a held-out page)",
            "image_sha256": vlm.pdf_image_sha256(pdf), "model": be.model,
            "settings_key": vlm.settings_key(be.model, be.settings), "status": rep["status"],
            "reason": rep["reason"], "cells_correct": rep["cells"]["correct"], "cells_gt": rep["cells"]["gt_cells"],
-           "f1": rep["cells"]["f1"], "decision": rep["acceptance"]["decision"],
+           "value_correct": value_correct, "f1": rep["cells"]["f1"], "decision": rep["acceptance"]["decision"],
+           "acceptance_reasons": rep["acceptance"]["reasons"],
            "threshold": SMOKE_MIN_CELLS, "passed": rep["cells"]["correct"] >= SMOKE_MIN_CELLS,
            "run_info": getattr(be.runner, "info", {})}
     (cache / "smoke" / "smoke_result.json").write_text(json.dumps(res, indent=1, ensure_ascii=False), encoding="utf-8")
@@ -92,7 +99,8 @@ def main(argv=None) -> int:
     print("model:", json.dumps(runner.info), "| settings key:", vlm.settings_key(a.model, be.settings))
 
     sm = smoke(be, Path(a.cache))
-    print(f"SMOKE TEST (clean reference page, 300 dpi): {sm['cells_correct']}/{sm['cells_gt']} cells correct, "
+    print(f"SMOKE TEST (clean reference page, 300 dpi): {sm['cells_correct']}/{sm['cells_gt']} cells correct "
+          f"(gate, path-keyed), {sm['value_correct']}/{sm['cells_gt']} value-correct, "
           f"status {sm['status']}, decision {sm['decision']}"
           + (f", reason {sm['reason']}" if sm["reason"] else ""))
     if not sm["passed"]:

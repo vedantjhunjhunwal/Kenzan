@@ -3575,6 +3575,7 @@
  "acceptance": {
   "decision": "accept",
   "reasons": [],
+  "rule": "A1-A5 + A6-A8 (2026-10-25)",
   "sections_present": [
    "資産"
   ],

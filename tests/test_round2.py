@@ -86,11 +86,15 @@ def test_title_removed_page_falls_back_to_content(tmp_path):
 
 
 # --------------------------------------------------------------------------- acceptance rule
-def _doc(checks, rows=None, coverage=0.5, status="ok"):
+PERIODS = [{"id": "prior", "date": "2025-03-31"}, {"id": "current", "date": "2026-03-31"}]
+
+
+def _doc(checks, rows=None, coverage=0.5, status="ok", unit="千円", periods=None):
     rows = rows if rows is not None else [{"row_id": "r1", "label_norm": "資産の部", "cells": {}},
                                           {"row_id": "r2", "label_norm": "流動資産合計", "cells": {}}]
     return {"status": status, "reason": None, "rows": rows, "checks": checks,
-            "check_summary": {"coverage": coverage}}
+            "check_summary": {"coverage": coverage}, "periods": PERIODS if periods is None else periods,
+            "metadata": {"unit_ja": unit, "route": {"backend": "text_layer"}}}
 
 
 def _chk(cid, status, sections=("資産",), template=True):
@@ -136,3 +140,31 @@ def test_failed_page_is_review():
 
 def test_sections_from_labels():
     assert sections_present(["資産の部", "負債純資産合計"]) == {"資産", "負債", "純資産"}
+
+
+# --------------------------------------------------------------------------- amendment A6-A8 (2026-10-25)
+def test_a6_missing_unit_means_review():
+    d = decide(_doc([_chk("T01", "exact")], unit=None))
+    assert d["decision"] == "review" and any(r.startswith("A6") for r in d["reasons"])
+
+
+@pytest.mark.parametrize("periods,why", [
+    ([{"id": "prior", "date": "2025-03-31"}, {"id": "current", "date": None}], "without a parsed"),
+    ([{"id": "prior", "date": "2026-03-31"}, {"id": "current", "date": "2026-03-31"}], "same period-end"),
+    ([{"id": "prior", "date": "2026-03-31"}, {"id": "current", "date": "2025-03-31"}], "前 column"),
+    ([{"id": "col0", "date": "2025-03-31"}, {"id": "col1", "date": "2027-03-31"},
+      {"id": "col2", "date": "2026-03-31"}], "one direction"),
+])
+def test_a7_bad_period_columns_mean_review(periods, why):
+    d = decide(_doc([_chk("T01", "exact")], periods=periods))
+    assert d["decision"] == "review" and any(r.startswith("A7") and why in r for r in d["reasons"])
+
+
+def test_a8_vlm_without_confirmed_cross_check_is_review():
+    doc = _doc([_chk("T01", "exact")])
+    doc["metadata"]["route"] = {"backend": "vlm", "backend_diagnostics": {"cross_check": {"ok": False,
+                                                                                       "problems": ["unit"]}}}
+    d = decide(doc)
+    assert d["decision"] == "review" and any(r.startswith("A8") for r in d["reasons"])
+    doc["metadata"]["route"]["backend_diagnostics"]["cross_check"] = {"ok": True, "problems": []}
+    assert decide(doc)["decision"] == "accept"

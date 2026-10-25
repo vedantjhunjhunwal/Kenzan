@@ -2,8 +2,10 @@
 
 These tests show that (a) a correct table from a VLM goes through the shared pipeline to the same
 cells, structure and ACCEPT decision as the born-digital page, (b) one wrong digit fails a check and
-goes to review, and (c) malformed responses and cache misses fail the page instead of being
-repaired. They are not evidence about any real model's accuracy.
+goes to review, (c) malformed responses and cache misses fail the page instead of being repaired,
+and (d) amendment A6-A8: column swaps, wrong or missing unit lines go to review, while
+indentation-only errors are corrected from the page geometry. They are not evidence about any real
+model's accuracy. Tests marked needs_ocr use the Tesseract second reading (jpn model).
 """
 import io
 import json
@@ -15,14 +17,27 @@ from PIL import Image
 
 from docparse import vlm
 from docparse.evaluate import evaluate
+from docparse.extract import TesseractBackend
 from docparse.pipeline import parse_pdf
+
+
+def _ocr_ready() -> bool:
+    try:
+        TesseractBackend().check_setup()
+        return True
+    except Exception:
+        return False
+
+
+needs_ocr = pytest.mark.skipif(not _ocr_ready(), reason="Tesseract jpn model not set up (second reading)")
 
 ROOT = Path(__file__).resolve().parents[1]
 FIX = ROOT / "tests/fixtures/balance_sheet_after_correction.pdf"
 GT = ROOT / "gt/out/ground_truth"
 
 
-def _scan_pdf(tmp_path, dpi=100) -> Path:
+def _scan_pdf(tmp_path, dpi=300) -> Path:
+    """Same render as the smoke test (300 dpi grey PNG), so the OCR second reading is shared."""
     page = pymupdf.open(FIX)[0]
     pix = page.get_pixmap(dpi=dpi, colorspace=pymupdf.csGRAY)
     buf = io.BytesIO()
@@ -53,10 +68,12 @@ class FakeRunner:
         return self.text, {"model": "fake"}
 
 
-def _backend(tmp_path, text):
-    return vlm.VLMBackend(cache_dir=tmp_path / "cache", model="fake/model", runner=FakeRunner(text))
+def _backend(tmp_path, text, second_reader="tesseract"):
+    return vlm.VLMBackend(cache_dir=tmp_path / "cache", model="fake/model", runner=FakeRunner(text),
+                          second_reader=second_reader)
 
 
+@needs_ocr
 def test_correct_vlm_table_is_verified_and_accepted(tmp_path):
     pdf = _scan_pdf(tmp_path)
     be = _backend(tmp_path, json.dumps(_gt_table(), ensure_ascii=False))
@@ -97,6 +114,7 @@ def test_fenced_json_is_accepted_as_is():
     assert vlm.parse_response("```json\n" + json.dumps(t) + "\n```") == t
 
 
+@needs_ocr
 def test_cache_roundtrip_and_offline_miss(tmp_path):
     pdf = _scan_pdf(tmp_path)
     text = json.dumps(_gt_table(), ensure_ascii=False)
@@ -119,6 +137,7 @@ def test_cache_key_is_the_embedded_image_bytes(tmp_path):
     assert how2 == "render:300dpi"
 
 
+@needs_ocr
 def test_smoke_gate_passes_a_correct_read_and_stops_a_bad_one(tmp_path):
     import importlib.util
     spec = importlib.util.spec_from_file_location("vlm_run", ROOT / "scripts/vlm_run.py")
@@ -131,3 +150,65 @@ def test_smoke_gate_passes_a_correct_read_and_stops_a_bad_one(tmp_path):
         r["values"] = ["1", "2"]
     bad = vr.smoke(_backend(tmp_path / "b", json.dumps(t, ensure_ascii=False)), tmp_path / "b")
     assert not bad["passed"] and bad["cells_correct"] < vr.SMOKE_MIN_CELLS
+
+
+# --------------------------------------------------------------------------- amendment A6-A8 (2026-10-25)
+def _variant(kind: str) -> dict:
+    t = _gt_table()
+    if kind == "all_indents_0":
+        for r in t["rows"]:
+            r["indent"] = 0
+    elif kind == "depreciation_one_less":
+        for r in t["rows"]:
+            if r["label"] == "減価償却累計額":
+                r["indent"] -= 1
+    elif kind == "swapped_columns":                    # 2025 numbers under 2026, headers kept
+        for r in t["rows"]:
+            r["values"] = r["values"][::-1]
+    elif kind == "unit_million":
+        t["heading_lines"] = [h.replace("千円", "百万円") for h in t["heading_lines"]]
+    elif kind == "no_heading_lines":
+        t["heading_lines"] = []
+    return t
+
+
+@needs_ocr
+@pytest.mark.parametrize("kind,decision,cells,reason", [
+    ("exact", "accept", 74, None),
+    ("all_indents_0", "accept", 74, None),             # indentation comes from the page geometry
+    ("depreciation_one_less", "accept", 74, None),
+    ("swapped_columns", "review", None, "A8"),
+    ("unit_million", "review", None, "A8"),
+    ("no_heading_lines", "review", None, "A6"),
+])
+def test_fake_vlm_cases_after_amendment(tmp_path, kind, decision, cells, reason):
+    pdf = _scan_pdf(tmp_path)
+    be = _backend(tmp_path, json.dumps(_variant(kind), ensure_ascii=False))
+    rep = evaluate(str(pdf), str(GT), str(tmp_path / "eval"), route="visual", backend=be)
+    assert rep["acceptance"]["decision"] == decision, rep["acceptance"]["reasons"]
+    if cells is not None:
+        assert rep["cells"]["correct"] == cells
+        assert rep["structure"]["calc_parent"] == 1.0 and rep["structure"]["presentation_parent"] == 1.0
+    if reason:
+        assert any(r.startswith(reason) for r in rep["acceptance"]["reasons"])
+
+
+def test_without_a_second_reading_every_vlm_page_goes_to_review(tmp_path):
+    pdf = _scan_pdf(tmp_path)
+    be = _backend(tmp_path, json.dumps(_gt_table(), ensure_ascii=False), second_reader=None)
+    pred = parse_pdf(str(pdf), force_route="visual", ocr=be)
+    assert pred["acceptance"]["decision"] == "review"
+    assert any(r.startswith("A8") for r in pred["acceptance"]["reasons"])
+
+
+def test_text_layer_page_without_unit_line_goes_to_review():
+    """A6 on the born-digital route: remove the unit line from the page's text layer."""
+    doc = pymupdf.open(FIX)
+    page = doc[0]
+    for r in page.search_for("単位"):
+        page.add_redact_annot(r.include_rect(pymupdf.Rect(r.x0 - 20, r.y0, r.x1 + 60, r.y1)))
+    page.apply_redactions()
+    from docparse.pipeline import parse_page
+    d = parse_page(page)
+    assert d["metadata"]["unit_ja"] is None
+    assert d["acceptance"]["decision"] == "review" and any(x.startswith("A6") for x in d["acceptance"]["reasons"])
