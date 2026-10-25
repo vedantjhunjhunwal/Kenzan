@@ -191,8 +191,8 @@ claim(SB, f"{acc_all} of {n_all} degraded pages accepted, hence {fa_all} false a
 claim(SB, f"{gts['cells']} values, {gts['xbrl_value_mismatch']} mismatches; {len(ev)} checks, "
       f"{sum(c['status'] == 'fail' for c in ev)} failed", NG, gts["sign_differs_from_xbrl"] == 0)
 claim("README.md", f"{gts['cells']} values, {gts['xbrl_value_mismatch']} mismatches vs tagged facts", NG, True)
-claim(SB, "6 tests skip", "tests/test_real_edinet.py",
-      len(re.findall(r"^def test_", (ROOT / "tests/test_real_edinet.py").read_text(encoding="utf-8"), re.M)) == 6)
+claim(SB, "7 tests skip", "tests/test_real_edinet.py",
+      len(re.findall(r"^def test_", (ROOT / "tests/test_real_edinet.py").read_text(encoding="utf-8"), re.M)) == 7)
 
 ones = re.search(r"digit:ones\s+\d+\s+[\d.]+%\s+([\d.]+%)", dp).group(1)
 for d in ("docs/RESULTS.md", "docs/VLM.md", "SUBMISSION.md"):

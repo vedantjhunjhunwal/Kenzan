@@ -250,10 +250,10 @@ Individual commands:
     visual_transcription.json out)                                             # rebuild ground truth
 ```
 
-**Optional real-filing fixture.** The six tests in `tests/test_real_edinet.py` need Nintendo's XBRL
+**Optional real-filing fixture.** The seven tests in `tests/test_real_edinet.py` need Nintendo's XBRL
 zip, which isn't redistributed here. To run them:
 
 1. Download docID **S100Y9NX** from the public EDINET site (書類検索 → XBRL).
 2. Save it as `tests/fixtures/edinet/S100Y9NX_xbrl.zip`.
 
-Without it, those six tests are skipped.
+Without it, those seven tests are skipped.
