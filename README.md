@@ -16,6 +16,7 @@ identities to decide which pages can be trusted without human review.
 - **Benchmark:** [docs/BENCHMARK.md](docs/BENCHMARK.md)
 - **Ground truth:** [docs/METHOD.md#3-ground-truth](docs/METHOD.md#3-ground-truth)
 - **Reproducing:** [docs/RESULTS.md#reproducing](docs/RESULTS.md#reproducing)
+- **VLM run (Google Colab):** [notebooks/vlm_heldout_v3.ipynb](notebooks/vlm_heldout_v3.ipynb), [open in Colab](https://colab.research.google.com/github/vedantjhunjhunwal/Kenzan/blob/main/notebooks/vlm_heldout_v3.ipynb)
 
 It provides:
 
