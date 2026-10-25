@@ -29,8 +29,10 @@ from pathlib import Path
 import pymupdf
 from PIL import Image
 
-from .extract import PageContent, Span
-from .normalize import parse_value
+import difflib
+
+from .extract import PageContent, Span, TesseractBackend
+from .normalize import label_norm, parse_dates, parse_unit, parse_value
 
 DEFAULT_MODEL = "Qwen/Qwen3-VL-8B-Instruct"
 # Fixed before any VLM output was seen (logged in stress/FREEZE_LOG.txt). Part of the cache key.
@@ -181,6 +183,129 @@ def table_to_content(table: dict, page_index: int, width: float, height: float, 
     return PageContent(page_index, width, height, spans, None, src, diagnostics)
 
 
+# ----------------------------------------------------------------------------- second reading (A8)
+# Amendment A6-A8 (2026-10-25, stress/FREEZE_LOG.txt): the VLM's read is cross-checked against an
+# independent Tesseract reading of the same page, and row indentation is taken from the page
+# geometry (Tesseract label x0), not from the model's "indent" field.
+_SECOND: dict[str, dict] = {}            # in-process cache by image sha256 (OCR is deterministic)
+
+
+def second_reading(page: pymupdf.Page, image_sha: str, ocr=None) -> dict:
+    if image_sha in _SECOND:
+        return _SECOND[image_sha]
+    from .layout import analyze
+    from .merge import merge_tokens
+    try:
+        content = (ocr or TesseractBackend()).read(page)
+    except Exception as e:                                   # noqa: BLE001
+        return {"status": "unavailable", "reason": type(e).__name__}
+    lay = analyze(merge_tokens(content.spans))
+    band_unit, band_text = None, ""
+    try:                                                     # header band read on its own (psm 6)
+        band_text = header_band_text(page, lay.body[0].y0 if lay.body else 0.25 * page.rect.height)
+        u = parse_unit(band_text)
+        band_unit = u[0] if u else None
+    except Exception:                                        # noqa: BLE001
+        pass
+    rows = []
+    for br in lay.body:
+        vals = {}
+        for ci, tok in br.values.items():
+            pv = parse_value(tok.text)
+            if pv is not None and pv.reported_value is not None:
+                vals[ci] = abs(pv.reported_value)
+        rows.append({"label_norm": label_norm(br.label_text)[0],
+                     "x0": br.label_tokens[0].x0 if br.label_tokens else None, "values": vals})
+    out = {"status": "ok", "unit": band_unit or (lay.unit[0] if lay.unit else None),
+           "unit_source": "header band" if band_unit else ("full page" if lay.unit else None),
+           "dates": [c.period.get("date") if c.period else None for c in lay.columns],
+           "n_columns": len(lay.columns), "char_size": lay.char_size, "rows": rows,
+           "deskew_deg": content.diagnostics.get("deskew_deg")}
+    _SECOND[image_sha] = out
+    return out
+
+
+def header_band_text(page: pymupdf.Page, body_top_pt: float, dpi: int = 300) -> str:
+    """OCR of the strip above the table body alone (the full-page pass garbles the small unit line:
+    on the clean reference page it read 「（単位：千円）」 as noise). Same render, deskew and
+    model as the full-page pass; psm 6; fixed before any held-out VLM output."""
+    import os
+    import subprocess
+    import tempfile
+    from .deskew import deskew as _deskew
+    be = TesseractBackend()
+    be.check_setup()
+    pix = page.get_pixmap(dpi=dpi, colorspace=pymupdf.csGRAY)
+    img, _ = _deskew(Image.frombytes("L", (pix.width, pix.height), pix.samples))
+    cut = min(img.height, int((body_top_pt + 4) * dpi / 72))
+    with tempfile.TemporaryDirectory() as td:
+        f = os.path.join(td, "band.png")
+        img.crop((0, 0, img.width, cut)).save(f)
+        out = subprocess.run(["tesseract", f, "stdout", "-l", be.lang, "--psm", "6"], capture_output=True,
+                             text=True, env=be._env())
+    return out.stdout
+
+
+def align_rows(vlm_labels: list[str], ocr_labels: list[str]) -> dict[int, int]:
+    """VLM row index -> OCR row index: label-sequence alignment, then pairing by order inside
+    'replace' gaps of equal length (a misread label still pairs with its own row)."""
+    m: dict[int, int] = {}
+    sm = difflib.SequenceMatcher(a=vlm_labels, b=ocr_labels, autojunk=False)
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == "equal" or (tag == "replace" and i2 - i1 == j2 - j1):
+            for k in range(i2 - i1):
+                m[i1 + k] = j1 + k
+    return m
+
+
+def derive_levels(table: dict, second: dict) -> tuple[list[int] | None, str]:
+    """Levels for every VLM row from the OCR label x0 of its aligned row, or None (with why)."""
+    if second.get("status") != "ok":
+        return None, "no second reading"
+    from .hierarchy import cluster_1d
+    m = align_rows([label_norm(r["label"])[0] for r in table["rows"]], [r["label_norm"] for r in second["rows"]])
+    xs = [second["rows"][m[i]]["x0"] if i in m else None for i in range(len(table["rows"]))]
+    missing = sum(x is None for x in xs)
+    if missing:
+        return None, f"{missing} of {len(xs)} rows not matched to a page row"
+    centers = cluster_1d(xs, tol=0.4 * second["char_size"])
+    return [min(range(len(centers)), key=lambda k: abs(centers[k] - x)) for x in xs], "page geometry"
+
+
+def cross_check(table: dict, second: dict, levels_why: str, levels_ok: bool) -> dict:
+    problems: list[str] = []
+    if second.get("status") != "ok":
+        return {"ok": False, "problems": [f"second reading unavailable ({second.get('reason')})"]}
+    vu = parse_unit(" ".join(table["heading_lines"]))
+    vu = vu[0] if vu else None
+    if vu is None or second["unit"] is None:
+        problems.append(f"unit not read by both (VLM {vu}, OCR {second['unit']})")
+    elif vu != second["unit"]:
+        problems.append(f"unit differs (VLM {vu}, OCR {second['unit']})")
+    vdates = [(parse_dates(c) or [None])[-1] for c in table["columns"]]
+    if None in vdates or None in second["dates"] or vdates != second["dates"]:
+        problems.append(f"column dates differ or missing (VLM {vdates}, OCR {second['dates']})")
+    # column assignment of values: each VLM column must overlap most with the same OCR column
+    ncol = len(table["columns"])
+    vcols = [{abs(pv.reported_value) for r in table["rows"] if r["values"][k]
+              for pv in [parse_value(r["values"][k])] if pv is not None and pv.reported_value is not None}
+             for k in range(ncol)]
+    ocols = [{r["values"][j] for r in second["rows"] if j in r["values"]} for j in range(second["n_columns"])]
+    overlap = [[len(v & o) for o in ocols] for v in vcols]
+    if second["n_columns"] != ncol:
+        problems.append(f"column count differs (VLM {ncol}, OCR {second['n_columns']})")
+    else:
+        for k in range(ncol):
+            others = [overlap[k][j] for j in range(ncol) if j != k]
+            if not overlap[k][k] or (others and overlap[k][k] <= max(others)):
+                problems.append(f"values of VLM column {k} do not match OCR column {k} best (overlap {overlap[k]})")
+    if not levels_ok:
+        problems.append(f"indentation not confirmed: {levels_why}")
+    return {"ok": not problems, "problems": problems, "vlm_unit": vu, "ocr_unit": second["unit"],
+            "vlm_dates": vdates, "ocr_dates": second["dates"], "value_overlap": overlap,
+            "indent_source": levels_why if levels_ok else "vlm (unconfirmed)"}
+
+
 # ----------------------------------------------------------------------------- backend
 class VLMBackend:
     """Visual-route backend. `runner(image_bytes, prompt, settings) -> (raw_text, info)` is optional;
@@ -188,10 +313,11 @@ class VLMBackend:
     name = "vlm"
 
     def __init__(self, cache_dir: str | Path = "vlm_cache", model: str = DEFAULT_MODEL,
-                 settings: dict | None = None, runner=None):
+                 settings: dict | None = None, runner=None, second_reader: str | None = "tesseract"):
         self.cache_dir, self.model = Path(cache_dir), model
         self.settings = dict(DEFAULT_SETTINGS | (settings or {}))
         self.runner = runner
+        self.second_reader = second_reader          # None: no cross-check -> A8 sends every page to review
 
     def response_for(self, image: bytes) -> tuple[str, dict]:
         sha = hashlib.sha256(image).hexdigest()
@@ -216,8 +342,20 @@ class VLMBackend:
         image, how = page_image(page)
         raw, info = self.response_for(image)
         table = parse_response(raw)                       # VLMSchemaError -> page failed -> review
+        second = (second_reading(page, info["image_sha256"]) if self.second_reader == "tesseract"
+                  else {"status": "unavailable", "reason": "no second reader configured"})
+        levels, why = derive_levels(table, second)
+        vlm_indent = [r["indent"] for r in table["rows"]]
+        if levels is not None:                            # geometry wins over the model's indent field
+            for r, lv in zip(table["rows"], levels):
+                r["indent"] = lv
+        cc = cross_check(table, second, why, levels is not None)
         diag = {"model": self.model, "settings_key": settings_key(self.model, self.settings),
-                "image_source": how, "vlm_rows": len(table["rows"])} | info
+                "image_source": how, "vlm_rows": len(table["rows"]), "cross_check": cc,
+                "indent_changed_rows": sum(a != b for a, b in zip(vlm_indent, [r["indent"] for r in table["rows"]])),
+                "second_reading": {k: second.get(k) for k in ("status", "reason", "unit", "unit_source", "dates",
+                                                              "deskew_deg")}
+                | {"rows": len(second.get("rows", []))}} | info
         return table_to_content(table, page.number, page.rect.width, page.rect.height, diag)
 
 
@@ -257,7 +395,21 @@ class TransformersRunner:
                      if torch.cuda.is_available() else "cpu", "gpu_gb": round(gpu_gb, 1),
                      "transformers": transformers.__version__, "torch": torch.__version__,
                      "compute_dtype": str(dtype).replace("torch.", ""), "gpu_capability": list(cap),
-                     "model_revision": getattr(self.model.config, "_commit_hash", None)}
+                     "model_revision": self._revision(model)}
+
+    def _revision(self, model: str) -> str | None:
+        """Commit sha of the weights actually loaded: the local snapshot folder name, else the hub's
+        current sha (config._commit_hash was null on Colab run 1)."""
+        try:
+            from huggingface_hub import snapshot_download
+            return Path(snapshot_download(model, local_files_only=True)).name
+        except Exception:                                    # noqa: BLE001
+            pass
+        try:
+            from huggingface_hub import model_info
+            return model_info(model).sha
+        except Exception:                                    # noqa: BLE001
+            return getattr(self.model.config, "_commit_hash", None)
 
     def __call__(self, image: bytes, prompt: str, settings: dict) -> tuple[str, dict]:
         if settings["quant"] != self.quant:
