@@ -1,0 +1,13 @@
+{
+ "docID": "S100Y9NX",
+ "split": "dev",
+ "metadata": {
+  "standard": "jgaap",
+  "unit": "百万円",
+  "bs_in_xbrl": true,
+  "bs_pages": null,
+  "liabilities_equity_own_page": null,
+  "pdf_status": "no_pdf"
+ },
+ "note": "filing_metadata on the XBRL zip only; PDF not in hand, so bs_pages and liabilities_equity_own_page are unknown"
+}

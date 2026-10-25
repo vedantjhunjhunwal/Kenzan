@@ -354,3 +354,99 @@ def test_triage_seals_test_filings_unopened(tmp_path, monkeypatch):
     rec = json.loads((tmp_path / "SEALED_TEST.json").read_text(encoding="utf-8"))
     assert set(rec["sealed"]["S100TEST"]["sha256"]) == {"S100TEST.pdf", "S100TEST_xbrl.zip"}
     assert "SEALED" in (tmp_path / "FREEZE_LOG.txt").read_text(encoding="utf-8")
+
+
+# --------------------------------------------------------------------------- automatic sealed-filing metadata
+def _bs_pdf(path, pages):
+    doc = pymupdf.open()
+    for lines in pages:
+        p = doc.new_page()
+        y = 60
+        for t in lines:
+            p.insert_text((50, y), t, fontname="japan", fontsize=9)
+            y += 13
+    doc.save(path)
+
+
+def _sealable_pair(tmp_path, std="Japan GAAP", title="連結貸借対照表", two_page=True):
+    import bench_fixture as bf
+    import io as _io
+    import zipfile as _zf
+    raw = bf.xbrl_zip(std, title=title)
+    buf = _io.BytesIO()
+    with _zf.ZipFile(_io.BytesIO(raw)) as src, _zf.ZipFile(buf, "w") as z:
+        for n in src.namelist():
+            z.writestr(f"S100META/{n}", src.read(n))
+    zp = tmp_path / "S100META_xbrl.zip"
+    zp.write_bytes(buf.getvalue())
+    nums = [f"項目{k}   {k},000   {k},100" for k in range(1, 12)]
+    assets = [f"①【{title}】", "（単位：千円）", "資産の部", "流動資産"] + nums + ["資産合計   7,534,110   5,135,249"]
+    liab = ["負債の部", "流動負債"] + nums + ["負債純資産合計   7,534,110   5,135,249"]
+    pdf = tmp_path / "S100META.pdf"
+    _bs_pdf(pdf, [["目次"], assets, liab] if two_page else [["目次"], assets + liab])
+    return zp, pdf
+
+
+def test_metadata_two_page_bs_with_liabilities_on_own_page(tmp_path):
+    import triage as tr
+    zp, pdf = _sealable_pair(tmp_path)
+    m = tr.filing_metadata(zp, pdf)
+    assert m["standard"] == "jgaap" and m["unit"] == "千円" and m["bs_in_xbrl"]
+    assert m["bs_pages"] == 2 and m["liabilities_equity_own_page"] is True and m["pdf_status"] == "ok"
+
+
+def test_metadata_one_page_bs_and_coverage_table(tmp_path):
+    import triage as tr
+    zp, pdf = _sealable_pair(tmp_path, two_page=False)
+    m = tr.filing_metadata(zp, pdf)
+    assert m["bs_pages"] == 1 and m["liabilities_equity_own_page"] is False
+    entries = [{"docID": "S100ONE", "metadata": m}]
+    cov = tr.coverage(entries)
+    assert cov["千円"] == ["S100ONE"] and cov["IFRS"] == [] and cov["two-page balance sheet"] == []
+    table = tr.coverage_table(entries)
+    assert "| IFRS | **no** |" in table and "Missing:" in table and "split.py which" in table
+
+
+def test_metadata_without_pdf_and_with_broken_zip(tmp_path):
+    import triage as tr
+    zp, _ = _sealable_pair(tmp_path)
+    m = tr.filing_metadata(zp, None)
+    assert m["unit"] == "千円" and m["bs_pages"] is None and m["pdf_status"] == "no_pdf"
+    bad = tmp_path / "bad.zip"
+    bad.write_bytes(b"not a zip")
+    m2 = tr.filing_metadata(bad, None)
+    assert m2["error"].startswith("xbrl:") and ":" in m2["error"] and len(m2["error"]) < 40   # type only
+
+
+def test_triage_records_metadata_for_sealed_filings(tmp_path, monkeypatch):
+    import triage as tr
+    code = next(f"E{n:05d}" for n in range(1, 999) if sp.hash_split(f"E{n:05d}") == "test")
+    dl = tmp_path / "downloads"
+    dl.mkdir()
+    zp, pdf = _sealable_pair(dl)
+    import io as _io
+    import zipfile as _zf
+    buf = _io.BytesIO()
+    with _zf.ZipFile(zp) as src, _zf.ZipFile(buf, "w") as z:
+        for n in src.namelist():
+            z.writestr(n, src.read(n))
+        z.writestr("XbrlSearchDlInfo.csv", ("ダウンロードデータ作成日,2026年10月25日現在,件数,1件,\r\n"
+                                            "書類管理番号,書類名,EDINET(ファンド)コード,提出者(ファンド),提出者法人番号\r\n"
+                                            f"S100META,有価証券報告書,{code},テスト社,1\r\n").encode("cp932"))
+    zp.write_bytes(buf.getvalue())
+    monkeypatch.setattr(tr, "SEALED_RECORD", tmp_path / "SEALED_TEST.json")
+    monkeypatch.setattr(tr, "FREEZE_LOG", tmp_path / "FREEZE_LOG.txt")
+    monkeypatch.setattr(sp, "FORCED_DEV_FILE", tmp_path / "none.txt")
+    s = tr.triage(str(dl), str(tmp_path / "realdocs"))
+    m = s["test_sealed"][0]["metadata"]
+    assert m["bs_pages"] == 2 and m["liabilities_equity_own_page"] is True and m["unit"] == "千円"
+    assert s["coverage"]["two-page balance sheet"] == ["S100META"]
+    rec = json.loads((tmp_path / "SEALED_TEST.json").read_text(encoding="utf-8"))
+    assert rec["sealed"]["S100META"]["metadata"]["standard"] == "jgaap"
+
+
+def test_metadata_detects_ifrs(tmp_path):
+    import triage as tr
+    zp, pdf = _sealable_pair(tmp_path, std="IFRS", title="連結財政状態計算書")
+    m = tr.filing_metadata(zp, pdf)
+    assert m["standard"] == "ifrs" and m["bs_pages"] == 2

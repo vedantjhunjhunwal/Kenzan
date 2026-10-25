@@ -117,3 +117,11 @@ def test_local_pairing_by_docid_and_by_folder(tmp_path):
     assert pairs[0][1].name == "S100Y9NX.pdf" and any("other.pdf" in n for n in notes)
     s = fe.run(["--local", str(b), "--out", str(tmp_path / "o"), "--no-zip"])
     assert s["outcomes"] == {"excluded:bs_heading_not_found_in_pdf": 1}   # blank PDF: no balance sheet
+
+
+def test_triage_metadata_on_nintendo_xbrl():
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "bench"))
+    import triage as tr
+    m = tr.filing_metadata(ZIP, None)                       # Nintendo's PDF is not in the fixtures
+    assert m["standard"] == "jgaap" and m["unit"] == "百万円" and m["bs_in_xbrl"]
+    assert m["bs_pages"] is None and m["pdf_status"] == "no_pdf"

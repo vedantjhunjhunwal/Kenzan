@@ -50,7 +50,7 @@ PYTHON=.venv/bin/python bash scripts/run_all.sh
 
 Some steps depend on the environment:
 
-- Without the Nintendo XBRL zip, 6 tests skip.
+- Without the Nintendo XBRL zip, 7 tests skip.
 - Without the `tesseract` binary, 2 OCR tests skip. With the binary but no `jpn` model, 1 skips.
   The stress steps need `bash scripts/setup_tesseract.sh`.
 - The VLM step needs `vlm_cache/`.
