@@ -1,7 +1,7 @@
 # VLM path (scan route)
 
 **Status: run once, on the smoke page only; it failed the gate, so no held-out page has a VLM
-result.** This workspace has no GPU and can't reach Hugging Face. The model runs on Colab and its
+result. The rule has since been amended twice, A6–A8 and then A9–A10, on dev data only.** This workspace has no GPU and can't reach Hugging Face. The model runs on Colab and its
 raw responses are cached; scoring is offline.
 
 ## Run 1: smoke test only (2026-10-25)
@@ -52,6 +52,45 @@ Fake-runner results after the amendment (`tests/test_vlm.py`):
 | unit line 百万円 instead of 千円 | review (A8) |
 | no heading lines | review (A6) |
 
+## Amendment A9–A10 and the unit fix (dev data only)
+
+You found a hole in A8: a perfect fake read with one last-digit error was accepted on 7 of 10 seen
+scans. A8 compares column assignment by overlap and never compares individual values.
+
+- **A9 (VLM route).** Wherever Tesseract reads a number in an aligned cell, its magnitude must equal
+  the VLM value's magnitude. Cells Tesseract leaves blank don't block. Signs are left to the
+  identity checks: with signed comparison, the perfect-read ceiling is 0/10, because Tesseract drops
+  most △.
+- **A10.** A subtotal or total with an unresolved calculation parent goes to review. This also
+  catches the smoke failure when the geometry levels are unavailable.
+- **Unit fix.** On rot_+1 and rot_+2 the header band was already cropped after deskew. The real
+  cause was psm 6 garbling the right-aligned unit line when the column headers shared the band. The
+  band is now cut above the period-header lines.
+
+Fake-VLM measurement on the 10 seen scans, with every single error type from
+`gt/detection_power.py` (3816 per page). Source: `stress/out_vlm_dev_seen/`.
+
+| Rule | Perfect read accepted | Single injected errors accepted |
+|---|--:|--:|
+| A1–A8 (commit 160085f) | 7/10 | 1341/38160 |
+| final rule without A9 | 9/10 | 1723/38160 |
+| final rule (A1–A10) | **1/10** | **21/38160** |
+
+**The perfect-read ceiling falls to 1/10, not quite 0.** On 8 pages a correct read is rejected
+because Tesseract truncates or misreads a number (3,377,407 → 407; 4,553 → 553; 884,339 → 894339).
+On raster_100, Tesseract can't read the column dates at all. So A9 is safe on dev, but on this
+evidence it accepts almost nothing.
+
+**Proposed alternatives (not implemented; your call):**
+
+1. **VLM-native second reading.** A second VLM pass on crops of each value column ("list the numbers
+   top to bottom"), with per-cell agreement required. The input and the prompt differ, but the model
+   is the same, so the errors are less independent than OCR's. It costs about 2 more model calls per
+   page.
+2. **Suffix-tolerant A9.** When Tesseract's number equals the trailing comma groups of the VLM value
+   (it lost the leading groups), count it as agreement on those groups only. This is a weaker check
+   and would need its own dev measurement.
+
 **The smoke response re-scored offline under A6–A8.** These are the same response bytes as above,
 with no new model call: 74/74 path-keyed, structure 100%, accepted
 (`stress/out_vlm_smoke/rescore_A6_A8/`). This is not the gate's official rerun. The gate is rerun
@@ -69,7 +108,7 @@ at the start of the next Colab run, and v3 runs only if it passes there.
    a missing or extra key, a wrong type, or a value the shared number parser rejects. A response is
    never repaired.
 4. The table is laid out as synthetic positioned text. From there everything is the existing
-   pipeline: layout, hierarchy, identity checks and acceptance rule A1–A8.
+   pipeline: layout, hierarchy, identity checks and acceptance rule A1–A10.
 5. The model never sees the checks. There's no re-prompting or best-of-N on a failed check, so the
    read is verified, not optimised against the verifier.
 6. Responses are cached under the sha256 of the image bytes plus the model, settings and prompt hash.
@@ -113,7 +152,7 @@ Held-out v3 is **8 new degradations of the same reference page, not new document
    `stress/out_heldout_v3/results.json`.
 3. **VLM arms** are scored by `stress/run_vlm_compare.py`:
    - VLM alone (no checks);
-   - VLM + checks (A1–A8 since the amendment; before it, A1–A5);
+   - VLM + checks (A1–A10 since the amendments; before them, A1–A5);
    - VLM + checks + OCR agreement.
 4. **Key question:** does any scan become fully correct *and* accepted, with 0 false accepts?
 

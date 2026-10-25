@@ -102,11 +102,13 @@ including the stress sets.
 2. **The scan path is weak.** OCR reads △ as other characters, and misread header labels break the
    calculation-tree rules. Best held-out cell F1 is about 85%. The checks catch these pages, but they
    don't repair them.
-3. **The "0 false accepts" results used an older rule.** Acceptance rule A1–A5 could not detect
-   swapped value columns, a wrong unit, or a wrong hierarchy when the values are consistent (found
-   on the VLM smoke page and with a fake VLM). Rules A6–A8 fix this; the frozen held-out sets have
-   not been re-scored with them.
-4. **Accept-side untested on scans.** No degraded page was fully correct, so it isn't shown yet that
+3. **The "0 false accepts" results first used an older rule.** Acceptance rule A1–A5 could not
+   detect swapped value columns, a wrong unit, a wrong hierarchy, or a last-digit error when the
+   values are consistent (found on the VLM smoke page and with a fake VLM). Rules A6–A10 fix this.
+   The held-out sets, re-scored once under A1–A10, keep the same decisions (still reject-side only).
+4. **Per-cell agreement is strict.** On dev scans, a perfect VLM read survives A9 on 1 page of 10,
+   because Tesseract misreads at least one number on the others.
+5. **Accept-side untested on scans.** No degraded page was fully correct, so it isn't shown yet that
    the rule accepts a *good* scan. Ground truth and pipeline also share label-normalization code.
 
 ## AI assistance

@@ -96,7 +96,36 @@ caught by A3: its required checks couldn't be evaluated.
 fully correct, so this is a reject-side result only. It doesn't show that the rule *accepts* a good
 scan, and with nothing degraded accepted, there is no false-accept *rate* to estimate.
 
-**These runs used acceptance rule A1–A5, which had holes.** Identity checks are invariant to the unit and to swapping whole value columns, and template checks match totals by label, not by tree position. So A1–A5 would accept a page with a wrong unit, swapped columns, or a wrong hierarchy if its values were consistent. Fake-VLM tables and the VLM smoke page (§5) showed this. Rules A6–A8 (unit read from the page; column periods parsed in order; on the VLM route, a second OCR reading that confirms unit, columns and indentation) fix it, and are tested in `tests/test_vlm.py` and `tests/test_round2.py`. The frozen held-out sets above have **not** been re-scored with A6–A8. The geometry variants were re-run with A6–A8 and are still all accepted.
+**These runs used acceptance rule A1–A5, which had holes.** Identity checks are invariant to the unit and to swapping whole value columns, and template checks match totals by label, not by tree position. So A1–A5 would accept a page with a wrong unit, swapped columns, or a wrong hierarchy if its values were consistent. Fake-VLM tables and the VLM smoke page (§5) showed this. Rules A6–A8 (unit read from the page; column periods parsed in order; on the VLM route, a second OCR reading that confirms unit, columns and indentation) fix it, and are tested in `tests/test_vlm.py` and `tests/test_round2.py`. Rules A9 and A10 followed (see [VLM.md](VLM.md)).
+
+**Re-score of the frozen held-out sets under the final rule (A1–A10).** This was done once, with
+your approval, into new folders; the originals are kept. Code: commit a589605, pushed before the
+run.
+
+| Set | Extraction metrics vs original | Accepted (old → new) | False accepts | New review reasons |
+|---|---|--:|--:|---|
+| unseen (`stress/out_v2_unseen_rescore_A10/`) | identical on all 10 pages | 1 → 1 (born-digital) | 0 | A10 on 5 pages, A6 on 4 |
+| held-out v3 (`stress/out_heldout_v3_rescore_A10/`) | identical on all 9 pages | 1 → 1 (born-digital) | 0 | A10 on 7 pages, A6 on 2 |
+
+No decision changed: every degraded page was already in review. Per-page tables:
+`rescore_vs_original.md` in each folder.
+
+**Dev measurement of the VLM-route rule (seen scans, fake VLM).** The fake VLM returns the
+ground-truth table, or that table with one injected error. All 3816 single errors from
+`gt/detection_power.py`'s error types were tried, on each of the 10 seen scans. The seen set is dev
+data. Source: `stress/out_vlm_dev_seen/*/dev_seen.json`.
+
+| Rule | Perfect read accepted | Single injected errors accepted |
+|---|--:|--:|
+| A1–A8 (commit 160085f) | 7/10 | 1341/38160 |
+| final rule without A9 | 9/10 | 1723/38160 |
+| final rule (A1–A10) | 1/10 | 21/38160 |
+
+- **A9 stops last-digit errors.** These were almost all ones-digit errors inside the truncation
+  window.
+- **It also rejects 8 of the 10 perfect reads.** Tesseract truncates or misreads at least one number
+  on those pages (e.g. 3,377,407 read as 407), and A9 counts that as disagreement.
+- **The remaining 21 accepted errors** all fall on raster_300, in cells Tesseract left blank.
 
 ## 4. Real-document results (JP-BS-Bench extractor)
 
@@ -191,7 +220,9 @@ Any accept from "VLM + checks" has no OCR agreement behind it. It rests on the i
   - Path-keyed scoring cascades on ancestor misreads; this is shown as a separate diagnostic.
   - A second, AI-based ground-truth review was reported by the user and did not run in the project.
 - **Acceptance untested on good scans** (see above).
-- **"0 false accepts" was measured with rule A1–A5**, which could not detect column swaps, unit errors, or wrong hierarchies with consistent values. A6–A8 fix this; held-out sets not re-scored.
+- **"0 false accepts" was first measured with rule A1–A5**, which could not detect column swaps, unit errors, or wrong hierarchies with consistent values. A6–A10 fix this. Re-scored once under A1–A10, the held-out decisions are unchanged (§3). This is still reject-side only.
+- **A9's ceiling is low.** On the seen scans, a perfect VLM read passes A9 on 1 page of 10, because Tesseract misreads or truncates a number on the other pages (§3).
+- **A6 on the OCR route** needs the unit from the full-page read, which Tesseract often garbles. That is a reject-side cost: good OCR pages without a readable unit line go to review.
 - **Not implemented.**
   - cross-page stitching (interface designed);
   - wrapped labels, 90° pages, two-column layouts;

@@ -12,8 +12,9 @@ to decide which pages can skip human review. Every number below is recomputed fr
 3. **Label-free consistency.** Identity checks within a sign-aware truncation window, plus
    *coverage*: a check that can't be evaluated never counts as a pass.
 
-The acceptance rule (A1–A8) accepts a page only if every required check is evaluable and passes, the
-unit and the column periods were read from the page, and (VLM route) a second OCR reading agrees.
+The acceptance rule (A1–A10) accepts a page only if every required check is evaluable and passes, the
+unit and the column periods were read from the page, no subtotal is left outside the calculation tree,
+and (VLM route) a second OCR reading agrees on the unit, columns, indentation and every cell it read.
 
 ## Headline results
 
@@ -22,7 +23,8 @@ unit and the column periods were read from the page, and (VLM route) a second OC
 | Born-digital reference page: 74/74 cells, F1 100.0%, accepted | `stress/out_geometry/geometry_results.json` |
 | Unseen scan degradations (9): mean cell F1 37.8% → 60.9% (round 1 → v2) | `stress/summary_all_runs.json` |
 | Held-out v3: 8 new degradations of the same page (not new documents), frozen before any VLM code. Tesseract: mean cell F1 70.7% | `stress/out_heldout_v3/results.json` |
-| Acceptance: 0 of 27 degraded pages accepted, hence 0 false accepts. This tests only the reject side, and was obtained with rule A1–A5, which could not detect column swaps or unit errors (fixed in A6–A8; not re-scored) | the two files above |
+| Acceptance: 0 of 27 degraded pages accepted, hence 0 false accepts. This tests only the reject side. It was first obtained with rule A1–A5, which could not detect column swaps or unit errors; re-scored once under A1–A10, the decisions are unchanged and cell F1 is identical | the two files above; `stress/out_*_rescore_A10/` |
+| Dev check of the VLM-route rule (fake VLM, 10 seen scans, 3816 single injected errors each): errors accepted 1341/38160 under A1–A8, 21/38160 under A1–A10; a perfect read is accepted on 7/10 → 1/10 pages | `stress/out_vlm_dev_seen/` |
 | VLM smoke test (clean reference page, not held-out): 20/74 cells path-keyed, 74/74 value-correct; accepted by A1–A5 despite wrong indentation on 31 of 43 rows. Gate failed, so v3 was not run | `stress/out_vlm_smoke/` |
 | Real filing (Nintendo): XBRL extractor and ground-truth builder only. 88 values, 0 mismatches; 28 checks, 0 failed | `bench/results/S100Y9NX/ground_truth_xbrl.json` |
 
@@ -36,9 +38,10 @@ unit and the column periods were read from the page, and (VLM route) a second OC
   accepted. "0 false accepts" comes from 0 accepts; it carries no false-accept-rate bound.
 - **The VLM.** Run once, on the smoke page only: the gate failed (indentation), so no held-out
   page has a VLM result ([docs/VLM.md](docs/VLM.md)).
-- **The old acceptance rule had holes.** The "0 false accepts" results above used A1–A5, which
-  could not detect swapped columns, a wrong unit, or a wrong hierarchy with consistent values. The
-  fix (A6–A8) is tested on fake-VLM cases; the frozen held-out sets have not been re-scored with it.
+- **The old acceptance rule had holes.** A1–A5 could not detect swapped columns, a wrong unit, a
+  wrong hierarchy, or a last-digit error with consistent values. A6–A10 fix these on fake-VLM cases.
+  The price: on dev scans a perfect VLM read is accepted on only 1 page of 10, because Tesseract
+  misreads at least one number on the others.
 - **"VLM + checks" accepts.** If that arm accepts a page, nothing but the checks stands behind it:
   no OCR agreement. On this page the checks catch only 70.7% of single ones-digit errors. The arm
   was frozen after Tesseract-vs-ground-truth on v3 had been seen, but before any VLM output.
