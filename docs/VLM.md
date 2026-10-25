@@ -164,7 +164,7 @@ The OCR-agreement arm can't accept any v3 page, even with a perfect read (`stres
 
 ## How to run it
 
-1. **Generate responses.** Open `notebooks/vlm_heldout_v3.ipynb` in Colab with a T4 (fp16 compute).
+1. **Generate responses.** Open `notebooks/vlm_heldout_v3.ipynb` in Colab ([open in Colab](https://colab.research.google.com/github/vedantjhunjhunwal/Kenzan/blob/main/notebooks/vlm_heldout_v3.ipynb)) with a T4 (fp16 compute).
    It prints the transformers version and regenerates the 8 pages, checking their image hashes.
    Then it runs a **smoke test** on the clean reference page rendered at 300 dpi; this is not a v3
    page. If fewer than 70 of 74 cells are read correctly, it stops and v3 is not run. Otherwise it
