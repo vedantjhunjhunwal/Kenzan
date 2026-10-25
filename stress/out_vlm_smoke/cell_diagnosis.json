@@ -1,0 +1,488 @@
+[
+ {
+  "row": "r13",
+  "period": "2025-03-31",
+  "gt_label": "流動資産合計",
+  "pred_label": "流動資産合計",
+  "gt_raw": "5,863,684",
+  "pred_raw": "5,863,684",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r13",
+  "period": "2026-03-31",
+  "gt_label": "流動資産合計",
+  "pred_label": "流動資産合計",
+  "gt_raw": "3,377,407",
+  "pred_raw": "3,377,407",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r16",
+  "period": "2025-03-31",
+  "gt_label": "建物及び構築物",
+  "pred_label": "建物及び構築物",
+  "gt_raw": "2,121,360",
+  "pred_raw": "2,121,360",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r16",
+  "period": "2026-03-31",
+  "gt_label": "建物及び構築物",
+  "pred_label": "建物及び構築物",
+  "gt_raw": "1,880,082",
+  "pred_raw": "1,880,082",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r17",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△1,923,585",
+  "pred_raw": "△1,923,585",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r17",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△1,640,253",
+  "pred_raw": "△1,640,253",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r18",
+  "period": "2025-03-31",
+  "gt_label": "建物及び構築物（純額）",
+  "pred_label": "建物及び構築物（純額）",
+  "gt_raw": "197,775",
+  "pred_raw": "197,775",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r18",
+  "period": "2026-03-31",
+  "gt_label": "建物及び構築物（純額）",
+  "pred_label": "建物及び構築物（純額）",
+  "gt_raw": "239,828",
+  "pred_raw": "239,828",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r19",
+  "period": "2025-03-31",
+  "gt_label": "機械装置及び運搬具",
+  "pred_label": "機械装置及び運搬具",
+  "gt_raw": "4,024,922",
+  "pred_raw": "4,024,922",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r19",
+  "period": "2026-03-31",
+  "gt_label": "機械装置及び運搬具",
+  "pred_label": "機械装置及び運搬具",
+  "gt_raw": "2,250,799",
+  "pred_raw": "2,250,799",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r20",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△3,634,165",
+  "pred_raw": "△3,634,165",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r20",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△1,914,091",
+  "pred_raw": "△1,914,091",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r21",
+  "period": "2025-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬具（純額）",
+  "gt_raw": "390,757",
+  "pred_raw": "390,757",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r21",
+  "period": "2026-03-31",
+  "gt_label": "機械装置及び運搬具（純額）",
+  "pred_label": "機械装置及び運搬具（純額）",
+  "gt_raw": "336,708",
+  "pred_raw": "336,708",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r22",
+  "period": "2025-03-31",
+  "gt_label": "土地",
+  "pred_label": "土地",
+  "gt_raw": "768,976",
+  "pred_raw": "768,976",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r22",
+  "period": "2026-03-31",
+  "gt_label": "土地",
+  "pred_label": "土地",
+  "gt_raw": "705,403",
+  "pred_raw": "705,403",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r23",
+  "period": "2025-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資産",
+  "gt_raw": "210,746",
+  "pred_raw": "210,746",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r23",
+  "period": "2026-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資産",
+  "gt_raw": "213,939",
+  "pred_raw": "213,939",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r24",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△147,599",
+  "pred_raw": "△147,599",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r24",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△172,066",
+  "pred_raw": "△172,066",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r25",
+  "period": "2025-03-31",
+  "gt_label": "リース資産（純額）",
+  "pred_label": "リース資産（純額）",
+  "gt_raw": "63,146",
+  "pred_raw": "63,146",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r25",
+  "period": "2026-03-31",
+  "gt_label": "リース資産（純額）",
+  "pred_label": "リース資産（純額）",
+  "gt_raw": "41,872",
+  "pred_raw": "41,872",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r26",
+  "period": "2025-03-31",
+  "gt_label": "建設仮勘定",
+  "pred_label": "建設仮勘定",
+  "gt_raw": "－",
+  "pred_raw": "－",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r26",
+  "period": "2026-03-31",
+  "gt_label": "建設仮勘定",
+  "pred_label": "建設仮勘定",
+  "gt_raw": "4,553",
+  "pred_raw": "4,553",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r27",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "848,814",
+  "pred_raw": "848,814",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r27",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "446,126",
+  "pred_raw": "446,126",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r28",
+  "period": "2025-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△840,375",
+  "pred_raw": "△840,375",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r28",
+  "period": "2026-03-31",
+  "gt_label": "減価償却累計額",
+  "pred_label": "減価償却累計額",
+  "gt_raw": "△421,883",
+  "pred_raw": "△421,883",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r29",
+  "period": "2025-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他（純額）",
+  "gt_raw": "8,439",
+  "pred_raw": "8,439",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r29",
+  "period": "2026-03-31",
+  "gt_label": "その他（純額）",
+  "pred_label": "その他（純額）",
+  "gt_raw": "24,243",
+  "pred_raw": "24,243",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r30",
+  "period": "2025-03-31",
+  "gt_label": "有形固定資産合計",
+  "pred_label": "有形固定資産合計",
+  "gt_raw": "1,429,094",
+  "pred_raw": "1,429,094",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r30",
+  "period": "2026-03-31",
+  "gt_label": "有形固定資産合計",
+  "pred_label": "有形固定資産合計",
+  "gt_raw": "1,352,610",
+  "pred_raw": "1,352,610",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r32",
+  "period": "2025-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資産",
+  "gt_raw": "34,190",
+  "pred_raw": "34,190",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r32",
+  "period": "2026-03-31",
+  "gt_label": "リース資産",
+  "pred_label": "リース資産",
+  "gt_raw": "21,402",
+  "pred_raw": "21,402",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r33",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "10,070",
+  "pred_raw": "10,070",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r33",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "14,466",
+  "pred_raw": "14,466",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r34",
+  "period": "2025-03-31",
+  "gt_label": "無形固定資産合計",
+  "pred_label": "無形固定資産合計",
+  "gt_raw": "44,261",
+  "pred_raw": "44,261",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r34",
+  "period": "2026-03-31",
+  "gt_label": "無形固定資産合計",
+  "pred_label": "無形固定資産合計",
+  "gt_raw": "35,869",
+  "pred_raw": "35,869",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r36",
+  "period": "2025-03-31",
+  "gt_label": "投資有価証券",
+  "pred_label": "投資有価証券",
+  "gt_raw": "44,180",
+  "pred_raw": "44,180",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r36",
+  "period": "2026-03-31",
+  "gt_label": "投資有価証券",
+  "pred_label": "投資有価証券",
+  "gt_raw": "218,836",
+  "pred_raw": "218,836",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r37",
+  "period": "2025-03-31",
+  "gt_label": "関係会社株式",
+  "pred_label": "関係会社株式",
+  "gt_raw": "1,123",
+  "pred_raw": "1,123",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r37",
+  "period": "2026-03-31",
+  "gt_label": "関係会社株式",
+  "pred_label": "関係会社株式",
+  "gt_raw": "1,123",
+  "pred_raw": "1,123",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r38",
+  "period": "2025-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": "長期貸付金",
+  "gt_raw": "－",
+  "pred_raw": "－",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r38",
+  "period": "2026-03-31",
+  "gt_label": "長期貸付金",
+  "pred_label": "長期貸付金",
+  "gt_raw": "62,000",
+  "pred_raw": "62,000",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r39",
+  "period": "2025-03-31",
+  "gt_label": "退職給付に係る資産",
+  "pred_label": "退職給付に係る資産",
+  "gt_raw": "18,404",
+  "pred_raw": "18,404",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r39",
+  "period": "2026-03-31",
+  "gt_label": "退職給付に係る資産",
+  "pred_label": "退職給付に係る資産",
+  "gt_raw": "16,435",
+  "pred_raw": "16,435",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r40",
+  "period": "2025-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "133,361",
+  "pred_raw": "133,361",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r40",
+  "period": "2026-03-31",
+  "gt_label": "その他",
+  "pred_label": "その他",
+  "gt_raw": "70,967",
+  "pred_raw": "70,967",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r41",
+  "period": "2025-03-31",
+  "gt_label": "投資その他の資産合計",
+  "pred_label": "投資その他の資産合計",
+  "gt_raw": "197,069",
+  "pred_raw": "197,069",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r41",
+  "period": "2026-03-31",
+  "gt_label": "投資その他の資産合計",
+  "pred_label": "投資その他の資産合計",
+  "gt_raw": "369,362",
+  "pred_raw": "369,362",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r42",
+  "period": "2025-03-31",
+  "gt_label": "固定資産合計",
+  "pred_label": "固定資産合計",
+  "gt_raw": "1,670,426",
+  "pred_raw": "1,670,426",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r42",
+  "period": "2026-03-31",
+  "gt_label": "固定資産合計",
+  "pred_label": "固定資産合計",
+  "gt_raw": "1,757,841",
+  "pred_raw": "1,757,841",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r43",
+  "period": "2025-03-31",
+  "gt_label": "資産合計",
+  "pred_label": "資産合計",
+  "gt_raw": "7,534,110",
+  "pred_raw": "7,534,110",
+  "cause": "hierarchy differs -> path mismatch"
+ },
+ {
+  "row": "r43",
+  "period": "2026-03-31",
+  "gt_label": "資産合計",
+  "pred_label": "資産合計",
+  "gt_raw": "5,135,249",
+  "pred_raw": "5,135,249",
+  "cause": "hierarchy differs -> path mismatch"
+ }
+]
