@@ -85,6 +85,21 @@ def ocr_ceiling() -> dict:
     return out
 
 
+def ones_digit_detection() -> str:
+    """Share of single ones-digit errors the checks catch on this page (sign-aware window)."""
+    txt = (ROOT / "gt/out/detection_power.txt").read_text(encoding="utf-8")
+    m = re.search(r"digit:ones\s+\d+\s+[\d.]+%\s+([\d.]+%)", txt)
+    return m.group(1) if m else "unknown"
+
+
+def vlm_checks_caveat() -> str:
+    return (f"Every accept from the vlm+checks arm has NO OCR agreement behind it: it rests on the identity "
+            f"checks alone, and on this page those catch only {ones_digit_detection()} of single ones-digit "
+            f"errors (gt/out/detection_power.txt, from gt/detection_power.py). This arm was frozen "
+            f"(stress/FREEZE_LOG.txt, VLM METHOD FROZEN 2026-10-24T23:20:10Z) after the Tesseract output on v3 "
+            f"had been compared with the v3 ground truth, but before any VLM output existed.")
+
+
 def fully_correct(rep: dict) -> bool:
     c, s = rep["cells"], rep["structure"]
     return c["f1"] == 1.0 and s["calc_parent"] == 1.0 and s["presentation_parent"] == 1.0
@@ -167,7 +182,8 @@ def main(argv=None) -> int:
     meta = {"set": "heldout_v3", "n_degraded": n, "model": a.model, "settings": be.settings, "settings_key": skey,
             "prompt_version": vlm.PROMPT_VERSION, "prompt_sha256": hashlib.sha256(vlm.PROMPT.encode()).hexdigest(),
             "vlm_pipeline_fingerprint": code_fingerprint(), "tesseract_pipeline_fingerprint": tess["code_fingerprint"],
-            "spec_sha256": tess["spec_sha256"], "not_run": not_run,
+            "spec_sha256": tess["spec_sha256"], "not_run": not_run, "vlm+checks_caveat": vlm_checks_caveat(),
+            "what_v3_is": "8 new degradations of the same reference page, not new documents",
             "scored_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
             "summary": summary, "results": rows}
     (out / "compare.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -188,7 +204,9 @@ def to_markdown(m: dict) -> str:
          f"Model `{m['model']}`, settings {json.dumps(m['settings'])} (key `{m['settings_key']}`), prompt "
          f"{m['prompt_version']} sha256 `{m['prompt_sha256'][:16]}`. Spec sha256 `{m['spec_sha256']}`. "
          f"Pipeline fingerprints: VLM run `{m['vlm_pipeline_fingerprint']}`, Tesseract run "
-         f"`{m['tesseract_pipeline_fingerprint']}` (baselines/v2). Scored {m['scored_at']}.", ""]
+         f"`{m['tesseract_pipeline_fingerprint']}` (baselines/v2). Scored {m['scored_at']}.", "",
+         f"Held-out v3 is {m['what_v3_is']}.", "",
+         f"**Caveat for vlm+checks:** {m['vlm+checks_caveat']}", ""]
     if m["not_run"]:
         L += [f"**Not run (no cached response): {', '.join(m['not_run'])}.** Those rows are not results.", ""]
     L += ["| Variant | Tesseract F1 | Tess. decision | VLM F1 | VLM calc / pres parent | VLM fully correct "
@@ -204,7 +222,8 @@ def to_markdown(m: dict) -> str:
           "|---|--:|--:|--:|--:|"]
     for k in ("tesseract+checks", "vlm (no checks)", "vlm+checks", "vlm+checks+ocr"):
         s = m["summary"][k]
-        L.append(f"| {k} | {s['accepted']} / {m['n_degraded']} | {s['fully_correct_and_accepted']} "
+        name = k + (" (no OCR agreement; see caveat)" if k == "vlm+checks" else "")
+        L.append(f"| {name} | {s['accepted']} / {m['n_degraded']} | {s['fully_correct_and_accepted']} "
                  f"| {s['false_accepts']} | {s['fully_correct']} |")
     mf = m["summary"]["mean_f1"]
     L += ["", f"Mean cell F1 over the {m['n_degraded']} degraded pages: Tesseract {_p(mf['tesseract+checks'])}, "

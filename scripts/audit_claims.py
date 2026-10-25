@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = {p: (ROOT / p).read_text(encoding="utf-8") for p in
-        ("README.md", "docs/RESULTS.md", "docs/METHOD.md", "docs/BENCHMARK.md", "SUBMISSION.md")
+        ("README.md", "docs/RESULTS.md", "docs/METHOD.md", "docs/BENCHMARK.md", "SUBMISSION.md", "docs/VLM.md")
         if (ROOT / p).exists()}
 
 
@@ -193,6 +193,10 @@ claim(SB, f"{gts['cells']} values, {gts['xbrl_value_mismatch']} mismatches; {len
 claim("README.md", f"{gts['cells']} values, {gts['xbrl_value_mismatch']} mismatches vs tagged facts", NG, True)
 claim(SB, "6 tests skip", "tests/test_real_edinet.py",
       len(re.findall(r"^def test_", (ROOT / "tests/test_real_edinet.py").read_text(encoding="utf-8"), re.M)) == 6)
+
+ones = re.search(r"digit:ones\s+\d+\s+[\d.]+%\s+([\d.]+%)", dp).group(1)
+for d in ("docs/RESULTS.md", "docs/VLM.md", "SUBMISSION.md"):
+    claim(d, f"catch only {ones} of single ones-digit errors", "gt/out/detection_power.txt", ones == "70.7%")
 
 # ------------------------------------------------------------------ report
 bad = [c for c in claims if not (c["in_doc"] and c["matches_file"])]

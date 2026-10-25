@@ -5,7 +5,7 @@
 <p align="center">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/python-3.11%2B-blue">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
-  <img alt="Tests: 105 passed, 6 skipped" src="https://img.shields.io/badge/tests-105%20passed%2C%206%20skipped-brightgreen">
+  <img alt="Tests: 106 passed, 6 skipped" src="https://img.shields.io/badge/tests-106%20passed%2C%206%20skipped-brightgreen">
 </p>
 
 Kenzan turns pages of Japanese financial statements into verified tables, and uses accounting
@@ -50,7 +50,7 @@ It provides:
 | Scanned variants, **unseen** (held-out, 9) | mean cell F1 37.8% → **60.9%** (round 1 → current) | `stress/summary_all_runs.json` |
 | Scanned variants, seen (10; motivated the fixes, not evidence) | 31.7% → 72.7% | `stress/summary_all_runs.json` |
 | Acceptance on degraded pages | 0 of 19 degraded pages accepted, hence 0 false accepts (not an accept-side result) | `stress/summary_all_runs.json` |
-| Held-out v3 scans (8; frozen before any VLM code), Tesseract | mean cell F1 70.7%; 0 of 8 accepted, 0 false accepts | `stress/out_heldout_v3/results.json` |
+| Held-out v3: 8 new degradations of the same page, not new documents (frozen before any VLM code), Tesseract | mean cell F1 70.7%; 0 of 8 accepted, 0 false accepts | `stress/out_heldout_v3/results.json` |
 | VLM on the same 8 scans | **not run yet** (code, model choice and protocol ready: [docs/VLM.md](docs/VLM.md)) | — |
 | Real filing (Nintendo FY2026): benchmark XBRL extractor + ground-truth builder only | 88 values, 0 mismatches vs tagged facts; 28 identity checks evaluated, 0 failed (26 template + 2 dynamic). PDF parser not yet run on this filing | `bench/results/S100Y9NX/` |
 
@@ -81,9 +81,9 @@ or `bash scripts/setup_tesseract.sh`.
 .venv/bin/python -m pytest -q tests
 ```
 
-Expected: **105 passed, 6 skipped**. The six skipped tests need a real EDINET filing (Nintendo,
+Expected: **106 passed, 6 skipped**. The six skipped tests need a real EDINET filing (Nintendo,
 docID S100Y9NX), which isn't redistributed here. Download its XBRL zip from EDINET to
-`tests/fixtures/edinet/S100Y9NX_xbrl.zip` and all 111 run. `bash scripts/run_all.sh` reproduces
+`tests/fixtures/edinet/S100Y9NX_xbrl.zip` and all 112 run. `bash scripts/run_all.sh` reproduces
 every result, including the stress sets.
 
 ## Limitations

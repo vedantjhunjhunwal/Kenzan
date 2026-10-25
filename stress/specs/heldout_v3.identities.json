@@ -1,0 +1,47 @@
+{
+ "note": "Two identities per held-out v3 page. image_sha256: sha256 of the page image stream embedded in the PDF; this is what OCR and the VLM see, it is identical across regenerations, and it is the VLM cache key. pdf_sha256: sha256 of the PDF file; it changes on every save because pymupdf writes a random trailer /ID. 'pdf_used' = the PDFs the Tesseract run read (written 2026-10-24 23:12:32-23:15:07Z by the rerun) and the files inside heldout_v3_pdfs.zip. 'pdf_first_generation' = the PDFs generated at freeze time; only the first 16 hex digits were kept (the file holding the full hashes was deleted before commit, and those PDFs were overwritten by the runs).",
+ "identity_definition_changed": "2026-10-24T23:17:35Z (see stress/FREEZE_LOG.txt, HELDOUT_V3 CORRECTION)",
+ "heldout_v3_pdfs.zip_sha256": "65c420bf626d4e7d27c31e98b90f28e1c4208241c23cbdd0b42c8975e27992ac",
+ "pages": {
+  "raster_250": {
+   "image_sha256": "cd73c4f0fdaa47dccbb3518520b66c033b01f8c7f7e924fc2b5d96cde504d576",
+   "pdf_used_sha256": "6a3c777fa2e266827a165ffb32660e045032ef37cea31923501d4b58d6061e88",
+   "pdf_first_generation_sha256_prefix16": "304d82cacbeafc26"
+  },
+  "raster_175": {
+   "image_sha256": "2df4b640f0f3cd9b458535df1583de768cbc5e60f8b51a90a7f21d831b9edca8",
+   "pdf_used_sha256": "4af9e602285604445959885831c4e24f79aeff1ae42472b50be60679b39f8077",
+   "pdf_first_generation_sha256_prefix16": "9ac0640fd998fa55"
+  },
+  "rot_+0.8": {
+   "image_sha256": "f8b43bc945f916eddaea7e3d89cfda6bbda49f140e18ebf8a3400a26e4dfcd6e",
+   "pdf_used_sha256": "72710a7dd6f8b79dd1488821e1adfdf40a7a9d3de16de85b4fad40344fec815d",
+   "pdf_first_generation_sha256_prefix16": "c6e5ddd48dd318b6"
+  },
+  "rot_-1.2": {
+   "image_sha256": "5a4a2904ee6186d1975126311a905456847dcfbb7242a5f030fe8cf3f63a6f4e",
+   "pdf_used_sha256": "9eb07ffc4d6158d660d98ab43bde39d814f6f75c845922401c7d0a802a4750aa",
+   "pdf_first_generation_sha256_prefix16": "f01b12736d08a4bf"
+  },
+  "noise_s12": {
+   "image_sha256": "24393590421b8102dd0e16fbd2fecc6ead5aab334388d1a436172f274543b3a7",
+   "pdf_used_sha256": "895f71b5f016d5ca5e49dcd792e6ad1dc32a9232b1a98435231a76a1c73efd64",
+   "pdf_first_generation_sha256_prefix16": "de84f848d3387db6"
+  },
+  "jpeg_q40": {
+   "image_sha256": "e3efc6842752ebb6e25c8150c3fa4110adf17b2134040da649125d55e0d5064a",
+   "pdf_used_sha256": "d851ec339ed4f1ad8566a7835d389b267c95680b91aba32c7a087f379d6c29d8",
+   "pdf_first_generation_sha256_prefix16": "188d22df0cc2bb99"
+  },
+  "scan_250": {
+   "image_sha256": "1079f830893ec26cc910910a072bd0319fa415ef86957e5578f8f3c71e3fdddd",
+   "pdf_used_sha256": "42bf6fee03488ddf7d0ef9f681c739b8cb8cdc5253ebbd817ef7ca77b680074e",
+   "pdf_first_generation_sha256_prefix16": "45bf595889ca49aa"
+  },
+  "scan_175": {
+   "image_sha256": "2de960f677d8b2d7791c16de17358dfe44aede74cb36e59f90dcb566f0a1ffcc",
+   "pdf_used_sha256": "7e712d3739f1a742b25f0d4c472b73d1630c3f058e2230936322ad519ae07108",
+   "pdf_first_generation_sha256_prefix16": "d4d297d7dd75ea2c"
+  }
+ }
+}

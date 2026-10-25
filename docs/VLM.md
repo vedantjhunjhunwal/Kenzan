@@ -51,6 +51,8 @@ fingerprint and prompt hash.
 
 ## Experiment: held-out v3
 
+Held-out v3 is **8 new degradations of the same reference page, not new documents**.
+
 1. **Inputs frozen first.** The new degradation set (`stress/specs/heldout_v3.json`) was hashed
    before any VLM code existed. Each page's identity is the sha256 of its embedded image
    (`stress/specs/heldout_v3.image_sha256.json`). PDF file hashes change on every save.
@@ -62,11 +64,19 @@ fingerprint and prompt hash.
    - VLM + checks + OCR agreement.
 4. **Key question:** does any scan become fully correct *and* accepted, with 0 false accepts?
 
+Any accept from "VLM + checks" has no OCR agreement behind it. It rests on the identity checks alone, and on this page they catch only 70.7% of single ones-digit errors (`gt/out/detection_power.txt`, from `gt/detection_power.py`). This arm was frozen after the Tesseract output on v3 had been compared with the v3 ground truth, but before any VLM output existed (`stress/FREEZE_LOG.txt`, "VLM METHOD FROZEN").
+
+The OCR-agreement arm can't accept any v3 page, even with a perfect read (`stress/out_heldout_v3/ocr_agreement_ceiling.json`).
+
+**Next: v3b.** Once the filings in `bench/DOWNLOADS.md` are triaged, the balance-sheet pages of the sealed test filings will be rasterized with the v3 degradation parameters and scored against their XBRL ground truth. The pages, spec and code fingerprint will be locked before any of them is run, and each will be run once. That would be the first scan evidence on documents other than the reference page.
+
 ## How to run it
 
-1. **Generate responses.** Open `notebooks/vlm_heldout_v3.ipynb` in Colab with a T4. It regenerates
-   the 8 pages and checks their image hashes, runs `scripts/vlm_run.py`, and downloads
-   `vlm_cache.zip`. If regeneration reports MISMATCH, upload `heldout_v3_pdfs.zip` (the frozen
+1. **Generate responses.** Open `notebooks/vlm_heldout_v3.ipynb` in Colab with a T4 (fp16 compute).
+   It prints the transformers version and regenerates the 8 pages, checking their image hashes.
+   Then it runs a **smoke test** on the clean reference page rendered at 300 dpi; this is not a v3
+   page. If fewer than 70 of 74 cells are read correctly, it stops and v3 is not run. Otherwise it
+   reads the v3 pages and downloads `vlm_cache.zip`. If regeneration reports MISMATCH, upload `heldout_v3_pdfs.zip` (the frozen
    PDFs).
 2. **Score offline.** Unzip into the repo root and run:
 
