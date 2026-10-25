@@ -25,6 +25,29 @@ in EDINET's search results when you download; triage reads the real docID from t
 | 7 | not verified† | 東京自働機械製作所 Tokyo Automatic Machinery (E01534), FY 2026-03 | J-GAAP expected | not looked up | not looked up | **test** | same |
 | 8 | not verified† | 東京機械製作所 Tokyo Kikai (E01539), FY 2026-03 | J-GAAP expected | not looked up | not looked up | **test** | same |
 
+**Extra dev filings.** These were added so that the IFRS template and two-page stitching aren't
+built on one or zero examples. They were chosen by split only: each is `dev` by hash in
+`python bench/split.py which`, and no company was moved. Because they are dev, their edinetdb.jp
+pages were also checked for consolidated statements.
+
+| # | docID | Company (EDINET code) | Standard | Unit | BS pages | Split | Why |
+|---|---|---|---|---|---|---|---|
+| 9 | **S100YA20** | 小野薬品工業 Ono (E00945), FY 2026-03 | IFRS* | unknown | unknown | dev (hash) | second IFRS dev filing |
+| 10 | **S100YH3M** | 住友ファーマ Sumitomo Pharma (E00922), FY 2026-03 | IFRS* | unknown | unknown | dev (hash) | third IFRS dev filing |
+| 11 | **S100XUA7** | 大塚ホールディングス Otsuka HD (E21183), FY 2025-12 | IFRS* | unknown | unknown | dev (hash) | IFRS, December year-end, large group |
+| 12 | **S100YE3I** | 森下仁丹 Morishita Jintan (E00941), FY 2026-03 | J-GAAP expected | unknown | unknown | dev (hash) | small-cap J-GAAP manufacturer, consolidated |
+| 13 | **S100XSQX** | ラクオリア創薬 RaQualia (E25269), FY 2025-12 | J-GAAP expected | unknown; some of its tables use 千円 | unknown | dev (hash) | small consolidated filer, likely 千円 |
+
+Also dev by hash, but dropped because their pages show only non-consolidated statements (財務諸表,
+no 連結):
+
+- 有機合成薬品工業 (E00848);
+- 中京医薬品 (E03289);
+- 扶桑薬品工業 (E00953);
+- 室町ケミカル (E36350).
+
+DMG森精機 (E01502) is dev and IFRS, but its docID wasn't looked up.
+
 \* IFRS adopter status is public company information. It is confirmed from each filing's XBRL at
 triage.
 
