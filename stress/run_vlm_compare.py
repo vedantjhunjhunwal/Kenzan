@@ -209,15 +209,19 @@ def to_markdown(m: dict) -> str:
          f"**Caveat for vlm+checks:** {m['vlm+checks_caveat']}", ""]
     if m["not_run"]:
         L += [f"**Not run (no cached response): {', '.join(m['not_run'])}.** Those rows are not results.", ""]
-    L += ["| Variant | Tesseract F1 | Tess. decision | VLM F1 | VLM calc / pres parent | VLM fully correct "
-          "| VLM checks failed | VLM+checks | OCR agrees (VLM cells not in OCR) | VLM+checks+OCR |",
-          "|---|--:|---|--:|--:|---|--:|---|---|---|"]
+    L += ["| Variant | Tesseract F1 | Tess. decision | VLM status | VLM F1 | VLM calc / pres parent | VLM fully correct "
+          "| VLM checks failed | VLM+checks | OCR agrees (VLM cells not in OCR) | VLM+checks+OCR "
+          "| False accept (vlm / vlm+checks / vlm+checks+ocr) | VLM s/page |",
+          "|---|--:|---|---|--:|--:|---|--:|---|---|---|---|--:|"]
     for r in m["results"]:
         t, v, d, g = r["tesseract"], r["vlm"], r["decisions"], r["ocr_agreement"]
-        L.append(f"| {r['variant']} | {_p(t['f1'])} | {t['decision']} | {_p(v['f1'])} "
+        fa = " / ".join("**YES**" if d[k] == "accept" and not v["fully_correct"] else "no"
+                        for k in ("vlm_no_checks", "vlm+checks", "vlm+checks+ocr"))
+        secs = (r.get("run_info") or {}).get("seconds")
+        L.append(f"| {r['variant']} | {_p(t['f1'])} | {t['decision']} | {r['vlm_status']} | {_p(v['f1'])} "
                  f"| {_p(v['calc_parent'])} / {_p(v['pres_parent'])} | {'yes' if v['fully_correct'] else 'no'} "
                  f"| {v['checks_failed']} | {d['vlm+checks']} | {'yes' if g['agree'] else 'no'} "
-                 f"({g['vlm_cells_not_in_ocr']}) | {d['vlm+checks+ocr']} |")
+                 f"({g['vlm_cells_not_in_ocr']}) | {d['vlm+checks+ocr']} | {fa} | {secs if secs is not None else 'n/a'} |")
     L += ["", "| Arm | Accepted | Fully correct AND accepted | False accepts | Fully correct (any decision) |",
           "|---|--:|--:|--:|--:|"]
     for k in ("tesseract+checks", "vlm (no checks)", "vlm+checks", "vlm+checks+ocr"):
