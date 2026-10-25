@@ -1,0 +1,455 @@
+{
+ "fingerprint": "70f9fac9d027441c",
+ "pages": {
+  "jpeg_q30": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     7,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     2,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3638,
+    "A3": 5,
+    "A8": 4,
+    "A10": 2
+   }
+  },
+  "noise_s15": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A9 2 of 62 OCR-read cells disagree with the VLM, e.g. 売掛金 col1: VLM 884,339 vs OCR 894339; 減価償却累計額 col1: VLM △1,640,253 vs OCR 640258"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3816,
+    "A3": 5,
+    "A8": 10,
+    "A10": 2
+   }
+  },
+  "raster_100": {
+   "perfect": "review",
+   "perfect_reasons": [
+    "A8 VLM read not confirmed by the second reading: column dates differ or missing (VLM ['2025-03-31', '2026-03-31'], OCR [None, None]); indentation not confirmed: 20 of 43 rows not matched to a page row",
+    "A9 3 of 7 OCR-read cells disagree with the VLM, e.g. その他 col1: VLM 14,466 vs OCR 346; 退職給付に係る資産 col1: VLM 16,435 vs OCR 16455; 投資その他の資産合計 col0: VLM 197,069 vs OCR 6"
+   ],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     0,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A8": 3816,
+    "A9": 3816,
+    "A3": 5,
+    "A10": 2
+   }
+  },
+  "raster_150": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     7,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3629,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "raster_300": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     19,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     1,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3495,
+    "A3": 5,
+    "A8": 6,
+    "A10": 2
+   }
+  },
+  "rot_+1": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     4,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3638,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_+2": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     0,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3638,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_-1": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     6,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3629,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "rot_-2": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     6,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3629,
+    "A3": 5,
+    "A8": 8,
+    "A10": 2
+   }
+  },
+  "scan_combo": {
+   "perfect": "accept",
+   "perfect_reasons": [],
+   "injected_accepted": {
+    "digit:hundreds+": [
+     0,
+     2386
+    ],
+    "digit:ones": [
+     24,
+     648
+    ],
+    "digit:tens": [
+     0,
+     639
+    ],
+    "row:columns_swapped": [
+     0,
+     35
+    ],
+    "row:dropped": [
+     0,
+     36
+    ],
+    "sign:dropped_△": [
+     1,
+     10
+    ],
+    "sign:spurious_△": [
+     0,
+     62
+    ]
+   },
+   "injected_reason_counts": {
+    "A2": 3616,
+    "A9": 3151,
+    "A8": 11,
+    "A3": 5,
+    "A10": 2
+   }
+  }
+ },
+ "n_cases": 3816,
+ "disabled": [],
+ "a9_compare": "suffix",
+ "summary": {
+  "perfect_read_accepted": "8/10",
+  "perfect_read_rejected": {
+   "noise_s15": [
+    "A9 2 of 62 OCR-read cells disagree with the VLM, e.g. 売掛金 col1: VLM 884,339 vs OCR 894339; 減価償却累計額 col1: VLM △1,640,253 vs OCR 640258"
+   ],
+   "raster_100": [
+    "A8 VLM read not confirmed by the second reading: column dates differ or missing (VLM ['2025-03-31', '2026-03-31'], OCR [None, None]); indentation not confirmed: 20 of 43 rows not matched to a page row",
+    "A9 3 of 7 OCR-read cells disagree with the VLM, e.g. その他 col1: VLM 14,466 vs OCR 346; 退職給付に係る資産 col1: VLM 16,435 vs OCR 16455; 投資その他の資産合計 col0: VLM 197,069 vs OCR 6"
+   ]
+  },
+  "injected_accepted_all_pages": {
+   "digit:hundreds+": "0/23860",
+   "digit:ones": "73/6480",
+   "digit:tens": "0/6390",
+   "row:columns_swapped": "0/350",
+   "row:dropped": "3/360",
+   "sign:dropped_△": "8/100",
+   "sign:spurious_△": "0/620"
+  },
+  "injected_accepted_total": "84/38160",
+  "injected_accepted_total_on_accepted_pages": "84/30528",
+  "injected_accepted_on_pages_where_perfect_read_is_accepted": {
+   "digit:hundreds+": "0/19088",
+   "digit:ones": "73/5184",
+   "digit:tens": "0/5112",
+   "row:columns_swapped": "0/280",
+   "row:dropped": "3/288",
+   "sign:dropped_△": "8/80",
+   "sign:spurious_△": "0/496"
+  }
+ }
+}

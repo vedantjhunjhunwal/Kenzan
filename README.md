@@ -5,7 +5,7 @@
 <p align="center">
   <img alt="Python 3.11+" src="https://img.shields.io/badge/python-3.11%2B-blue">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
-  <img alt="Tests: 133 passed, 7 skipped" src="https://img.shields.io/badge/tests-133%20passed%2C%207%20skipped-brightgreen">
+  <img alt="Tests: 134 passed, 7 skipped" src="https://img.shields.io/badge/tests-134%20passed%2C%207%20skipped-brightgreen">
 </p>
 
 Kenzan turns pages of Japanese financial statements into verified tables, and uses accounting
@@ -86,9 +86,9 @@ Expected:
 
 | Environment | Result |
 |---|---|
-| with the Japanese OCR model (`bash scripts/setup_tesseract.sh`) | **133 passed, 7 skipped** |
-| without the `jpn` model | **119 passed, 21 skipped** (the OCR and VLM second-reading tests skip) |
-| with the model and the Nintendo XBRL zip | **140 passed** |
+| with the Japanese OCR model (`bash scripts/setup_tesseract.sh`) | **134 passed, 7 skipped** |
+| without the `jpn` model | **120 passed, 21 skipped** (the OCR and VLM second-reading tests skip) |
+| with the model and the Nintendo XBRL zip | **141 passed** |
 
 The seven tests that always skip without it need a real EDINET filing (Nintendo, docID S100Y9NX),
 which isn't redistributed here: download its XBRL zip from EDINET to

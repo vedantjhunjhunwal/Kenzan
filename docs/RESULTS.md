@@ -120,6 +120,7 @@ data. Source: `stress/out_vlm_dev_seen/*/dev_seen.json`.
 | A1–A8 (commit 160085f) | 7/10 | 1341/38160 |
 | final rule without A9 | 9/10 | 1723/38160 |
 | final rule (A1–A10) | 1/10 | 21/38160 |
+| A1–A10 with A9-suffix (pre-registered candidate, rejected: breaks the ≤ 38/38160 bound) | 8/10 | 84/38160 |
 
 - **A9 stops last-digit errors.** These were almost all ones-digit errors inside the truncation
   window.

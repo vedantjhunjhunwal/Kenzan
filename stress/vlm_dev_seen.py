@@ -114,7 +114,7 @@ def main(argv=None) -> int:
     ap.add_argument("out_dir")
     ap.add_argument("--max-cases", type=int, default=0, help="0 = all injected cases")
     ap.add_argument("--disable", default="", help="comma-separated rule codes to ablate, e.g. A9 (dev only)")
-    ap.add_argument("--a9-compare", default="magnitude", choices=["magnitude", "signed"])
+    ap.add_argument("--a9-compare", default="magnitude", choices=["magnitude", "signed", "suffix"])
     ap.add_argument("--perfect-only", action="store_true")
     a = ap.parse_args(argv)
     from docparse import acceptance

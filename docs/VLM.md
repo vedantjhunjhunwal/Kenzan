@@ -75,21 +75,27 @@ Fake-VLM measurement on the 10 seen scans, with every single error type from
 | A1–A8 (commit 160085f) | 7/10 | 1341/38160 |
 | final rule without A9 | 9/10 | 1723/38160 |
 | final rule (A1–A10) | **1/10** | **21/38160** |
+| A1–A10 with A9-suffix (pre-registered dev candidate) | 8/10 | 84/38160 |
 
 **The perfect-read ceiling falls to 1/10, not quite 0.** On 8 pages a correct read is rejected
 because Tesseract truncates or misreads a number (3,377,407 → 407; 4,553 → 553; 884,339 → 894339).
 On raster_100, Tesseract can't read the column dates at all. So A9 is safe on dev, but on this
 evidence it accepts almost nothing.
 
-**Proposed alternatives (not implemented; your call):**
+**A9-suffix, tested with a pre-registered rule.** The variant counts a Tesseract number as
+agreeing when its digit string is a suffix of the VLM's. The selection rule was pushed before
+measuring (`stress/FREEZE_LOG.txt`): take the variant with more perfect reads accepted, provided
+single injected errors accepted stay ≤ 0.1% (38/38160).
 
-1. **VLM-native second reading.** A second VLM pass on crops of each value column ("list the numbers
-   top to bottom"), with per-cell agreement required. The input and the prompt differ, but the model
-   is the same, so the errors are less independent than OCR's. It costs about 2 more model calls per
-   page.
-2. **Suffix-tolerant A9.** When Tesseract's number equals the trailing comma groups of the VLM value
-   (it lost the leading groups), count it as agreement on those groups only. This is a weaker check
-   and would need its own dev measurement.
+A9-suffix accepts 8/10 perfect reads but 84/38160 injected errors (0.22%), which breaks the bound.
+**A9-strict is kept** (`stress/out_vlm_dev_seen/a9_suffix/`).
+
+**Remaining alternative (untested):**
+
+- **VLM-native second reading.** A second VLM pass on crops of each value column ("list the numbers
+  top to bottom"), with per-cell agreement required. The input and the prompt differ, but the model
+  is the same, so the errors are less independent than OCR's. It costs about 2 more model calls per
+  page.
 
 **The smoke response re-scored offline under A6–A8.** These are the same response bytes as above,
 with no new model call: 74/74 path-keyed, structure 100%, accepted
