@@ -12,8 +12,15 @@ question, this page says so instead of guessing.
 
 ## 1. AI involvement
 
-Kenzan was built with Claude (Anthropic) as a coding and research assistant. **Every commit in the
-history is authored "Claude"** (`git log --format=%an`). The user directed the work, made the
+Kenzan was built with Claude (Anthropic) as a coding and research assistant. Every commit up to and
+including PR #1 was originally authored "Claude <noreply@anthropic.com>". On 2026-10-26, at the
+repository owner's request, `main` was rewritten so that those commits name the owner as author and
+committer. Trees and messages are unchanged, and **every rewritten commit keeps its
+`Co-Authored-By: Claude` trailer**. The original commits are kept on the branches
+`archive/claude-authored-main` and `archive/claude-authored-pr1`. `release/COMMIT_MAP_rewrite.txt` maps
+each original hash (the ones cited in the freeze logs, the release notes and the notebook pin) to its
+rewritten hash. The git author field therefore no longer shows who wrote the code: the trailers and
+this page do. The user directed the work, made the
 decisions recorded in `stress/FREEZE_LOG.txt`, ran the Colab notebook, and did the verification steps
 marked "user" below. The code, tests, documentation, result files and this page were written by the
 AI assistant.

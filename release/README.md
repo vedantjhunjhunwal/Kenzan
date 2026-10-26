@@ -17,6 +17,11 @@ using the same git version (zip output can differ between git versions).
 The archive does **not** contain the original AI chat log. That log is a required external attachment
 to the submission ([docs/INTEGRITY.md](../docs/INTEGRITY.md)).
 
+**History rewrite (2026-10-26).** `main` was rewritten to change commit authorship
+(`COMMIT_MAP_rewrite.txt`). The source commit `3fb23bacb8858ffcb97d77235c9e2ddbd174213d` is on the branch
+`archive/claude-authored-pr1`, so the check above still works after a normal clone. Its content was
+squash-merged into `main` (PR #1) with an identical file tree.
+
 Previous snapshot (superseded): commit `b9fbc7009ca7426ff52bc7cec309d7deb16ce575`, 2603145 bytes,
 sha256 `38ca8eb2c9535594516fc6e75fcfbd356553b7516c635b95fb2b3f02fae6c511` (in git history at commit
 ed59e96).

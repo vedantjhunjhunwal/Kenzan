@@ -1,0 +1,36 @@
+# Commit hash map: history rewrite of main on 2026-10-26
+#
+# At the repository owner's request, the author and committer of every commit on main that was authored
+# 'Claude <noreply@anthropic.com>' were changed to the owner's GitHub identity. File trees and messages are
+# unchanged; every commit keeps its 'Co-Authored-By: Claude' trailer. The original commits remain on branches
+# archive/claude-authored-main (old main) and archive/claude-authored-pr1 (the 4 commits squashed into PR #1),
+# so every hash cited in stress/FREEZE_LOG.txt, bench/FREEZE_LOG.txt, release/README.md and the Colab notebook
+# (bd96a9b) still resolves after a normal 'git clone'. Columns: original hash, rewritten hash, subject.
+05bcfa8216a8fefa24c3533439dd38d93d5498ea 9ba7db27fb143b43378d1232a82c39b6a84d68fa Initial release of Kenzan (検算): verified table extraction for Japanese balance sheets
+9d688e2db1cf758af2a20e3c501f78c7d884b246 9d22d6f6e620c5856deb9af802aa53561e37b713 Fix overclaims; add a claim audit
+5926818fb61c35897c8a9a9760838e73745e83aa 6c9225481a184ac6396ddf6d3d2451e50d5140c4 Real-PDF evaluation groundwork: sealed test triage, download list, split fix
+cf20566044296dad453e9114e45fa14efd538e33 c1a420bdbf5384e8a7089c652858a9b20d484043 Freeze held-out degradation set v3 before any VLM code
+26d36814094d7b401a3c222d8833073fea31c1b6 2c8366ca1706289abc573039ab3b179d27bcb185 Log correction to the held-out v3 note (300 dpi base render is reused)
+605b130ce8eb3aeb3df76d5a4ff4c252f0b494de 5d3053a10c9eb99f4d0a82ff94b80e988e3a78f5 VLM path for scans: pluggable backend, frozen protocol, Tesseract arm on held-out v3
+4c6e4632901a90e63e344c6a0fd854b206196c0c a13109b072db7f3b60d639df64423343bb8af923 Add SUBMISSION.md (one-page reviewer summary); audit covers it (93/93)
+598354c6de294798b491c32c41ae1c7cf745eca2 29b6aa8ed1d052218a17b6b0a95113c9f00c0dcb Fresh-clone check: make the timing claim machine-independent in the audit; refresh v1_seen with current harness fields (metrics unchanged)
+bda76eaecc367c546457c6f4c78c020119a3840b d08866458f647bcf032a2120b8864e6aeb19b5de Pre-Colab fixes: v3 scope stated, both page identities logged, vlm+checks caveat, gated smoke test
+fcaa41dfa849fbbf4ee905941932ba9c7248df80 8611e3db0944938acc750be8e1ceaf80e3807d32 DOWNLOADS.md: concrete filings with docID, company, standard, unit, pages, split; split.py 'which' lookup
+5ea2f65f3dafbbd40984d34f2ab20648e2237af2 1c3c232975e7a83281ab13411d2fa4e0eff1cf74 Pin the Colab notebook to frozen commit fcaa41d; log it
+c47acbba6099f6c05328184d2e2b426e6f38e7ad 9069d84800f64efde53e76a79dc7f09d802f3d3e Diagnose the 250 dpi anomaly on held-out v3 (diagnosis only, no code changes)
+db03aaf6c78200b0a2289f75099c323ae15acc93 f7201e7c84aa3966caba370af20e40327efbb51e Add five dev filings to the download list (selected by split only)
+a96ef14ca81cd5d3f9c7efdb078eaea0869996b9 cce1895799d8a8897012ce48d41feeb5ce8d4503 Triage reads format metadata of sealed filings automatically and prints a coverage table
+91ea2cd0cd6ae967cbf73229d597cab5d91cb3be a28b81391d3b3b980f8fbd48ed8b1ca71a3249e5 Scorer: per-page false accept per arm and latency columns (harness only)
+16c1954968edbe481b05365f6631793731c89263 4f8cdd7f90708b1ac8a1d235e5375728132b3574 Log the Colab smoke-test result (20/74, gate failed, v3 not run) and the blocked transfer
+2580ecd56720426d1e1173987f0a9a93572c0efd beb0587b1cb697e5ca85f88490afda1a9446598e Diagnose the VLM smoke result: values 74/74 correct, indentation wrong on 31/43 rows (structure-level false accept)
+aeb7feb0ae3946bb674310d758b4d04e18333c6b 2de716ad1a441fbca7f113c90080f876877e9ba8 Acceptance amendment A6-A8: unit read from page, column periods in order, VLM second reading
+160085f56a9e2cc43725266348ccfa069431a2f6 c2e86ea19e39337bcead4e91e2c04baa622a5f90 Docs: smoke-test result, amendment A6-A8, and the caveat that earlier 0-false-accept results used A1-A5; smoke re-score under A6-A8
+a589605ad70199420443164abcf058eacf970fa9 43dc13c771759e016e8ba88c50d5d15b0078cdee Amendment A9-A10: per-cell VLM/OCR agreement, unresolved subtotals to review, unit band fix on rotated scans
+c8f342f4bd2cce47ed0baa2abc1313480f78494e 786aa7c583f95406168ff2c819d8b0bca0e7b942 Re-score frozen held-out sets once under A1-A10 (metrics identical, decisions unchanged); docs; notebook pinned to a589605
+b9fbc7009ca7426ff52bc7cec309d7deb16ce575 7a9e2722b271bf771d94f9fc86d0e45b49d8f43a Remove a local scratch path from the smoke re-score outputs (cache_file field)
+ed59e96b5d08a64e2f9b175bde4aa70a98f7d424 2431b6fcf94e52a6ab0641a86e0a40b2a610f650 Add release snapshot Kenzan_final.zip (git archive of b9fbc7009ca7426ff52bc7cec309d7deb16ce575)
+4812e1ccba0ee6ba584ce55de5fbeda4889dd8fd c27bb142070f975efc4a43afb70adacae7e6a01d Link the Colab notebook (open-in-Colab) from README and docs/VLM.md
+36c89897ad9029ac690b6113141b73e8090644e2 055ebc11efe69b71b7c3a1f75b555ad6566f692f Pre-register the A9-strict vs A9-suffix selection rule (before any measurement)
+bd96a9bcc7fe8113f9b4f070cbfb8c3201f7e73a bd53e038e216cdf9c13c803ad5756de84103d73e A9 variant test (pre-registered): A9-suffix breaks the 0.1% bound (84/38160), A9-strict kept; freeze
+246a072ea6fb00738614486e499194554de138bb 4246fbc73fb8b991c7608df658a7a4a9eedc84b2 Pin the Colab notebook to frozen commit bd96a9b for VLM run 2
+de7680ba1aeedaff21fb1cd35153b4e41b8d5add c6e77882fb5f7dd0d47f03e1c32600d31de8b488 Per-dimension metrics, wrapped labels + spans, acceptance study, real-filing runner, integrity notes (#1)

@@ -68,7 +68,9 @@ columns, indentation and every cell it read.
 
 ## AI assistance and chat log
 
-Built with Claude (Anthropic); every commit is authored by it. AI-made annotations and shared code
+Built with Claude (Anthropic). Commits name the repository owner as author since a history rewrite
+on 2026-10-26, with a `Co-Authored-By: Claude` trailer on each; the original Claude-authored history is
+on the `archive/claude-authored-*` branches. AI-made annotations and shared code
 are listed in [docs/INTEGRITY.md](docs/INTEGRITY.md). **The full original chat log is not in this
 repository. It is a required external attachment** and has not been reconstructed.
 
