@@ -129,12 +129,3 @@ including the stress sets.
 7. **Layout scope.** Single-table statement pages. Wrapped labels and spanning header cells are
    handled for the patterns in RESULTS §8, tested on synthetic pages only. There is no cross-page
    stitching and no general PDF table support.
-
-## AI assistance
-
-Kenzan was built with Claude (Anthropic) as a coding and research assistant. Commits name the
-repository owner as author since a history rewrite on 2026-10-26, and each carries a
-`Co-Authored-By: Claude` trailer; the original Claude-authored history is kept on the
-`archive/claude-authored-*` branches. Which annotations were AI-made, and how the ground truth is coupled to the pipeline, is in
-[docs/INTEGRITY.md](docs/INTEGRITY.md). **The full original chat log is not in this repository. It is a
-required external attachment to the submission** and has not been reconstructed here.
