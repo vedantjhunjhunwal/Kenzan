@@ -1,0 +1,90 @@
+{
+ "code_root": "git archive of commit 246a072 (docparse/)",
+ "fixtures": {
+  "wrap_last": {
+   "page_correct": false,
+   "overall_score": 0.803,
+   "decision": "review",
+   "reasons": [
+    "A2",
+    "A3",
+    "A10"
+   ],
+   "values_printed": 0.8,
+   "labels": 0.8461538461538461,
+   "rows_matched": 1.0,
+   "no_extra": 0.0
+  },
+  "wrap_first": {
+   "page_correct": false,
+   "overall_score": 0.8435,
+   "decision": "review",
+   "reasons": [
+    "A2",
+    "A3"
+   ],
+   "values_printed": 0.95,
+   "labels": 0.8461538461538461,
+   "rows_matched": 1.0,
+   "no_extra": 0.0
+  },
+  "wrap_last_hanging": {
+   "page_correct": false,
+   "overall_score": 0.797,
+   "decision": "review",
+   "reasons": [
+    "A2",
+    "A3",
+    "A10"
+   ],
+   "values_printed": 0.8,
+   "labels": 0.8461538461538461,
+   "rows_matched": 1.0,
+   "no_extra": 0.0
+  },
+  "span_header": {
+   "page_correct": false,
+   "overall_score": 0.803,
+   "decision": "review",
+   "reasons": [
+    "A2",
+    "A3",
+    "A10"
+   ],
+   "values_printed": 0.8,
+   "labels": 0.8461538461538461,
+   "rows_matched": 1.0,
+   "no_extra": 0.0
+  },
+  "ambiguous_wrap": {
+   "page_correct": false,
+   "overall_score": 0.803,
+   "decision": "review",
+   "reasons": [
+    "A2",
+    "A3",
+    "A10"
+   ],
+   "values_printed": 0.8,
+   "labels": 0.8461538461538461,
+   "rows_matched": 1.0,
+   "no_extra": 0.0
+  },
+  "span_header_date": {
+   "page_correct": false,
+   "overall_score": 0.7645,
+   "decision": "review",
+   "reasons": [
+    "A2",
+    "A3",
+    "A10"
+   ],
+   "values_printed": 0.8,
+   "labels": 0.8461538461538461,
+   "rows_matched": 1.0,
+   "no_extra": 0.0
+  }
+ },
+ "page_correct": 0,
+ "accepted": 0
+}

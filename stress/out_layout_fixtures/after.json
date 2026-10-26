@@ -1,0 +1,74 @@
+{
+ "code_root": "this repository",
+ "fixtures": {
+  "wrap_last": {
+   "page_correct": true,
+   "overall_score": 1.0,
+   "decision": "accept",
+   "reasons": [],
+   "values_printed": 1.0,
+   "labels": 1.0,
+   "rows_matched": 1.0,
+   "no_extra": 1.0
+  },
+  "wrap_first": {
+   "page_correct": true,
+   "overall_score": 1.0,
+   "decision": "accept",
+   "reasons": [],
+   "values_printed": 1.0,
+   "labels": 1.0,
+   "rows_matched": 1.0,
+   "no_extra": 1.0
+  },
+  "wrap_last_hanging": {
+   "page_correct": true,
+   "overall_score": 1.0,
+   "decision": "accept",
+   "reasons": [],
+   "values_printed": 1.0,
+   "labels": 1.0,
+   "rows_matched": 1.0,
+   "no_extra": 1.0
+  },
+  "span_header": {
+   "page_correct": true,
+   "overall_score": 1.0,
+   "decision": "accept",
+   "reasons": [],
+   "values_printed": 1.0,
+   "labels": 1.0,
+   "rows_matched": 1.0,
+   "no_extra": 1.0
+  },
+  "ambiguous_wrap": {
+   "page_correct": false,
+   "overall_score": 0.803,
+   "decision": "review",
+   "reasons": [
+    "A2",
+    "A3",
+    "A10",
+    "A11"
+   ],
+   "values_printed": 0.8,
+   "labels": 0.8461538461538461,
+   "rows_matched": 1.0,
+   "no_extra": 0.0
+  },
+  "span_header_date": {
+   "page_correct": true,
+   "overall_score": 1.0,
+   "decision": "review",
+   "reasons": [
+    "A11"
+   ],
+   "values_printed": 1.0,
+   "labels": 1.0,
+   "rows_matched": 1.0,
+   "no_extra": 1.0
+  }
+ },
+ "page_correct": 5,
+ "accepted": 4
+}

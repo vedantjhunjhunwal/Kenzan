@@ -251,6 +251,85 @@ claim("docs/RESULTS.md", f"| {sx['perfect_read_accepted']} | {sx['injected_accep
 claim("docs/VLM.md", f"A9-suffix accepts {sx['perfect_read_accepted']} perfect reads but {sx['injected_accepted_total']} injected errors",
       f"{DV}/a9_suffix", int(sx["injected_accepted_total"].split("/")[0]) > 38)
 
+# ------------------------------------------------------------------ 2026-10-25: per-dimension metric, acceptance study, layout
+DM = "stress/dimensions_all_runs.json"
+dm = J(DM)["runs"]
+
+
+def _deg(run):
+    return {k: v for k, v in dm[run]["pages"].items() if k != "born_digital"}
+
+
+def _unit_bad(run):
+    d = _deg(run)
+    return f"{sum(v['unit'] != 1.0 for v in d.values())} of {len(d)}"
+
+
+claim("README.md", f"unseen v2: {_unit_bad('out_v2_unseen')} pages; held-out v3: {_unit_bad('out_heldout_v3')}", DM,
+      all(dm[r]["degraded_page_correct"] == 0 for r in dm if r != "out_geometry"))
+claim(SB, f"unit missing or wrong on {_unit_bad('out_v2_unseen')} unseen v2 pages and {_unit_bad('out_heldout_v3')} "
+      f"held-out v3 pages", DM, True)
+for run, key in (("out_v1_seen", "| seen, round 1 ("), ("out_v2_seen", "| seen, v2 ("), ("out_v1_unseen", "| unseen, round 1 ("),
+                 ("out_v2_unseen", "| unseen, v2 ("), ("out_heldout_v3", "| held-out v3, v2 (")):
+    d = _deg(run)
+    m = lambda f: pct(sum(v[f] for v in d.values()) / len(d))
+    row = (f"| {m('cell_f1_historical')} | {m('values_printed')} | {m('labels')} | {m('paths')} | {_unit_bad(run)} | "
+           f"{sum(v['periods_columns'] != 1.0 for v in d.values())} of {len(d)} | {m('scaled_values')} | "
+           f"{sum(v['page_correct'] for v in d.values())} of {len(d)} |")
+    claim("docs/RESULTS.md", row, DM, True, line_key=key)
+v3 = dm["out_heldout_v3"]["pages"]
+claim("docs/RESULTS.md", f"scaled values are {pct(v3['rot_+0.8']['scaled_values'])} and {pct(v3['rot_-1.2']['scaled_values'])} correct",
+      DM, v3["rot_+0.8"]["unit"] == 0.0 and v3["rot_-1.2"]["unit"] == 0.0)
+claim("docs/RESULTS.md", f"cell F1 is {pct(v3['rot_+0.8']['cell_f1_historical'])} and {pct(v3['rot_-1.2']['cell_f1_historical'])}",
+      DM, True)
+claim("docs/RESULTS.md", f"The born-digital page and its 3 geometry variants are page-correct ({dm['out_geometry']['page_correct']} of 4)",
+      DM, dm["out_geometry"]["page_correct"] == 4)
+
+AE = "stress/out_acceptance_eval/results.json"
+ae = J(AE)
+aes, aet = ae["summary"], ae["by_type_on_pages_accepted_clean"]
+n, a = aes["runs_on_pages_accepted_clean"], aes["accepted_on_pages_accepted_clean"]
+rate = f"{100 * a / n:.1f}%"
+claim("docs/RESULTS.md", f"{aes['corrupted_runs']} runs, all {aes['corrupted_incorrect']} outputs incorrect", AE,
+      aes["corrupted_no_op"] == 0 and aes["edits_not_applied"] == 0)
+claim("docs/RESULTS.md", f"{n} runs, **{a} accepted ({rate})**", AE, aes["pages_accepted_clean"] == 8)
+claim("docs/RESULTS.md", f"**8 are accepted and 1 is sent to review**", AE,
+      aes["correct_pages"] == 9 and aes["correct_pages_accepted"] == 8 and aes["correct_pages_sent_to_review"] == 1)
+claim("docs/RESULTS.md", f"0 of 1 clean parse, and {a} of {n} corrupted reads", AE,
+      aes["incorrect_clean_pages"] == 1 and aes["incorrect_clean_pages_accepted"] == 0)
+for doc in ("README.md", "SUBMISSION.md"):
+    claim(doc, f"{a} of {n}", AE, True)
+claim("README.md", "8 of 9 accepted, 1 sent to review", AE, aes["correct_pages_accepted"] == 8)
+claim("README.md", f"incorrect reads accepted ({rate})", AE, True)
+claim(SB, f"8 of 9 accepted, 1 sent to review", AE, aes["correct_pages_accepted"] == 8)
+for key, t in (("unit 千円 → 百万円", "unit_wrong"), ("unit line removed", "unit_removed"),
+               ("period dates swapped", "period_dates_swapped"), ("whole column headers swapped", "period_headers_swapped"),
+               ("value columns swapped", "value_columns_swapped"), ("△ added", "sign_added"), ("△ dropped", "sign_dropped"),
+               ("ones digit +1", "digit_ones"), ("tens digit +1", "digit_tens"), ("one value +1,000", "consistent_value"),
+               ("missing cell", "missing_cell"), ("missing row", "missing_row"), ("label typo", "label_typo"),
+               ("line item one indent deeper", "hierarchy_deeper"), ("line item one indent shallower", "hierarchy_shallower")):
+    b = aet[t]
+    claim("docs/RESULTS.md", f"| {b['runs']} | {b['accepted']} |", AE, True, line_key=f"| {key}")
+
+LF = "stress/out_layout_fixtures"
+lb, la = J(f"{LF}/before_246a072.json"), J(f"{LF}/after.json")
+for v, fb in lb["fixtures"].items():
+    fa = la["fixtures"][v]
+    yn = lambda f: "yes" if f["page_correct"] else "no"
+    claim("docs/RESULTS.md", f"{yn(fb)} / {fb['decision']} |", f"{LF}/before_246a072.json", True, line_key=f"| {v} |")
+    claim("docs/RESULTS.md", f"{yn(fa)} / {fa['decision']}", f"{LF}/after.json", True, line_key=f"| {v} |")
+claim("README.md", f"page-correct {lb['page_correct']} of 6 → {la['page_correct']} of 6; accepted {lb['accepted']} → {la['accepted']}",
+      LF, True)
+claim(SB, f"page-correct {lb['page_correct']} → {la['page_correct']}, accepted {lb['accepted']} → {la['accepted']}", LF, True)
+SR = f"{LF}/seen_regression_70f9fac_vs_14deea7.json"
+sr = J(SR)["summary"]
+claim("docs/RESULTS.md", f"All {sr['pages']} seen pages give the same cell", SR, sr["identical"] == sr["pages"])
+VD = J("stress/out_vlm_dev_seen/a9_strict_parser_14deea7/dev_seen.json")
+claim("docs/VLM.md", f"perfect reads and {VD['summary']['injected_accepted_total']} injected errors accepted",
+      "stress/out_vlm_dev_seen/a9_strict_parser_14deea7",
+      VD["summary"]["perfect_read_accepted"] == f["perfect_read_accepted"] == "1/10"
+      and VD["summary"]["injected_accepted_total"] == f["injected_accepted_total"])
+
 # ------------------------------------------------------------------ report
 bad = [c for c in claims if not (c["in_doc"] and c["matches_file"])]
 lines = ["# Claim audit", "", "Generated by `scripts/audit_claims.py`. Each row: a number stated in the docs, the file it "

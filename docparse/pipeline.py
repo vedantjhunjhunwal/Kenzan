@@ -57,6 +57,7 @@ def parse_page(page: pymupdf.Page, *, force_route: str | None = None, ocr=None,
             "calc_parent": None, "calc_parent_source": None, "calc_rule": None, "closes_header": None,
             "footnote_refs": refs, "xbrl_candidate": None, "xbrl_confidence": None, "xbrl_verified": False,
             "human_verification": None, "label_bbox": br.label_bbox,
+            "row_span": {"lines": br.lines, "line_bboxes": br.line_bboxes, "value_line": br.value_line},
             "label_x0": br.label_tokens[0].x0 if br.label_tokens else (min(t.x0 for t in br.values.values())),
             "cells": cells,
         })
@@ -98,7 +99,9 @@ def parse_page(page: pymupdf.Page, *, force_route: str | None = None, ocr=None,
         "sections_present": [r["label_ja"] for r in rows if r["label_norm"].endswith("の部")],
         "route": {"route": decision.route, "reasons": decision.reasons, "metrics": decision.metrics,
                   "backend": backend.name, "backend_diagnostics": content.diagnostics},
-        "layout": lay.diagnostics | {"indent_levels_x0": [round(x, 1) for x in levels]},
+        "layout": lay.diagnostics | {"indent_levels_x0": [round(x, 1) for x in levels],
+                                     "header_cells": lay.header_cells,
+                                     "support": "uncertain" if lay.diagnostics.get("uncertain") else "supported"},
         "corrections": corr_diag,
     }
     periods = [{k: v for k, v in p.items() if k != "header_text"} for p in lay.periods]

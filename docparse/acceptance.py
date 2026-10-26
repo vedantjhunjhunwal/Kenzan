@@ -25,6 +25,10 @@ ACCEPT only if all of these hold; anything else goes to REVIEW (with every reaso
       "unresolved"): its place in the calculation tree is unknown, and the template checks, which
       match totals by label, cannot see that.
 
+  A11 the layout reconstruction is certain (docparse.layout): no label-only line that could belong to
+      the row above or below, no label-only line with nothing indented under it, no column-spanning
+      header carrying a date. Such pages are an unsupported layout for this parser.
+
 A6-A8 were added on 2026-10-25 (amendment in stress/FREEZE_LOG.txt) after the VLM smoke page and
 fake-runner cases showed that A1-A5 accept pages with swapped columns, a wrong unit, or a wrong
 hierarchy whenever the values themselves are consistent.
@@ -36,7 +40,7 @@ from __future__ import annotations
 
 from .registry import sections_present
 
-AMENDMENT = "A6-A10 (2026-10-25)"
+AMENDMENT = "A6-A10 (2026-10-25) + A11 (2026-10-25, layout reconstruction)"
 DISABLED: set[str] = set()     # dev measurement only (stress/vlm_dev_seen.py ablations); always empty in use
 
 
@@ -104,6 +108,10 @@ def decide(doc: dict, allow_solver: bool = False) -> dict:
     if doc.get("status") == "ok" and unresolved:
         reasons.append(f"A10 {len(unresolved)} subtotal/total row(s) with an unresolved calc parent: "
                        + ", ".join(unresolved[:8]))
+    uncertain = (meta.get("layout") or {}).get("uncertain") or []
+    if doc.get("status") == "ok" and uncertain:
+        reasons.append(f"A11 unsupported layout, reconstruction uncertain ({len(uncertain)}): "
+                       + "; ".join(f"{u['kind']} '{u['text']}'" for u in uncertain[:4])[:300])
     unknown_corr = sum(1 for r in doc.get("rows", []) for c in r["cells"].values() if c.get("is_corrected") is None)
     if DISABLED:
         reasons = [r for r in reasons if r.split()[0] not in DISABLED]

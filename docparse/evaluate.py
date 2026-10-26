@@ -13,6 +13,21 @@ Metrics
                are positive here, so accuracy alone says little). None (unknown) counts as wrong.
   validation   consistency (passed/evaluable) per category and template coverage, plus agreement of
                each check's status with the same check run on the ground truth.
+  dimensions   (added 2026-10-25; the four sections above are unchanged, for historical comparison)
+               each dimension scored on its own, so one error cannot hide behind another:
+                 values_printed   printed value, sign, nil per cell; rows aligned by label sequence then by
+                                  position, columns by position -> independent of labels, paths and dates
+                 labels / paths   label_norm and label_path per aligned row
+                 structure        level, presentation parent, calc parent, row type per aligned row
+                 unit             unit_ja and multiplier equal
+                 periods          per value column: period-end date and context equal; plus cells whose
+                                  value sits under the right period-end date
+                 scaled_values    per cell: value x multiplier (the yen amount) under the right date
+                 rows             ground-truth rows matched, predicted rows extra
+               page_correct is true only when EVERY dimension is perfect (no missing or extra rows or
+               cells); overall_score is the mean of the dimension scores, so it is 1.0 only then.
+               is_corrected is reported (page_correct_incl_corrections) but not required: scans
+               cannot determine it.
 """
 from __future__ import annotations
 
@@ -132,6 +147,139 @@ def score_validation(gt: dict, pred: dict) -> dict:
             1 - len(disagree) / max(len(gs.keys() | ps.keys()), 1), "differences": disagree}
 
 
+def align_rows_positional(gt_rows: list[dict], pred_rows: list[dict]) -> dict[str, tuple[str, bool]]:
+    """gt row_id -> (pred row_id, labels equal). Label-sequence alignment, then leftover rows are
+    paired by order inside each unmatched gap, so a misread label still pairs with its row and its
+    values are scored on their own (same rule as stress/run_stress.py's diagnosis)."""
+    sm = difflib.SequenceMatcher(a=[r["label_norm"] for r in gt_rows], b=[r["label_norm"] for r in pred_rows],
+                                 autojunk=False)
+    m = {}
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag in ("equal", "replace"):
+            for k in range(min(i2 - i1, j2 - j1)):
+                m[gt_rows[i1 + k]["row_id"]] = (pred_rows[j1 + k]["row_id"], tag == "equal")
+    return m
+
+
+def _ratio(ok: int, n: int) -> float | None:
+    return ok / n if n else None
+
+
+def score_dimensions(gt: dict, pred: dict) -> dict:
+    """Separate per-dimension scores and complete-page correctness (see module docstring)."""
+    m = align_rows_positional(gt["rows"], pred["rows"])
+    pr = {r["row_id"]: r for r in pred["rows"]}
+    inv = {pid: gid for gid, (pid, _) in m.items()}
+    gper, pper = gt["periods"], pred.get("periods", [])
+    gdate = {p["id"]: p.get("date") for p in gper}
+    pid_by_date = {p.get("date"): p["id"] for p in pper if p.get("date")}
+    gcol = {p["id"]: k for k, p in enumerate(gper)}
+    diffs: list[dict] = []
+
+    def cell_sig(c):
+        return None if c is None else (c.get("reported_value"), bool(c.get("is_negative")), bool(c.get("is_nil")))
+
+    n_cells = v_ok = per_ok = sc_ok = corr_ok = 0
+    lab_ok = path_ok = 0
+    struct = {"presentation_level": 0, "presentation_parent": 0, "calc_parent": 0, "row_type": 0}
+    for g in gt["rows"]:
+        hit = m.get(g["row_id"])
+        p = pr.get(hit[0]) if hit else None
+        if p is None:
+            diffs.append({"dimension": "rows", "row": g["row_id"], "label": g["label_ja"], "kind": "missing_row"})
+        else:
+            if p["label_norm"] == g["label_norm"]:
+                lab_ok += 1
+            else:
+                diffs.append({"dimension": "labels", "row": g["row_id"], "gt": g["label_norm"], "pred": p["label_norm"]})
+            if p.get("label_path") == g["label_path"]:
+                path_ok += 1
+            else:
+                diffs.append({"dimension": "paths", "row": g["row_id"], "gt": g["label_path"],
+                              "pred": p.get("label_path")})
+            for f in struct:
+                got = p.get(f)
+                if f in ("presentation_parent", "calc_parent"):
+                    got = inv.get(got) if got else None
+                if got == g.get(f):
+                    struct[f] += 1
+                else:
+                    diffs.append({"dimension": "structure", "row": g["row_id"], "field": f, "gt": g.get(f),
+                                  "pred": got})
+        for gpid, gc in g["cells"].items():
+            n_cells += 1
+            k = gcol[gpid]
+            pc_pos = (p["cells"].get(pper[k]["id"]) if p is not None and k < len(pper) else None)
+            if cell_sig(pc_pos) == cell_sig(gc):
+                v_ok += 1
+            else:
+                diffs.append({"dimension": "values_printed", "row": g["row_id"], "column": k,
+                              "gt": gc.get("raw_text"), "pred": None if pc_pos is None else pc_pos.get("raw_text")})
+            dpid = pid_by_date.get(gdate[gpid])
+            pc_date = p["cells"].get(dpid) if p is not None and dpid else None
+            if cell_sig(pc_date) == cell_sig(gc):
+                per_ok += 1
+            if pc_date is not None and pc_date.get("value") == gc.get("value") and cell_sig(pc_date) == cell_sig(gc):
+                sc_ok += 1
+            else:
+                diffs.append({"dimension": "scaled_values", "row": g["row_id"], "period": gdate[gpid],
+                              "gt": gc.get("value"), "pred": None if pc_date is None else pc_date.get("value")})
+            if pc_date is not None and pc_date.get("is_corrected") == gc.get("is_corrected"):
+                corr_ok += 1
+    matched_pred = {pid for pid, _ in m.values()}
+    extra_rows = [r["row_id"] for r in pred["rows"] if r["row_id"] not in matched_pred]
+    extra_cells = sum(len(r["cells"]) for r in pred["rows"] if r["row_id"] in extra_rows)
+    g_by_id = {g["row_id"]: g for g in gt["rows"]}
+    for r in pred["rows"]:                       # cells in aligned rows under columns the gt row leaves empty
+        g = g_by_id.get(inv.get(r["row_id"]))
+        if g is not None:
+            expected = {pper[gcol[x]]["id"] for x in g["cells"] if gcol[x] < len(pper)}
+            extra_cells += sum(1 for pid in r["cells"] if pid not in expected)
+    for rid in extra_rows:
+        diffs.append({"dimension": "rows", "row": rid, "label": pr[rid]["label_ja"], "kind": "extra_row"})
+
+    gm, pm = gt["metadata"], pred.get("metadata", {})
+    unit_ok = gm.get("unit_ja") == pm.get("unit_ja") and gm.get("unit_multiplier") == pm.get("unit_multiplier")
+    if not unit_ok:
+        diffs.append({"dimension": "unit", "gt": [gm.get("unit_ja"), gm.get("unit_multiplier")],
+                      "pred": [pm.get("unit_ja"), pm.get("unit_multiplier")]})
+    col_ok = 0
+    for k, gp in enumerate(gper):
+        pp = pper[k] if k < len(pper) else {}
+        if pp.get("date") == gp.get("date") and pp.get("context") == gp.get("context"):
+            col_ok += 1
+        else:
+            diffs.append({"dimension": "periods", "column": k, "gt": [gp.get("date"), gp.get("context")],
+                          "pred": [pp.get("date"), pp.get("context")]})
+    n_rows = len(gt["rows"])
+    dims = {
+        "values_printed": _ratio(v_ok, n_cells),
+        "labels": _ratio(lab_ok, n_rows),
+        "paths": _ratio(path_ok, n_rows),
+        **{f"structure_{f}": _ratio(v, n_rows) for f, v in struct.items()},
+        "unit": 1.0 if unit_ok else 0.0,
+        "periods_columns": _ratio(col_ok, len(gper)) if len(pper) == len(gper) else 0.0,
+        "periods_cells": _ratio(per_ok, n_cells),
+        "scaled_values": _ratio(sc_ok, n_cells),
+        "rows_matched": _ratio(len(m), n_rows),
+        "no_extra": 1.0 if not extra_rows and not extra_cells else 0.0,
+    }
+    scores = [v for v in dims.values() if v is not None]
+    page_correct = (pred.get("status") == "ok" and all(v == 1.0 for v in scores))
+    return {
+        **dims,
+        "counts": {"gt_cells": n_cells, "values_printed_correct": v_ok, "cells_under_correct_period": per_ok,
+                   "scaled_values_correct": sc_ok, "gt_rows": n_rows, "rows_matched": len(m),
+                   "labels_correct": lab_ok, "paths_correct": path_ok, "extra_rows": len(extra_rows),
+                   "extra_cells": extra_cells, "period_columns_gt": len(gper), "period_columns_pred": len(pper),
+                   "period_columns_correct": col_ok, "is_corrected_correct": corr_ok},
+        "overall_score": sum(scores) / len(scores) if scores else 0.0,
+        "page_correct": page_correct,
+        "page_correct_incl_corrections": page_correct and corr_ok == n_cells,
+        "differences": diffs,
+    }
+
+
 def evaluate(pdf: str, gt_stem: str, out_dir: str, page: int = 0, route: str | None = None,
              backend=None) -> dict:
     """backend: optional visual-route backend (e.g. docparse.vlm.VLMBackend); default Tesseract."""
@@ -147,6 +295,7 @@ def evaluate(pdf: str, gt_stem: str, out_dir: str, page: int = 0, route: str | N
         "structure": score_structure(gt, pred),
         "corrections": score_corrections(gt, pred),
         "validation": score_validation(gt, pred),
+        "dimensions": score_dimensions(gt, pred),
     }
     Path(out_dir, "report.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1, default=list),
                                             encoding="utf-8")
@@ -174,7 +323,16 @@ def print_report(rep: dict) -> None:
           f"(solver checks: {ps['solver']['checks']})  coverage={fmt(ps['coverage'])} "
           f"({ps['template_evaluable']}/{ps['template_expected']})  "
           f"status agreement with GT={v['status_agreement_with_gt']:.2%}")
-    for name, sec in (("cells", c), ("structure", s), ("corrections", k), ("validation", v)):
+    dm = rep["dimensions"]
+    pct = lambda x: "n/a" if x is None else f"{x:.2%}"
+    print(f"dimensions   values_printed={pct(dm['values_printed'])} labels={pct(dm['labels'])} "
+          f"paths={pct(dm['paths'])} unit={'ok' if dm['unit'] == 1.0 else 'WRONG'} "
+          f"periods={pct(dm['periods_columns'])} scaled_values={pct(dm['scaled_values'])} "
+          f"rows_matched={pct(dm['rows_matched'])} extra={dm['counts']['extra_rows']} rows/"
+          f"{dm['counts']['extra_cells']} cells")
+    print(f"page         page_correct={dm['page_correct']}  overall_score={dm['overall_score']:.4f}  "
+          f"(incl. is_corrected: {dm['page_correct_incl_corrections']})")
+    for name, sec in (("cells", c), ("structure", s), ("corrections", k), ("validation", v), ("dimensions", dm)):
         for d in sec["differences"]:
             print(f"  DIFF {name}: {d}")
     for d in c.get("info", []):

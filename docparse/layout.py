@@ -5,6 +5,15 @@ Everything is learned from the page:
   periods        header text stacked above each column (labels + dates, Western or 和暦)
   body           from the line after the period header to the last line holding a column value
   row pitch      median distance between body rows (diagnostic; flags tight rows = possible wraps)
+  wrapped labels a label printed over several lines is joined into one row (reconstruct_wrapped_labels);
+                 the row keeps its line count and line boxes (a row span over physical lines)
+  header cells   every header token with the value columns it covers; a token over two or more
+                 columns is a column-spanning cell and never becomes part of one column's period text
+  uncertainty    patterns the rules cannot decide (a label-only line that may belong to the row above
+                 or below, a label-only line with nothing indented under it, a spanning header that
+                 carries a date) are listed in diagnostics["uncertain"]; acceptance A11 sends the page
+                 to review. This is a focused reconstruction for single-table statement pages, not
+                 general PDF table support.
 """
 from __future__ import annotations
 
@@ -43,6 +52,12 @@ class BodyRow:
     values: dict[int, Token]
     y0: float
     y1: float
+    line_bboxes: list[list[float]] = field(default_factory=list)   # one box per physical line (row span)
+    value_line: int | None = None       # which of those lines holds the values (0-based); None = no values
+
+    @property
+    def lines(self) -> int:
+        return max(len(self.line_bboxes), 1)
 
     @property
     def label_text(self) -> str:
@@ -75,6 +90,109 @@ class Layout:
     revision: str | None
     printed_page: str | None
     diagnostics: dict = field(default_factory=dict)
+    header_cells: list[dict] = field(default_factory=list)
+
+
+WRAP_TIGHT = 0.8         # x row pitch: a line this close to its neighbour is inside the same cell
+WRAP_MAX_GAP = 1.25      # x row pitch: never join lines further apart than this
+WRAP_CLEAR = 0.15        # x row pitch: the row above and below must differ this much to pick one
+HANGING_INDENT = 1.5     # x char size: largest indent of a continuation line
+SPAN_OVERLAP = 0.3       # share of a header token's width that must lie over a column to cover it
+
+
+def _x0(r: BodyRow) -> float | None:
+    return r.label_tokens[0].x0 if r.label_tokens else None
+
+
+def _line_yc(r: BodyRow, k: int) -> float:
+    """Vertical centre of physical line k of a row (k = -1: its last line)."""
+    if r.line_bboxes:
+        b = r.line_bboxes[k]
+        return (b[1] + b[3]) / 2
+    return (r.y0 + r.y1) / 2
+
+
+def _join(a: BodyRow, b: BodyRow) -> BodyRow:
+    """a above b, one logical row; at most one of them carries values."""
+    vline = a.value_line if a.values else (a.lines + b.value_line if b.values else None)
+    return BodyRow(a.label_tokens + b.label_tokens, a.values or b.values, min(a.y0, b.y0), max(a.y1, b.y1),
+                   a.line_bboxes + b.line_bboxes, vline)
+
+
+def reconstruct_wrapped_labels(body: list[BodyRow], size: float, pitch: float | None
+                               ) -> tuple[list[BodyRow], list[dict], list[dict]]:
+    """Join labels printed over several lines. Returns (rows, joins, uncertain).
+
+    A label-only line B (no value in any column) is a section header when the next line is indented
+    deeper; otherwise it is part of a neighbouring row:
+      values on the last line   the next line C starts where B starts (or up to a hanging indent
+                                deeper) and carries values (or is itself a label-only continuation);
+      values on the first line  the previous line P carries values and B starts between P's x0 and a
+                                hanging indent deeper.
+    A join also needs the two lines closer than WRAP_TIGHT x row pitch (lines inside a cell sit closer
+    than rows). Wrap-like but spaced like rows, or equally close to both neighbours -> uncertain
+    "ambiguous_wrap" (left as is, A11). No wrap geometry and nothing indented below -> uncertain
+    "label_only_row_without_children".
+    """
+    if not pitch or len(body) < 2:
+        return body, [], []
+    rows, joins, uncertain = list(body), [], []
+    i = 0
+    while i < len(rows):
+        b = rows[i]
+        if b.values or not b.label_tokens:
+            i += 1
+            continue
+        p = rows[i - 1] if i > 0 else None
+        c = rows[i + 1] if i + 1 < len(rows) else None
+        xb = _x0(b)
+        gap_c = _line_yc(c, 0) - _line_yc(b, -1) if c else None      # between adjacent physical lines
+        gap_p = _line_yc(b, 0) - _line_yc(p, -1) if p else None
+        deeper = c is not None and _x0(c) is not None and _x0(c) > xb + 0.5 * size
+        # geometry of a wrap (start positions), then the spacing: lines inside one cell sit closer
+        # than rows do. A wrap-like line spaced like a row may also be a row whose values were lost
+        # (seen on noisy scans), so it is never joined on geometry alone.
+        down_geo = (c is not None and _x0(c) is not None and gap_c <= WRAP_MAX_GAP * pitch
+                    and (abs(_x0(c) - xb) <= 0.5 * size or (deeper and _x0(c) - xb <= HANGING_INDENT * size)))
+        up_geo = (p is not None and p.values and _x0(p) is not None and not deeper
+                  and gap_p <= WRAP_MAX_GAP * pitch and _x0(p) - 0.5 * size <= xb <= _x0(p) + HANGING_INDENT * size)
+        down = down_geo and gap_c < WRAP_TIGHT * pitch and (bool(c.values) or not deeper)
+        up = up_geo and gap_p < WRAP_TIGHT * pitch
+        if deeper and not down:
+            i += 1                                         # section header with indented rows below
+            continue
+        if down and up:
+            if abs(gap_c - gap_p) <= WRAP_CLEAR * pitch:
+                uncertain.append({"kind": "ambiguous_wrap", "text": b_text(b),
+                                  "detail": "label-only line equally close to the rows above and below"})
+                i += 1
+                continue
+            up, down = gap_p < gap_c, gap_c < gap_p
+        if not (down or up) and (down_geo or up_geo):
+            uncertain.append({"kind": "ambiguous_wrap", "text": b_text(b),
+                              "detail": "label-only line placed like a continuation but spaced like a row "
+                                        "(a wrapped label, or a row whose values are missing)"})
+            i += 1
+            continue
+        if down:
+            rows[i:i + 2] = [_join(b, c)]
+            joins.append({"text": b_text(rows[i]), "lines": rows[i].lines, "values_on": "last"
+                          if rows[i].value_line == rows[i].lines - 1 else "first" if rows[i].value_line == 0
+                          else "none"})
+            continue                                       # the joined row may continue further
+        if up:
+            rows[i - 1:i + 1] = [_join(p, b)]
+            joins.append({"text": b_text(rows[i - 1]), "lines": rows[i - 1].lines, "values_on": "first"})
+            i = max(i - 1, 0)
+            continue
+        uncertain.append({"kind": "label_only_row_without_children", "text": b_text(b),
+                          "detail": "no value and nothing indented below it; not a recognisable wrap"})
+        i += 1
+    return rows, joins, uncertain
+
+
+def b_text(r: BodyRow) -> str:
+    return "".join(t.text for t in r.label_tokens)
 
 
 def _line_text(line: list[Token]) -> str:
@@ -149,19 +267,31 @@ def analyze(lines: list[list[Token]]) -> Layout:
         regions.append((c, lo, c.right + size))
     header_end = -1
     col_text: dict[int, list[str]] = {c.idx: [] for c in cols}
+    header_cells: list[dict] = []
+    uncertain: list[dict] = []
     for i in range(first):
         over = []
         for t in lines[i]:
             if parse_unit(t.text):          # the unit line often sits over the last column
                 continue
+            w = max(t.x1 - t.x0, 1e-6)
+            covers = [c.idx for c, lo, hi in regions if min(t.x1, hi) - max(t.x0, lo) > SPAN_OVERLAP * w]
             xc = (t.x0 + t.x1) / 2
             for c, lo, hi in regions:
                 if lo < xc <= hi:
-                    over.append((c.idx, t))
+                    over.append((c.idx, t, covers))
                     break
         if over:
             header_end = i
-            for ci, t in over:
+            for ci, t, covers in over:
+                spanning = len(covers) > 1
+                header_cells.append({"text": t.text, "bbox": [round(v, 1) for v in t.bbox], "line": i,
+                                     "columns": covers or [ci], "colspan": max(len(covers), 1)})
+                if spanning:                 # a cell over several columns belongs to none of them alone
+                    if parse_dates(t.text):
+                        uncertain.append({"kind": "spanning_header_with_date", "text": t.text,
+                                          "detail": f"header over columns {covers} carries a date"})
+                    continue
                 col_text[ci].append(t.text)
     head_text = " ".join(_line_text(l) for l in lines[: max(header_end + 1, 0)] or lines[:first])
     title, stype = None, None
@@ -189,7 +319,18 @@ def analyze(lines: list[list[Token]]) -> Layout:
         if orphans:
             diag.setdefault("orphan_tokens", []).append({"line": i, "texts": [t.text for t in orphans]})
         toks = label + list(vals.values())
-        body.append(BodyRow(label, vals, min(t.bbox[1] for t in toks), max(t.bbox[3] for t in toks)))
+        y0, y1 = min(t.bbox[1] for t in toks), max(t.bbox[3] for t in toks)
+        box = [round(min(t.x0 for t in toks), 1), round(y0, 1), round(max(t.x1 for t in toks), 1), round(y1, 1)]
+        body.append(BodyRow(label, vals, y0, y1, [box], 0 if vals else None))
+
+    ycs0 = [(r.y0 + r.y1) / 2 for r in body]
+    gaps0 = [b - a for a, b in zip(ycs0, ycs0[1:])]
+    body, joins, wrap_uncertain = reconstruct_wrapped_labels(body, size, statistics.median(gaps0) if gaps0 else None)
+    uncertain += wrap_uncertain
+    if joins:
+        diag["wrapped_labels"] = joins
+    if uncertain:
+        diag["uncertain"] = uncertain
 
     footer = [_line_text(l) for l in lines[last + 1:]]
     printed_page = next((m.group(1) for f in footer if (m := re.fullmatch(r"[-－‐\s]*(\d+)[-－‐\s]*", nfkc(f)))), None)
@@ -198,4 +339,4 @@ def analyze(lines: list[list[Token]]) -> Layout:
     pitch = statistics.median(gaps) if gaps else None
     diag.update(row_pitch=pitch, body_rows=len(body), header_lines=header_end + 1,
                 tight_rows=[i for i, g in enumerate(gaps, 1) if pitch and g < 0.6 * pitch])
-    return Layout(cols, periods, body, size, unit, title, stype, revision, printed_page, diag)
+    return Layout(cols, periods, body, size, unit, title, stype, revision, printed_page, diag, header_cells)

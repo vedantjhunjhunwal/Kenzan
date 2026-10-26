@@ -33,6 +33,12 @@ else
   echo "   skipped: Japanese OCR not set up (bash scripts/setup_tesseract.sh)"
 fi
 
+echo "== 5b. per-dimension metric on every stored prediction (scoring only)"
+"$PY" stress/score_dimensions_all.py
+
+echo "== 5c. acceptance on correct and corrupted born-digital pages (dev; ~75 s)"
+"$PY" stress/acceptance_eval.py stress/out_acceptance_eval
+
 echo "== 6. VLM comparison on held-out v3 (offline, from cached model responses)"
 if [ -d vlm_cache ]; then
   "$PY" stress/run_vlm_compare.py --cache vlm_cache
