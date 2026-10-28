@@ -1,7 +1,7 @@
 {
  "page": "clean reference page at 300 dpi (dev, not held-out)",
  "response_sha256": "1c909eef5ed827d10015d0a2716b97b31cbfe7f20f9d97dc4a6032a5668c7e06",
- "commit": "aeb7feb0ae3946bb674310d758b4d04e18333c6b",
+ "commit": "a49fe9934e5e5cadc1d0bb3b7384a45646c8788d",
  "pipeline_fingerprint": "1ebbb150ef174b2b",
  "cells_correct": 74,
  "value_correct": 74,

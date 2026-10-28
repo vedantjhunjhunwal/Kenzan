@@ -8,7 +8,7 @@ raw responses are cached; scoring is offline.
 
 | | |
 |---|---|
-| Code | commit fcaa41d, pushed to GitHub before any VLM output existed |
+| Code | commit 1ce7f94, pushed to GitHub before any VLM output existed |
 | Hardware | Colab Tesla T4; 4-bit weights, fp16 compute; transformers 5.20.2, torch 2.11.0+cu130 |
 | Page | the clean reference page at 300 dpi (dev, not held-out) |
 | Result | **20/74** cells path-keyed, below the 70/74 gate; **74/74** value-correct; status ok; **accepted** by A1–A5 |
@@ -72,7 +72,7 @@ Fake-VLM measurement on the 10 seen scans, with every single error type from
 
 | Rule | Perfect read accepted | Single injected errors accepted |
 |---|--:|--:|
-| A1–A8 (commit 160085f) | 7/10 | 1341/38160 |
+| A1–A8 (commit 2cbbfa7) | 7/10 | 1341/38160 |
 | final rule without A9 | 9/10 | 1723/38160 |
 | final rule (A1–A10) | **1/10** | **21/38160** |
 | A1–A10 with A9-suffix (pre-registered dev candidate) | 8/10 | 84/38160 |
@@ -104,7 +104,7 @@ at the start of the next Colab run, and v3 runs only if it passes there.
 
 ## Code after the VLM freeze (2026-10-25)
 
-The notebook stays pinned to commit bd96a9b: the frozen method for VLM run 2. The code after it adds
+The notebook stays pinned to commit 8450d48: the frozen method for VLM run 2. The code after it adds
 the wrapped-label reconstruction and rule A11 ([RESULTS.md §8](RESULTS.md#8-wrapped-labels-and-spanning-headers-synthetic-layout-fixtures)).
 That code is **not** the frozen VLM method. On the dev measurement it behaves the same: 1/10
 perfect reads and 21/38160 injected errors accepted, page for page

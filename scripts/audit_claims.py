@@ -225,10 +225,10 @@ claim("docs/VLM.md", f"{rs['cells_correct']}/74 path-keyed, structure 100%, acce
 
 # ------------------------------------------------------------------ VLM-route dev measurement (seen set, fake VLM)
 DV = "stress/out_vlm_dev_seen"
-dv = {k: J(f"{DV}/{k}/dev_seen.json")["summary"] for k in ("before_A9_commit160085f", "final_without_A9", "final")}
-b, n, f = dv["before_A9_commit160085f"], dv["final_without_A9"], dv["final"]
+dv = {k: J(f"{DV}/{k}/dev_seen.json")["summary"] for k in ("before_A9_commit2cbbfa7", "final_without_A9", "final")}
+b, n, f = dv["before_A9_commit2cbbfa7"], dv["final_without_A9"], dv["final"]
 for d in ("docs/RESULTS.md", "docs/VLM.md"):
-    claim(d, f"| {b['perfect_read_accepted']} | {b['injected_accepted_total']} |", DV, True, line_key="A1–A8 (commit 160085f)")
+    claim(d, f"| {b['perfect_read_accepted']} | {b['injected_accepted_total']} |", DV, True, line_key="A1–A8 (commit 2cbbfa7)")
     claim(d, f"| {n['perfect_read_accepted']} | {n['injected_accepted_total']} |", DV, True, line_key="final rule without A9")
 claim("docs/RESULTS.md", f"| {f['perfect_read_accepted']} | {f['injected_accepted_total']} |", DV, True, line_key="final rule (A1–A10)")
 claim("docs/VLM.md", f"| **{f['perfect_read_accepted']}** | **{f['injected_accepted_total']}** |", DV, True, line_key="final rule (A1–A10)")
@@ -312,11 +312,11 @@ for key, t in (("unit 千円 → 百万円", "unit_wrong"), ("unit line removed"
     claim("docs/RESULTS.md", f"| {b['runs']} | {b['accepted']} |", AE, True, line_key=f"| {key}")
 
 LF = "stress/out_layout_fixtures"
-lb, la = J(f"{LF}/before_246a072.json"), J(f"{LF}/after.json")
+lb, la = J(f"{LF}/before_effd4e0.json"), J(f"{LF}/after.json")
 for v, fb in lb["fixtures"].items():
     fa = la["fixtures"][v]
     yn = lambda f: "yes" if f["page_correct"] else "no"
-    claim("docs/RESULTS.md", f"{yn(fb)} / {fb['decision']} |", f"{LF}/before_246a072.json", True, line_key=f"| {v} |")
+    claim("docs/RESULTS.md", f"{yn(fb)} / {fb['decision']} |", f"{LF}/before_effd4e0.json", True, line_key=f"| {v} |")
     claim("docs/RESULTS.md", f"{yn(fa)} / {fa['decision']}", f"{LF}/after.json", True, line_key=f"| {v} |")
 claim("README.md", f"page-correct {lb['page_correct']} of 6 → {la['page_correct']} of 6; accepted {lb['accepted']} → {la['accepted']}",
       LF, True)

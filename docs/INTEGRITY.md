@@ -48,5 +48,4 @@ reference page and the benchmark can't detect a normalisation bug.
 
 `release/Kenzan_final.zip` is a `git archive` of the final source commit, recorded with its sha256 in
 [release/README.md](../release/README.md). It holds tracked files only (no EDINET downloads, OCR
-models, caches or keys). The previous snapshot (commit b9fbc70, sha256 `38ca8eb2…c511`) is recorded
-there too.
+models, caches or keys).

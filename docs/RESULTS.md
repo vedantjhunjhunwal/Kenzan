@@ -99,7 +99,7 @@ scan, and with nothing degraded accepted, there is no false-accept *rate* to est
 **These runs used acceptance rule A1–A5, which had holes.** Identity checks are invariant to the unit and to swapping whole value columns, and template checks match totals by label, not by tree position. So A1–A5 would accept a page with a wrong unit, swapped columns, or a wrong hierarchy if its values were consistent. Fake-VLM tables and the VLM smoke page (§5) showed this. Rules A6–A8 (unit read from the page; column periods parsed in order; on the VLM route, a second OCR reading that confirms unit, columns and indentation) fix it, and are tested in `tests/test_vlm.py` and `tests/test_round2.py`. Rules A9 and A10 followed (see [VLM.md](VLM.md)).
 
 **Re-score of the frozen held-out sets under the final rule (A1–A10).** This was done once, with
-your approval, into new folders; the originals are kept. Code: commit a589605, pushed before the
+your approval, into new folders; the originals are kept. Code: commit edf7418, pushed before the
 run.
 
 | Set | Extraction metrics vs original | Accepted (old → new) | False accepts | New review reasons |
@@ -117,7 +117,7 @@ data. Source: `stress/out_vlm_dev_seen/*/dev_seen.json`.
 
 | Rule | Perfect read accepted | Single injected errors accepted |
 |---|--:|--:|
-| A1–A8 (commit 160085f) | 7/10 | 1341/38160 |
+| A1–A8 (commit 2cbbfa7) | 7/10 | 1341/38160 |
 | final rule without A9 | 9/10 | 1723/38160 |
 | final rule (A1–A10) | 1/10 | 21/38160 |
 | A1–A10 with A9-suffix (pre-registered candidate, rejected: breaks the ≤ 38/38160 bound) | 8/10 | 84/38160 |
@@ -203,7 +203,7 @@ Any accept from "VLM + checks" has no OCR agreement behind it. It rests on the i
 
 **Planned: held-out v3b, real-filing pages.** Once the filings in `bench/DOWNLOADS.md` are triaged, the balance-sheet pages of the sealed test filings will be rasterized with the v3 degradation parameters and scored against their XBRL ground truth. The pages, spec and code fingerprint will be locked before any of them is run, and each will be run once. That would be the first scan evidence on documents other than the reference page.
 
-**VLM arms: not run.** The VLM was run once on Colab (commit fcaa41d), on the smoke page only: the clean reference page at 300 dpi, which is not held-out. It scored 20/74 cells path-keyed, below the pre-registered 70/74 gate, so held-out v3 was not run. Its values were all right (74/74 value-correct); the indentation was wrong on 31 of 43 rows, so 54 correct values sat on wrong label paths. Rule A1–A5 still accepted the page: a structure-level false accept (`stress/out_vlm_smoke/diagnosis.md`). Details and the amendment that followed are in [VLM.md](VLM.md).
+**VLM arms: not run.** The VLM was run once on Colab (commit 1ce7f94), on the smoke page only: the clean reference page at 300 dpi, which is not held-out. It scored 20/74 cells path-keyed, below the pre-registered 70/74 gate, so held-out v3 was not run. Its values were all right (74/74 value-correct); the indentation was wrong on 31 of 43 rows, so 54 correct values sat on wrong label paths. Rule A1–A5 still accepted the page: a structure-level false accept (`stress/out_vlm_smoke/diagnosis.md`). Details and the amendment that followed are in [VLM.md](VLM.md).
 
 ## 6. Per-dimension correctness (metric added 2026-10-25)
 
@@ -296,9 +296,9 @@ from 0 accepts and is not evidence of reliability.
 from the same spec (values invented but consistent; it does not import the parser). These fixtures
 show the rules work as specified; they are not evidence about real filings.
 
-Sources: `stress/out_layout_fixtures/before_246a072.json`, `after.json` (`stress/run_layout_fixtures.py`).
+Sources: `stress/out_layout_fixtures/before_effd4e0.json`, `after.json` (`stress/run_layout_fixtures.py`).
 
-| Fixture | Pattern | Before (commit 246a072): page correct / decision | After: page correct / decision |
+| Fixture | Pattern | Before (commit effd4e0): page correct / decision | After: page correct / decision |
 |---|---|---|---|
 | wrap_last | label over 2 lines, values on the last line | no / review | **yes / accept** |
 | wrap_first | values on the first line, hanging indent | no / review | **yes / accept** |

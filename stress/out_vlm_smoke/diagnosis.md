@@ -4,7 +4,7 @@
 
 **Run.** Colab run 1:
 
-- commit fcaa41d;
+- commit 1ce7f94;
 - Qwen/Qwen3-VL-8B-Instruct, 4-bit, Tesla T4;
 - 270.8 s, 1648 new tokens; the 6144 limit was not hit.
 
