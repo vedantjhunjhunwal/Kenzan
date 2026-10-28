@@ -16,7 +16,7 @@ identities to decide which pages can be trusted without human review.
 - **Benchmark:** [docs/BENCHMARK.md](docs/BENCHMARK.md)
 - **Ground truth:** [docs/METHOD.md#3-ground-truth](docs/METHOD.md#3-ground-truth)
 - **Reproducing:** [docs/RESULTS.md#reproducing](docs/RESULTS.md#reproducing)
-- **Integrity (AI involvement, ground-truth coupling, chat log):** [docs/INTEGRITY.md](docs/INTEGRITY.md)
+- **Integrity (ground-truth coupling, release archive):** [docs/INTEGRITY.md](docs/INTEGRITY.md)
 - **VLM run (Google Colab):** [notebooks/vlm_heldout_v3.ipynb](notebooks/vlm_heldout_v3.ipynb), [open in Colab](https://colab.research.google.com/github/vedantjhunjhunwal/Kenzan/blob/main/notebooks/vlm_heldout_v3.ipynb)
 
 It provides:
@@ -63,7 +63,7 @@ It provides:
 | Acceptance, correct born-digital pages (reference, geometry, synthetic layouts) | 8 of 9 accepted, 1 sent to review | `stress/out_acceptance_eval/` |
 | Acceptance, corrupted reads of the 8 accepted pages (unit, period, sign, digit, consistent-value, missing, label, hierarchy) | 1128 of 2960 incorrect reads accepted (38.1%) | `stress/out_acceptance_eval/` |
 | Wrapped labels / spanning headers, 6 synthetic fixtures | page-correct 0 of 6 → 5 of 6; accepted 0 → 4; ambiguous layouts go to review | [RESULTS.md §8](docs/RESULTS.md#8-wrapped-labels-and-spanning-headers-synthetic-layout-fixtures) |
-| New real documents through the PDF parser | **not run**: downloads blocked by the session's network policy; nothing claimed | [RESULTS.md §9](docs/RESULTS.md#9-real-documents-through-the-pdf-parser-not-run) |
+| New real documents through the PDF parser | **not run**: filings could not be downloaded in the build environment; nothing claimed | [RESULTS.md §9](docs/RESULTS.md#9-real-documents-through-the-pdf-parser-not-run) |
 
 Each number comes from the file named next to it; the full tables are in [docs/RESULTS.md](docs/RESULTS.md).
 The held-out set was hashed before the code it tests was written, and code fingerprints are logged
@@ -110,7 +110,7 @@ including the stress sets.
 1. **One reference page.** "Unseen" means unseen *degradations* of one page. One real filing has been
    run through the XBRL extractor and ground-truth builder, but not yet through the PDF parser.
    Generalization across filings is the purpose of JP-BS-Bench, and it is untested. The runner for it
-   (`bench/eval_real.py`) is ready; the filings couldn't be downloaded in this session.
+   (`bench/eval_real.py`) is ready; the filings couldn't be downloaded in the build environment.
 2. **The scan path is weak.** OCR reads △ as other characters, and misread header labels break the
    calculation-tree rules. Best held-out cell F1 is about 85%. The checks catch these pages, but they
    don't repair them.
