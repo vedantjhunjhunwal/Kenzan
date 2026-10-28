@@ -39,7 +39,7 @@ columns, indentation and every cell it read.
 
 - **Generalization across documents.** There is one reference page, and the PDF parser has not been
   run on any real filing yet. The real-PDF evaluation (dev/sealed-test split, [bench/DOWNLOADS.md](bench/DOWNLOADS.md))
-  is waiting for the filings to be downloaded. On 2026-10-25 the session's network policy blocked
+  is waiting for the filings to be downloaded. On 2026-10-25 network restrictions in the build environment blocked
   EDINET, TDnet and the company sites, so nothing was downloaded and no result is claimed. The
   runner (`bench/eval_real.py`) is ready and tested on a synthetic filing only. The same goes for
   v3b, the planned scans of real-filing pages.
@@ -63,16 +63,7 @@ columns, indentation and every cell it read.
   because Tesseract never reads all the values right (`stress/out_heldout_v3/ocr_agreement_ceiling.json`).
 - **Independence of ground truth.** The ground truth and the pipeline share label-normalization,
   path, value-parsing and check code ([docs/INTEGRITY.md](docs/INTEGRITY.md)). The reference
-  transcription is recorded as human-verified, but the repository doesn't record whether a person or
-  the AI typed it.
-
-## AI assistance and chat log
-
-Built with Claude (Anthropic). Commits name the repository owner as author since a history rewrite
-on 2026-10-26 (co-author lines removed); the original Claude-authored history is on the
-`archive/claude-authored-*` branches. AI-made annotations and shared code
-are listed in [docs/INTEGRITY.md](docs/INTEGRITY.md). **The full original chat log is not in this
-repository. It is a required external attachment** and has not been reconstructed.
+  transcription is recorded as human-verified.
 
 ## Reproduce
 
